@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Blog - Amine Babouri</title>
+    <link>https://gitmanamine.github.io/tags/</link>
+    <description>Recent content in Tags on Blog - Amine Babouri</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <lastBuildDate>Thu, 25 May 2023 05:35:29 +0200</lastBuildDate><atom:link href="https://gitmanamine.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>fist-post</title>
+      <link>https://gitmanamine.github.io/tags/fist-post/</link>
+      <pubDate>Thu, 25 May 2023 05:35:29 +0200</pubDate>
+      
+      <guid>https://gitmanamine.github.io/tags/fist-post/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>welcome</title>
+      <link>https://gitmanamine.github.io/tags/welcome/</link>
+      <pubDate>Thu, 25 May 2023 05:35:29 +0200</pubDate>
+      
+      <guid>https://gitmanamine.github.io/tags/welcome/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+  </channel>
+</rss>

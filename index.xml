@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog - Amine Babouri</title>
+    <link>https://gitmanamine.github.io/</link>
+    <description>Recent content on Blog - Amine Babouri</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <lastBuildDate>Thu, 25 May 2023 05:35:29 +0200</lastBuildDate><atom:link href="https://gitmanamine.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About me !</title>
+      <link>https://gitmanamine.github.io/about/</link>
+      <pubDate>Thu, 25 May 2023 05:35:29 +0200</pubDate>
+      
+      <guid>https://gitmanamine.github.io/about/</guid>
+      <description>Hey There! I’m Amine Babouri 👋 I am a 20 years old Cloud/DevOps from Lyon, France. I like the piano 🎹, photography 📸, hiking 🥾⛰️, boxing 🥊, computer science 👨‍💻, and videos games 🎮.
+I&amp;rsquo;m very keen on IT I created this blog to share tutorials and IT technologies in the world of computing, so don&amp;rsquo;t hesitate to check out my articles!
+Skills Azure Devops 🔄 Azure ☁️ Bash &amp;gt;_ CI/CD 🚀 Docker 🐳 Kubernetes 🚢 Terraform 🌍 Education Degree Diploma Institute Date Apprenticeship training Cloud DevOps Administrator Simplon 2022 - 2023 Undergraduate degree Advanced Technician Diploma in Digital Systems and Computer Network Communications Lycée Edouard Branly 2021 - 2022 High School Professional Baccalaureate in Digital Systems and Computer Networks Lycée Professionnel Jacques de Flesselles 2018-2021 Certification Category Name Date Azure AZ - 900 2022 Azure AI - 900 2022 Azure AZ - 104 2023 Kubernetes CKA 2023 Terraform Terraform Associate 2023 Experience Position Company Date Alternant analyste cloud Visiativ 11/2022 - 11/2023 IT support technician Atos 03/2022 - 05/2022 intern computer technician Lyon Olympique Echecs 02/2021 - 03/2021 intern computer technician Cyber-Phone 01/2021 - 02/2021 intern computer technician Cyber-Phone 11/2020 - 12/2020 Links Liens Name LinkedIn Email GitHub </description>
+      <content>&lt;h1 id=&#34;hey-there-im-amine-babouri-&#34;&gt;Hey There! I’m Amine Babouri 👋&lt;/h1&gt;
+&lt;hr&gt;
+&lt;p&gt;I am a 20 years old Cloud/DevOps from Lyon, France. I like the piano 🎹, photography 📸, hiking 🥾⛰️, boxing 🥊, computer science 👨‍💻, and videos games 🎮.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m very keen on IT I created this blog to share tutorials and IT technologies in the world of computing, so don&amp;rsquo;t hesitate to check out my articles!&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;skills&#34;&gt;Skills&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Azure Devops 🔄&lt;/li&gt;
+&lt;li&gt;Azure ☁️&lt;/li&gt;
+&lt;li&gt;Bash &amp;gt;_&lt;/li&gt;
+&lt;li&gt;CI/CD 🚀&lt;/li&gt;
+&lt;li&gt;Docker  🐳&lt;/li&gt;
+&lt;li&gt;Kubernetes 🚢&lt;/li&gt;
+&lt;li&gt;Terraform 🌍&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;education&#34;&gt;Education&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Degree&lt;/th&gt;
+&lt;th&gt;Diploma&lt;/th&gt;
+&lt;th&gt;Institute&lt;/th&gt;
+&lt;th&gt;Date&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Apprenticeship training&lt;/td&gt;
+&lt;td&gt;Cloud DevOps Administrator&lt;/td&gt;
+&lt;td&gt;Simplon&lt;/td&gt;
+&lt;td&gt;2022 - 2023&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Undergraduate degree&lt;/td&gt;
+&lt;td&gt;Advanced Technician Diploma in Digital Systems and Computer Network Communications&lt;/td&gt;
+&lt;td&gt;Lycée Edouard Branly&lt;/td&gt;
+&lt;td&gt;2021 - 2022&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;High School&lt;/td&gt;
+&lt;td&gt;Professional Baccalaureate in Digital Systems and Computer Networks&lt;/td&gt;
+&lt;td&gt;Lycée Professionnel Jacques de Flesselles&lt;/td&gt;
+&lt;td&gt;2018-2021&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;certification&#34;&gt;Certification&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Category&lt;/th&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Date&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Azure&lt;/td&gt;
+&lt;td&gt;AZ - 900&lt;/td&gt;
+&lt;td&gt;2022&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Azure&lt;/td&gt;
+&lt;td&gt;AI - 900&lt;/td&gt;
+&lt;td&gt;2022&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Azure&lt;/td&gt;
+&lt;td&gt;AZ - 104&lt;/td&gt;
+&lt;td&gt;2023&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Kubernetes&lt;/td&gt;
+&lt;td&gt;CKA&lt;/td&gt;
+&lt;td&gt;2023&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Terraform&lt;/td&gt;
+&lt;td&gt;Terraform Associate&lt;/td&gt;
+&lt;td&gt;2023&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;experience&#34;&gt;Experience&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Position&lt;/th&gt;
+&lt;th&gt;Company&lt;/th&gt;
+&lt;th&gt;Date&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Alternant analyste cloud&lt;/td&gt;
+&lt;td&gt;Visiativ&lt;/td&gt;
+&lt;td&gt;11/2022 - 11/2023&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;IT support technician&lt;/td&gt;
+&lt;td&gt;Atos&lt;/td&gt;
+&lt;td&gt;03/2022 - 05/2022&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;intern computer technician&lt;/td&gt;
+&lt;td&gt;Lyon Olympique Echecs&lt;/td&gt;
+&lt;td&gt;02/2021 - 03/2021&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;intern computer technician&lt;/td&gt;
+&lt;td&gt;Cyber-Phone&lt;/td&gt;
+&lt;td&gt;01/2021 - 02/2021&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;intern computer technician&lt;/td&gt;
+&lt;td&gt;Cyber-Phone&lt;/td&gt;
+&lt;td&gt;11/2020 - 12/2020&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&#34;links&#34;&gt;Links&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Liens&lt;/th&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.linkedin.com/in/amine-babouri/&#34;&gt;&lt;img src=&#34;https://gitmanamine.github.io/images/linkedin.png&#34; alt=&#34;LinkedIn&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;LinkedIn&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;mailto:amine.babouri@protonmail.com&#34;&gt;&lt;img src=&#34;https://gitmanamine.github.io/images/email.png&#34; alt=&#34;Email&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Email&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/GitManAmine?tab=repositories&#34;&gt;&lt;img src=&#34;https://gitmanamine.github.io/images/github.png&#34; alt=&#34;GitHub&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;GitHub&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>https://gitmanamine.github.io/posts/hello-world/</link>
+      <pubDate>Thu, 25 May 2023 05:35:29 +0200</pubDate>
+      
+      <guid>https://gitmanamine.github.io/posts/hello-world/</guid>
+      <description>Welcome to my blog, this is my first post.</description>
+      <content>&lt;hr&gt;
+&lt;p&gt;Welcome to my blog, this is my first post.&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gitmanamine.github.io/docs/docs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gitmanamine.github.io/docs/docs/</guid>
+      <description>ss</description>
+      <content>&lt;p&gt;ss&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://gitmanamine.github.io/portfolio/portfolio/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gitmanamine.github.io/portfolio/portfolio/</guid>
+      <description>a</description>
+      <content>&lt;p&gt;a&lt;/p&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>
