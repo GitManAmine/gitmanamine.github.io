@@ -6,7 +6,164 @@
     <description>Recent content on Blog - Amine Babouri</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr</language>
-    <lastBuildDate>Thu, 25 May 2023 05:35:29 +0200</lastBuildDate><atom:link href="https://gitmanamine.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 May 2023 22:12:30 +0200</lastBuildDate><atom:link href="https://gitmanamine.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Déployer Nginx sur AKS avec une pipeline</title>
+      <link>https://gitmanamine.github.io/posts/deploy_nginx_on_aks/</link>
+      <pubDate>Tue, 30 May 2023 22:12:30 +0200</pubDate>
+      
+      <guid>https://gitmanamine.github.io/posts/deploy_nginx_on_aks/</guid>
+      <description>Dans ce projet, j&amp;rsquo;ai déployé Nginx sur Azure Kubernetes Service (AKS) en utilisant une pipeline CI/CD. J&amp;rsquo;ai automatisé le déploiement en utilisant des scripts Terraform et j&amp;rsquo;ai utilisé Azure DevOps pour créer la pipeline.
+Schéma de l&amp;rsquo;infrastructure :
+Étapes : Créer un référentiel Git dans Azure Créer un script Terraform pour créer l&amp;rsquo;infrastructure AKS Créer un manifeste YAML pour déployer Nginx sur le cluster Créer la pipeline CI/CD sur Azure Devops Créer un référentiel Git dans Azure ➡️ Connectez-vous à votre compte Azure DevOps</description>
+      <content>&lt;hr&gt;
+&lt;p&gt;Dans ce projet, j&amp;rsquo;ai déployé Nginx sur Azure Kubernetes Service (AKS) en utilisant une pipeline CI/CD. J&amp;rsquo;ai automatisé le déploiement en utilisant des scripts Terraform et j&amp;rsquo;ai utilisé Azure DevOps pour créer la pipeline.&lt;/p&gt;
+&lt;p&gt;Schéma de l&amp;rsquo;infrastructure :&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://gitmanamine.github.io/images/infra.png&#34; alt=&#34;Schéma&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;étapes-&#34;&gt;Étapes :&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Créer un référentiel Git dans Azure&lt;/li&gt;
+&lt;li&gt;Créer un script Terraform pour créer l&amp;rsquo;infrastructure AKS&lt;/li&gt;
+&lt;li&gt;Créer un manifeste YAML pour déployer Nginx sur le cluster&lt;/li&gt;
+&lt;li&gt;Créer la pipeline CI/CD sur Azure Devops&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;créer-un-référentiel-git-dans-azure&#34;&gt;Créer un référentiel Git dans Azure&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;➡️ Connectez-vous à votre compte Azure DevOps&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;➡️ Sélectionnez l&amp;rsquo;organisation Azure DevOps dans laquelle vous souhaitez créer le référentiel Git.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;➡️ Accédez au projet dans lequel vous souhaitez créer le référentiel Git, ou créez un nouveau projet si nécessaire.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;➡️ Cliquez sur l&amp;rsquo;onglet &amp;ldquo;Repos&amp;rdquo; dans la barre de navigation supérieure pour accéder à la page des référentiels.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;➡️ Cliquez sur le bouton &amp;ldquo;New repository&amp;rdquo; (Nouveau référentiel) pour créer un nouveau référentiel Git.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;➡️ Dans la fenêtre contextuelle qui s&amp;rsquo;ouvre :&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Entrez un &amp;ldquo;Repository name&amp;rdquo; (Nom du référentiel) significatif.&lt;/li&gt;
+&lt;li&gt;Sélectionnez &amp;ldquo;Git&amp;rdquo; comme système de &amp;ldquo;Version control&amp;rdquo; (Contrôle de version).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;➡️ Cliquez sur le bouton &amp;ldquo;Create&amp;rdquo; (Créer) pour créer le référentiel Git.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;➡️ Vous serez redirigé vers la page du référentiel nouvellement créé.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;créer-un-script-terraform&#34;&gt;Créer un script terraform&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;terraform {
+  required_providers {
+    azurerm = {
+      source = &amp;#34;hashicorp/azurerm&amp;#34;
+      version = &amp;#34;3.57.0&amp;#34;
+    }
+  }
+}
+
+provider &amp;#34;azurerm&amp;#34; {
+  features {}
+  tenant_id       = &amp;#34;&amp;#34;
+  subscription_id = &amp;#34;&amp;#34;
+}
+
+data &amp;#34;azurerm_resource_group&amp;#34; &amp;#34;rg&amp;#34; {
+  name = &amp;#34;&amp;#34;
+}
+
+output &amp;#34;id&amp;#34; {
+  value = data.azurerm_resource_group.rg.id
+}
+
+resource &amp;#34;azurerm_kubernetes_cluster&amp;#34; &amp;#34;aks&amp;#34; {
+  name                = &amp;#34;&amp;#34;
+  location            = data.azurerm_resource_group.rg.location
+  resource_group_name = data.azurerm_resource_group.rg.name
+  dns_prefix          = &amp;#34;&amp;#34;
+
+  default_node_pool {
+    name       = &amp;#34;default&amp;#34;
+    node_count = 1
+    vm_size    = &amp;#34;Standard_D2_v2&amp;#34;
+  }
+
+  identity {
+    type = &amp;#34;SystemAssigned&amp;#34;
+  }
+}
+
+output &amp;#34;client_certificate&amp;#34; {
+  value     = azurerm_kubernetes_cluster.aks.kube_config.0.client_certificate
+  sensitive = true
+}
+
+output &amp;#34;kube_config&amp;#34; {
+  value = azurerm_kubernetes_cluster.aks.kube_config_raw
+
+  sensitive = true
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;créer-la-pipeline&#34;&gt;Créer la pipeline&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Se rendre dans la séction &amp;ldquo;Pipelines&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Cliquer sur &amp;ldquo;New pipeline&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Poursuivre en fonction de la source de notre code (Azure Repos Git dans mon cas)&lt;/li&gt;
+&lt;li&gt;Séléctionner son dépôt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: &amp;#39;ubuntu-latest&amp;#39;
+
+steps:
+- checkout: self
+
+- script: az login
+
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: &amp;#39;3.8&amp;#39;
+    addToPath: true
+    
+- task: KubectlInstaller@0
+  displayName: Kubectl installer
+  inputs: 
+    kubectlVersion: latest
+
+- script: |
+    terraform init
+    terraform plan -out=tfplan
+  displayName: &amp;#39;Execute Terraform init and plan&amp;#39;
+
+- script: |
+    terraform apply -auto-approve tfplan
+  displayName: &amp;#39;Execute Terraform apply&amp;#39;
+
+- script: az aks get-credentials --resource-group &amp;lt;insérer nom du groupe de ressource&amp;gt; --name &amp;lt;insérer nom de l&amp;#39;aks&amp;gt;
+  displayName: &amp;#39;Get AKS credentials&amp;#39;
+  
+- script: kubectl apply -f nginx.yaml
+  displayName: &amp;#39;Deploy YAML manifest&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;fin&#34;&gt;Fin&lt;/h1&gt;
+&lt;p&gt;Connecter vous ensuite à votre cluster, pour connaitre l&amp;rsquo;adresse ip puiblique de votre cluster, éxécutez cette commande :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;kubecetl get svc&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Au revoir 👋&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>About me !</title>
       <link>https://gitmanamine.github.io/about/</link>
@@ -15,9 +172,8 @@
       <guid>https://gitmanamine.github.io/about/</guid>
       <description>Hey There! I’m Amine Babouri 👋 I am a 20 year old Cloud/DevOps from Lyon, France. I enjoy playing the piano 🎹, photography 📸, hiking 🥾⛰️, boxing 🥊, computer science 👨‍💻, and videos games 🎮.
 I&amp;rsquo;m very keen on IT I created this blog to share tutorials and IT technologies in the world of computing, so don&amp;rsquo;t hesitate to check out my articles!
-Skills Azure Devops 🔄 Azure ☁️ Bash &amp;gt;_ CI/CD 🚀 Docker 🐳 Kubernetes 🚢 Terraform 🌍 Education Degree Diploma Institute Date Apprenticeship training Cloud DevOps Administrator Simplon 2022 - 2023 Undergraduate degree Advanced Technician Diploma in Digital Systems and Computer Network Communications Lycée Edouard Branly 2021 - 2022 High School Professional Baccalaureate in Digital Systems and Computer Networks Lycée Professionnel Jacques de Flesselles 2018-2021 Certification Category Name Date Azure AZ - 900 2022 Azure AI - 900 2022 Azure AZ - 104 2023 Kubernetes CKA 2023 Terraform Terraform Associate 2023 Experience Position Company Date Alternant analyste cloud Visiativ 11/2022 - 11/2023 IT support technician Atos 03/2022 - 05/2022 intern computer technician Lyon Olympique Echecs 02/2021 - 03/2021 intern computer technician Cyber-Phone 01/2021 - 02/2021 intern computer technician Cyber-Phone 11/2020 - 12/2020 Links Liens Name LinkedIn Email GitHub </description>
+Skills Azure Devops 🔄 Azure ☁️ Bash &amp;gt;_ CI/CD 🚀 Docker 🐳 Kubernetes 🚢 Terraform 🌍 Education Degree Diploma Institute Date Apprenticeship training Cloud DevOps Administrator Simplon 2022 - 2023 Undergraduate degree Advanced Technician Diploma in Digital Systems and Computer Network Communications Lycée Edouard Branly 2021 - 2022 High School Professional Baccalaureate in Digital Systems and Computer Networks Lycée Professionnel Jacques de Flesselles 2018-2021 Certification Category Name Date Azure ☁️ AZ - 900 2022 Azure ☁️ AI - 900 2022 Azure ☁️ AZ - 104 2023 Kubernetes ☸️ CKA 2023 Terraform 🌍 Terraform Associate 2023 Experience Position Company Date Alternant analyste cloud Visiativ 11/2022 - 11/2023 IT support technician Atos 03/2022 - 05/2022 intern computer technician Lyon Olympique Echecs 02/2021 - 03/2021 intern computer technician Cyber-Phone 01/2021 - 02/2021 intern computer technician Cyber-Phone 11/2020 - 12/2020 Links Liens Name LinkedIn Email GitHub </description>
       <content>&lt;h1 id=&#34;hey-there-im-amine-babouri-&#34;&gt;Hey There! I’m Amine Babouri 👋&lt;/h1&gt;
-&lt;hr&gt;
 &lt;p&gt;I am a 20 year old Cloud/DevOps from Lyon, France. I enjoy playing the piano 🎹, photography 📸, hiking 🥾⛰️, boxing 🥊, computer science 👨‍💻, and videos games 🎮.&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;m very keen on IT I created this blog to share tutorials and IT technologies in the world of computing, so don&amp;rsquo;t hesitate to check out my articles!&lt;/p&gt;
 &lt;hr&gt;
@@ -75,27 +231,27 @@ Skills Azure Devops 🔄 Azure ☁️ Bash &amp;gt;_ CI/CD 🚀 Docker 🐳 Kube
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;Azure&lt;/td&gt;
+&lt;td&gt;Azure ☁️&lt;/td&gt;
 &lt;td&gt;AZ - 900&lt;/td&gt;
 &lt;td&gt;2022&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;Azure&lt;/td&gt;
+&lt;td&gt;Azure ☁️&lt;/td&gt;
 &lt;td&gt;AI - 900&lt;/td&gt;
 &lt;td&gt;2022&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;Azure&lt;/td&gt;
+&lt;td&gt;Azure ☁️&lt;/td&gt;
 &lt;td&gt;AZ - 104&lt;/td&gt;
 &lt;td&gt;2023&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;Kubernetes&lt;/td&gt;
+&lt;td&gt;Kubernetes ☸️&lt;/td&gt;
 &lt;td&gt;CKA&lt;/td&gt;
 &lt;td&gt;2023&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;Terraform&lt;/td&gt;
+&lt;td&gt;Terraform 🌍&lt;/td&gt;
 &lt;td&gt;Terraform Associate&lt;/td&gt;
 &lt;td&gt;2023&lt;/td&gt;
 &lt;/tr&gt;
@@ -139,6 +295,7 @@ Skills Azure Devops 🔄 Azure ☁️ Bash &amp;gt;_ CI/CD 🚀 Docker 🐳 Kube
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;hr&gt;
 &lt;h1 id=&#34;links&#34;&gt;Links&lt;/h1&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -174,28 +331,6 @@ Skills Azure Devops 🔄 Azure ☁️ Bash &amp;gt;_ CI/CD 🚀 Docker 🐳 Kube
       <description>Welcome to my blog, this is my first post.</description>
       <content>&lt;hr&gt;
 &lt;p&gt;Welcome to my blog, this is my first post.&lt;/p&gt;
-</content>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://gitmanamine.github.io/docs/docs/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://gitmanamine.github.io/docs/docs/</guid>
-      <description>ss</description>
-      <content>&lt;p&gt;ss&lt;/p&gt;
-</content>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://gitmanamine.github.io/portfolio/portfolio/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://gitmanamine.github.io/portfolio/portfolio/</guid>
-      <description>a</description>
-      <content>&lt;p&gt;a&lt;/p&gt;
 </content>
     </item>
     

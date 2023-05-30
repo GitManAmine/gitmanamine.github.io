@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Blog - Amine Babouri</title>
-    <link>https://gitmanamine.github.io/posts/</link>
-    <description>Recent content in Posts on Blog - Amine Babouri</description>
+    <title>Kubernetes on Blog - Amine Babouri</title>
+    <link>https://gitmanamine.github.io/tags/kubernetes/</link>
+    <description>Recent content in Kubernetes on Blog - Amine Babouri</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr</language>
-    <lastBuildDate>Tue, 30 May 2023 22:12:30 +0200</lastBuildDate><atom:link href="https://gitmanamine.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 May 2023 22:12:30 +0200</lastBuildDate><atom:link href="https://gitmanamine.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Déployer Nginx sur AKS avec une pipeline</title>
       <link>https://gitmanamine.github.io/posts/deploy_nginx_on_aks/</link>
@@ -161,18 +161,6 @@ steps:
 &lt;p&gt;kubecetl get svc&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Au revoir 👋&lt;/p&gt;
-</content>
-    </item>
-    
-    <item>
-      <title>Hello World</title>
-      <link>https://gitmanamine.github.io/posts/hello-world/</link>
-      <pubDate>Thu, 25 May 2023 05:35:29 +0200</pubDate>
-      
-      <guid>https://gitmanamine.github.io/posts/hello-world/</guid>
-      <description>Welcome to my blog, this is my first post.</description>
-      <content>&lt;hr&gt;
-&lt;p&gt;Welcome to my blog, this is my first post.&lt;/p&gt;
 </content>
     </item>
     

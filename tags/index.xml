@@ -6,7 +6,27 @@
     <description>Recent content in Tags on Blog - Amine Babouri</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr</language>
-    <lastBuildDate>Thu, 25 May 2023 05:35:29 +0200</lastBuildDate><atom:link href="https://gitmanamine.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 May 2023 22:12:30 +0200</lastBuildDate><atom:link href="https://gitmanamine.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure Devops</title>
+      <link>https://gitmanamine.github.io/tags/azure-devops/</link>
+      <pubDate>Tue, 30 May 2023 22:12:30 +0200</pubDate>
+      
+      <guid>https://gitmanamine.github.io/tags/azure-devops/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>https://gitmanamine.github.io/tags/kubernetes/</link>
+      <pubDate>Tue, 30 May 2023 22:12:30 +0200</pubDate>
+      
+      <guid>https://gitmanamine.github.io/tags/kubernetes/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
     <item>
       <title>fist-post</title>
       <link>https://gitmanamine.github.io/tags/fist-post/</link>
@@ -23,6 +43,16 @@
       <pubDate>Thu, 25 May 2023 05:35:29 +0200</pubDate>
       
       <guid>https://gitmanamine.github.io/tags/welcome/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>CI/CD</title>
+      <link>https://gitmanamine.github.io/tags/ci/cd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://gitmanamine.github.io/tags/ci/cd/</guid>
       <description></description>
       <content></content>
     </item>

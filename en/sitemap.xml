@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://gitmanamine.github.io/</loc>
-    <lastmod>2023-05-25T05:35:29+02:00</lastmod>
+    <lastmod>2023-05-30T22:12:30+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -15,20 +15,20 @@
                 href="https://gitmanamine.github.io/"
                 />
   </url><url>
-    <loc>https://gitmanamine.github.io/about/</loc>
-    <lastmod>2023-05-25T05:35:29+02:00</lastmod>
+    <loc>https://gitmanamine.github.io/tags/azure-devops/</loc>
+    <lastmod>2023-05-30T22:12:30+02:00</lastmod>
   </url><url>
-    <loc>https://gitmanamine.github.io/tags/fist-post/</loc>
-    <lastmod>2023-05-25T05:35:29+02:00</lastmod>
+    <loc>https://gitmanamine.github.io/posts/deploy_nginx_on_aks/</loc>
+    <lastmod>2023-05-30T22:12:30+02:00</lastmod>
   </url><url>
-    <loc>https://gitmanamine.github.io/posts/hello-world/</loc>
-    <lastmod>2023-05-25T05:35:29+02:00</lastmod>
+    <loc>https://gitmanamine.github.io/tags/kubernetes/</loc>
+    <lastmod>2023-05-30T22:12:30+02:00</lastmod>
   </url><url>
     <loc>https://gitmanamine.github.io/posts/</loc>
-    <lastmod>2023-05-25T05:35:29+02:00</lastmod>
+    <lastmod>2023-05-30T22:12:30+02:00</lastmod>
   </url><url>
     <loc>https://gitmanamine.github.io/tags/</loc>
-    <lastmod>2023-05-25T05:35:29+02:00</lastmod>
+    <lastmod>2023-05-30T22:12:30+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -40,12 +40,17 @@
                 href="https://gitmanamine.github.io/tags/"
                 />
   </url><url>
-    <loc>https://gitmanamine.github.io/tags/welcome/</loc>
+    <loc>https://gitmanamine.github.io/about/</loc>
     <lastmod>2023-05-25T05:35:29+02:00</lastmod>
   </url><url>
-    <loc>https://gitmanamine.github.io/docs/docs/</loc>
+    <loc>https://gitmanamine.github.io/tags/fist-post/</loc>
+    <lastmod>2023-05-25T05:35:29+02:00</lastmod>
   </url><url>
-    <loc>https://gitmanamine.github.io/portfolio/portfolio/</loc>
+    <loc>https://gitmanamine.github.io/posts/hello-world/</loc>
+    <lastmod>2023-05-25T05:35:29+02:00</lastmod>
+  </url><url>
+    <loc>https://gitmanamine.github.io/tags/welcome/</loc>
+    <lastmod>2023-05-25T05:35:29+02:00</lastmod>
   </url><url>
     <loc>https://gitmanamine.github.io/categories/</loc>
     <xhtml:link
@@ -59,8 +64,6 @@
                 href="https://gitmanamine.github.io/categories/"
                 />
   </url><url>
-    <loc>https://gitmanamine.github.io/docs/</loc>
-  </url><url>
-    <loc>https://gitmanamine.github.io/portfolio/</loc>
+    <loc>https://gitmanamine.github.io/tags/ci/cd/</loc>
   </url>
 </urlset>

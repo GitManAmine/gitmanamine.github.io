@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Déployer Nginx sur AKS avec une pipeline :: Blog - Amine Babouri</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dans ce projet, j&amp;rsquo;ai déployé Nginx sur Azure Kubernetes Service (AKS) en utilisant une pipeline CI/CD. J&amp;rsquo;ai automatisé le déploiement en utilisant des scripts Terraform et j&amp;rsquo;ai utilisé Azure DevOps pour créer la pipeline.
+Schéma de l&amp;rsquo;infrastructure :
+Étapes : Créer un référentiel Git dans Azure Créer un script Terraform pour créer l&amp;rsquo;infrastructure AKS Créer un manifeste YAML pour déployer Nginx sur le cluster Créer la pipeline CI/CD sur Azure Devops Créer un référentiel Git dans Azure ➡️ Connectez-vous à votre compte Azure DevOps" />
+<meta name="keywords" content=", " />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="https://gitmanamine.github.io/posts/deploy_nginx_on_aks/" />
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://gitmanamine.github.io/styles.css">
+
+
+
+
+
+
+
+  <link rel="shortcut icon" href="https://gitmanamine.github.io/img/theme-colors/red.png">
+  <link rel="apple-touch-icon" href="https://gitmanamine.github.io/img/theme-colors/red.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Déployer Nginx sur AKS avec une pipeline">
+<meta property="og:description" content="Dans ce projet, j&amp;rsquo;ai déployé Nginx sur Azure Kubernetes Service (AKS) en utilisant une pipeline CI/CD. J&amp;rsquo;ai automatisé le déploiement en utilisant des scripts Terraform et j&amp;rsquo;ai utilisé Azure DevOps pour créer la pipeline.
+Schéma de l&amp;rsquo;infrastructure :
+Étapes : Créer un référentiel Git dans Azure Créer un script Terraform pour créer l&amp;rsquo;infrastructure AKS Créer un manifeste YAML pour déployer Nginx sur le cluster Créer la pipeline CI/CD sur Azure Devops Créer un référentiel Git dans Azure ➡️ Connectez-vous à votre compte Azure DevOps" />
+<meta property="og:url" content="https://gitmanamine.github.io/posts/deploy_nginx_on_aks/" />
+<meta property="og:site_name" content="Blog - Amine Babouri" />
+
+  
+  
+  <meta property="og:image" content="https://gitmanamine.github.io/">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2023-05-30 22:12:30 &#43;0200 CEST" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="red">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    /home/.amine/~
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/about">./about</a></li>
+        
+      
+        
+          <li><a href="/categories">./categories</a></li>
+        
+      
+        
+          <li><a href="/posts">./posts</a></li>
+        
+      
+        
+          <li><a href="/tags">./tags</a></li>
+        
+      
+      
+        <hr />
+        
+          <li>
+            <a href="https://gitmanamine.github.io/">English</a>
+          </li>
+        
+          <li>
+            <a href="https://gitmanamine.github.io/fr/">Français</a>
+          </li>
+        
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+      <ul class="menu menu--desktop menu--language-selector">
+  <li class="menu__trigger">English&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        <li><a href="https://gitmanamine.github.io/">English</a></li>
+      
+        <li><a href="https://gitmanamine.github.io/fr/">Français</a></li>
+      
+    </ul>
+  </li>
+</ul>
+
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/about" >./about</a></li>
+        
+      
+        
+          <li><a href="/categories" >./categories</a></li>
+        
+      
+        
+          <li><a href="/posts" >./posts</a></li>
+        
+      
+        
+          <li><a href="/tags" >./tags</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://gitmanamine.github.io/posts/deploy_nginx_on_aks/">Déployer Nginx sur AKS avec une pipeline</a>
+  </h1>
+  <div class="post-meta">
+    
+      <time class="post-date">
+        2023-05-30 ::
+        
+      </time>
+    
+    
+      <span class="post-author">Amine</span>
+    
+    
+  </div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://gitmanamine.github.io/tags/ci/cd/">CI/CD</a>&nbsp;
+      
+      #<a href="https://gitmanamine.github.io/tags/azure-devops/">Azure Devops</a>&nbsp;
+      
+      #<a href="https://gitmanamine.github.io/tags/kubernetes/">Kubernetes</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+  
+  <div class="post-content"><div>
+        <hr>
+<p>Dans ce projet, j&rsquo;ai déployé Nginx sur Azure Kubernetes Service (AKS) en utilisant une pipeline CI/CD. J&rsquo;ai automatisé le déploiement en utilisant des scripts Terraform et j&rsquo;ai utilisé Azure DevOps pour créer la pipeline.</p>
+<p>Schéma de l&rsquo;infrastructure :</p>
+<p><img src="/images/infra.png" alt="Schéma"></p>
+<h1 id="étapes-">Étapes :<a href="#étapes-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<ul>
+<li>Créer un référentiel Git dans Azure</li>
+<li>Créer un script Terraform pour créer l&rsquo;infrastructure AKS</li>
+<li>Créer un manifeste YAML pour déployer Nginx sur le cluster</li>
+<li>Créer la pipeline CI/CD sur Azure Devops</li>
+</ul>
+<hr>
+<h1 id="créer-un-référentiel-git-dans-azure">Créer un référentiel Git dans Azure<a href="#créer-un-référentiel-git-dans-azure" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<ol>
+<li>
+<p>➡️ Connectez-vous à votre compte Azure DevOps</p>
+</li>
+<li>
+<p>➡️ Sélectionnez l&rsquo;organisation Azure DevOps dans laquelle vous souhaitez créer le référentiel Git.</p>
+</li>
+<li>
+<p>➡️ Accédez au projet dans lequel vous souhaitez créer le référentiel Git, ou créez un nouveau projet si nécessaire.</p>
+</li>
+<li>
+<p>➡️ Cliquez sur l&rsquo;onglet &ldquo;Repos&rdquo; dans la barre de navigation supérieure pour accéder à la page des référentiels.</p>
+</li>
+<li>
+<p>➡️ Cliquez sur le bouton &ldquo;New repository&rdquo; (Nouveau référentiel) pour créer un nouveau référentiel Git.</p>
+</li>
+<li>
+<p>➡️ Dans la fenêtre contextuelle qui s&rsquo;ouvre :</p>
+<ol>
+<li>Entrez un &ldquo;Repository name&rdquo; (Nom du référentiel) significatif.</li>
+<li>Sélectionnez &ldquo;Git&rdquo; comme système de &ldquo;Version control&rdquo; (Contrôle de version).</li>
+</ol>
+</li>
+<li>
+<p>➡️ Cliquez sur le bouton &ldquo;Create&rdquo; (Créer) pour créer le référentiel Git.</p>
+</li>
+<li>
+<p>➡️ Vous serez redirigé vers la page du référentiel nouvellement créé.</p>
+</li>
+</ol>
+<hr>
+<h1 id="créer-un-script-terraform">Créer un script terraform<a href="#créer-un-script-terraform" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<pre tabindex="0"><code>terraform {
+  required_providers {
+    azurerm = {
+      source = &#34;hashicorp/azurerm&#34;
+      version = &#34;3.57.0&#34;
+    }
+  }
+}
+
+provider &#34;azurerm&#34; {
+  features {}
+  tenant_id       = &#34;&#34;
+  subscription_id = &#34;&#34;
+}
+
+data &#34;azurerm_resource_group&#34; &#34;rg&#34; {
+  name = &#34;&#34;
+}
+
+output &#34;id&#34; {
+  value = data.azurerm_resource_group.rg.id
+}
+
+resource &#34;azurerm_kubernetes_cluster&#34; &#34;aks&#34; {
+  name                = &#34;&#34;
+  location            = data.azurerm_resource_group.rg.location
+  resource_group_name = data.azurerm_resource_group.rg.name
+  dns_prefix          = &#34;&#34;
+
+  default_node_pool {
+    name       = &#34;default&#34;
+    node_count = 1
+    vm_size    = &#34;Standard_D2_v2&#34;
+  }
+
+  identity {
+    type = &#34;SystemAssigned&#34;
+  }
+}
+
+output &#34;client_certificate&#34; {
+  value     = azurerm_kubernetes_cluster.aks.kube_config.0.client_certificate
+  sensitive = true
+}
+
+output &#34;kube_config&#34; {
+  value = azurerm_kubernetes_cluster.aks.kube_config_raw
+
+  sensitive = true
+}
+</code></pre><h1 id="créer-la-pipeline">Créer la pipeline<a href="#créer-la-pipeline" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<ul>
+<li>Se rendre dans la séction &ldquo;Pipelines&rdquo;</li>
+<li>Cliquer sur &ldquo;New pipeline&rdquo;</li>
+<li>Poursuivre en fonction de la source de notre code (Azure Repos Git dans mon cas)</li>
+<li>Séléctionner son dépôt</li>
+</ul>
+<pre tabindex="0"><code>trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: &#39;ubuntu-latest&#39;
+
+steps:
+- checkout: self
+
+- script: az login
+
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: &#39;3.8&#39;
+    addToPath: true
+    
+- task: KubectlInstaller@0
+  displayName: Kubectl installer
+  inputs: 
+    kubectlVersion: latest
+
+- script: |
+    terraform init
+    terraform plan -out=tfplan
+  displayName: &#39;Execute Terraform init and plan&#39;
+
+- script: |
+    terraform apply -auto-approve tfplan
+  displayName: &#39;Execute Terraform apply&#39;
+
+- script: az aks get-credentials --resource-group &lt;insérer nom du groupe de ressource&gt; --name &lt;insérer nom de l&#39;aks&gt;
+  displayName: &#39;Get AKS credentials&#39;
+  
+- script: kubectl apply -f nginx.yaml
+  displayName: &#39;Deploy YAML manifest&#39;
+</code></pre><h1 id="fin">Fin<a href="#fin" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Connecter vous ensuite à votre cluster, pour connaitre l&rsquo;adresse ip puiblique de votre cluster, éxécutez cette commande :</p>
+<blockquote>
+<p>kubecetl get svc</p>
+</blockquote>
+<p>Au revoir 👋</p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h">Read other posts</span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        
+        <span class="button next">
+            <a href="https://gitmanamine.github.io/posts/hello-world/">
+                <span class="button__text">Hello World</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2023 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
