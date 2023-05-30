@@ -2,68 +2,77 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://gitmanamine.github.io/</loc>
+    <loc>https://blog.aminebabouri.online/</loc>
     <lastmod>2023-05-30T22:12:30+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://gitmanamine.github.io/fr/"
+                href="https://blog.aminebabouri.online/fr/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://gitmanamine.github.io/"
+                href="https://blog.aminebabouri.online/"
                 />
   </url><url>
-    <loc>https://gitmanamine.github.io/tags/azure-devops/</loc>
+    <loc>https://blog.aminebabouri.online/tags/azure-devops/</loc>
     <lastmod>2023-05-30T22:12:30+02:00</lastmod>
   </url><url>
-    <loc>https://gitmanamine.github.io/posts/deploy_nginx_on_aks/</loc>
+    <loc>https://blog.aminebabouri.online/posts/deploy_nginx_on_aks/</loc>
     <lastmod>2023-05-30T22:12:30+02:00</lastmod>
   </url><url>
-    <loc>https://gitmanamine.github.io/tags/kubernetes/</loc>
+    <loc>https://blog.aminebabouri.online/posts-fr/d%C3%A9ployer_nginx_sur_un_aks/</loc>
     <lastmod>2023-05-30T22:12:30+02:00</lastmod>
   </url><url>
-    <loc>https://gitmanamine.github.io/posts/</loc>
+    <loc>https://blog.aminebabouri.online/tags/kubernetes/</loc>
     <lastmod>2023-05-30T22:12:30+02:00</lastmod>
   </url><url>
-    <loc>https://gitmanamine.github.io/tags/</loc>
+    <loc>https://blog.aminebabouri.online/posts/</loc>
+    <lastmod>2023-05-30T22:12:30+02:00</lastmod>
+  </url><url>
+    <loc>https://blog.aminebabouri.online/posts-fr/</loc>
+    <lastmod>2023-05-30T22:12:30+02:00</lastmod>
+  </url><url>
+    <loc>https://blog.aminebabouri.online/tags/</loc>
     <lastmod>2023-05-30T22:12:30+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://gitmanamine.github.io/fr/tags/"
+                href="https://blog.aminebabouri.online/fr/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://gitmanamine.github.io/tags/"
+                href="https://blog.aminebabouri.online/tags/"
                 />
   </url><url>
-    <loc>https://gitmanamine.github.io/about/</loc>
+    <loc>https://blog.aminebabouri.online/about/</loc>
     <lastmod>2023-05-25T05:35:29+02:00</lastmod>
   </url><url>
-    <loc>https://gitmanamine.github.io/tags/fist-post/</loc>
+    <loc>https://blog.aminebabouri.online/tags/fist-post/</loc>
     <lastmod>2023-05-25T05:35:29+02:00</lastmod>
   </url><url>
-    <loc>https://gitmanamine.github.io/posts/hello-world/</loc>
+    <loc>https://blog.aminebabouri.online/posts-fr/hello/</loc>
     <lastmod>2023-05-25T05:35:29+02:00</lastmod>
   </url><url>
-    <loc>https://gitmanamine.github.io/tags/welcome/</loc>
+    <loc>https://blog.aminebabouri.online/posts/hello-world/</loc>
     <lastmod>2023-05-25T05:35:29+02:00</lastmod>
   </url><url>
-    <loc>https://gitmanamine.github.io/categories/</loc>
+    <loc>https://blog.aminebabouri.online/tags/welcome/</loc>
+    <lastmod>2023-05-25T05:35:29+02:00</lastmod>
+  </url><url>
+    <loc>https://blog.aminebabouri.online/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://gitmanamine.github.io/fr/categories/"
+                href="https://blog.aminebabouri.online/fr/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://gitmanamine.github.io/categories/"
+                href="https://blog.aminebabouri.online/categories/"
                 />
   </url><url>
-    <loc>https://gitmanamine.github.io/tags/ci/cd/</loc>
+    <loc>https://blog.aminebabouri.online/tags/ci/cd/</loc>
   </url>
 </urlset>

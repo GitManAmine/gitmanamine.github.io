@@ -2,65 +2,65 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Blog - Amine Babouri</title>
-    <link>https://gitmanamine.github.io/posts/</link>
+    <link>https://blog.aminebabouri.online/posts/</link>
     <description>Recent content in Posts on Blog - Amine Babouri</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr</language>
-    <lastBuildDate>Tue, 30 May 2023 22:12:30 +0200</lastBuildDate><atom:link href="https://gitmanamine.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 May 2023 22:12:30 +0200</lastBuildDate><atom:link href="https://blog.aminebabouri.online/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Déployer Nginx sur AKS avec une pipeline</title>
-      <link>https://gitmanamine.github.io/posts/deploy_nginx_on_aks/</link>
+      <title>Deploy Nginx on AKS with a Pipeline</title>
+      <link>https://blog.aminebabouri.online/posts/deploy_nginx_on_aks/</link>
       <pubDate>Tue, 30 May 2023 22:12:30 +0200</pubDate>
       
-      <guid>https://gitmanamine.github.io/posts/deploy_nginx_on_aks/</guid>
-      <description>Dans ce projet, j&amp;rsquo;ai déployé Nginx sur Azure Kubernetes Service (AKS) en utilisant une pipeline CI/CD. J&amp;rsquo;ai automatisé le déploiement en utilisant des scripts Terraform et j&amp;rsquo;ai utilisé Azure DevOps pour créer la pipeline.
-Schéma de l&amp;rsquo;infrastructure :
-Étapes : Créer un référentiel Git dans Azure Créer un script Terraform pour créer l&amp;rsquo;infrastructure AKS Créer un manifeste YAML pour déployer Nginx sur le cluster Créer la pipeline CI/CD sur Azure Devops Créer un référentiel Git dans Azure ➡️ Connectez-vous à votre compte Azure DevOps</description>
+      <guid>https://blog.aminebabouri.online/posts/deploy_nginx_on_aks/</guid>
+      <description>In this project, I deployed Nginx on Azure Kubernetes Service (AKS) using a CI/CD pipeline. I automated the deployment using Terraform scripts and used Azure DevOps to create the pipeline.
+Infrastructure diagram :
+Étapes : Create a Git repository in Azure Create a Terraform script to create the AKS infrastructure Create a YAML manifest to deploy Nginx on the cluster Create the CI/CD pipeline in Azure DevOps Créer un référentiel Git dans Azure ➡️ Sign in to your Azure DevOps account.</description>
       <content>&lt;hr&gt;
-&lt;p&gt;Dans ce projet, j&amp;rsquo;ai déployé Nginx sur Azure Kubernetes Service (AKS) en utilisant une pipeline CI/CD. J&amp;rsquo;ai automatisé le déploiement en utilisant des scripts Terraform et j&amp;rsquo;ai utilisé Azure DevOps pour créer la pipeline.&lt;/p&gt;
-&lt;p&gt;Schéma de l&amp;rsquo;infrastructure :&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gitmanamine.github.io/images/infra.png&#34; alt=&#34;Schéma&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In this project, I deployed Nginx on Azure Kubernetes Service (AKS) using a CI/CD pipeline. I automated the deployment using Terraform scripts and used Azure DevOps to create the pipeline.&lt;/p&gt;
+&lt;p&gt;Infrastructure diagram :&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/infra.png&#34; alt=&#34;Schéma&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;étapes-&#34;&gt;Étapes :&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;Créer un référentiel Git dans Azure&lt;/li&gt;
-&lt;li&gt;Créer un script Terraform pour créer l&amp;rsquo;infrastructure AKS&lt;/li&gt;
-&lt;li&gt;Créer un manifeste YAML pour déployer Nginx sur le cluster&lt;/li&gt;
-&lt;li&gt;Créer la pipeline CI/CD sur Azure Devops&lt;/li&gt;
+&lt;li&gt;Create a Git repository in Azure&lt;/li&gt;
+&lt;li&gt;Create a Terraform script to create the AKS infrastructure&lt;/li&gt;
+&lt;li&gt;Create a YAML manifest to deploy Nginx on the cluster&lt;/li&gt;
+&lt;li&gt;Create the CI/CD pipeline in Azure DevOps&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;h1 id=&#34;créer-un-référentiel-git-dans-azure&#34;&gt;Créer un référentiel Git dans Azure&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;➡️ Connectez-vous à votre compte Azure DevOps&lt;/p&gt;
+&lt;p&gt;➡️ Sign in to your Azure DevOps account.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;➡️ Sélectionnez l&amp;rsquo;organisation Azure DevOps dans laquelle vous souhaitez créer le référentiel Git.&lt;/p&gt;
+&lt;p&gt;➡️ Select the Azure DevOps organization where you want to create the Git repository.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;➡️ Accédez au projet dans lequel vous souhaitez créer le référentiel Git, ou créez un nouveau projet si nécessaire.&lt;/p&gt;
+&lt;p&gt;➡️  Navigate to the project where you want to create the Git repository or create a new project if needed.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;➡️ Cliquez sur l&amp;rsquo;onglet &amp;ldquo;Repos&amp;rdquo; dans la barre de navigation supérieure pour accéder à la page des référentiels.&lt;/p&gt;
+&lt;p&gt;➡️ Click on the &amp;ldquo;Repos&amp;rdquo; tab in the top navigation bar to access the repositories page.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;➡️ Cliquez sur le bouton &amp;ldquo;New repository&amp;rdquo; (Nouveau référentiel) pour créer un nouveau référentiel Git.&lt;/p&gt;
+&lt;p&gt;➡️ Click the &amp;ldquo;New repository&amp;rdquo; button to create a new Git repository.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;➡️ Dans la fenêtre contextuelle qui s&amp;rsquo;ouvre :&lt;/p&gt;
+&lt;p&gt;➡️ In the opened popup window:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Entrez un &amp;ldquo;Repository name&amp;rdquo; (Nom du référentiel) significatif.&lt;/li&gt;
-&lt;li&gt;Sélectionnez &amp;ldquo;Git&amp;rdquo; comme système de &amp;ldquo;Version control&amp;rdquo; (Contrôle de version).&lt;/li&gt;
+&lt;li&gt;Enter a meaningful &amp;ldquo;Repository name&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;Select &amp;ldquo;Git&amp;rdquo; as the &amp;ldquo;Version control&amp;rdquo; system.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;➡️ Cliquez sur le bouton &amp;ldquo;Create&amp;rdquo; (Créer) pour créer le référentiel Git.&lt;/p&gt;
+&lt;p&gt;➡️ Click the &amp;ldquo;Create&amp;rdquo; button to create the Git repository.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;➡️ Vous serez redirigé vers la page du référentiel nouvellement créé.&lt;/p&gt;
+&lt;p&gt;➡️ You will be redirected to the newly created repository page.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;créer-un-script-terraform&#34;&gt;Créer un script terraform&lt;/h1&gt;
+&lt;h1 id=&#34;create-a-terraform-script&#34;&gt;Create a Terraform script&lt;/h1&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;terraform {
   required_providers {
     azurerm = {
@@ -72,8 +72,8 @@ Schéma de l&amp;rsquo;infrastructure :
 
 provider &amp;#34;azurerm&amp;#34; {
   features {}
-  tenant_id       = &amp;#34;&amp;#34;
-  subscription_id = &amp;#34;&amp;#34;
+  tenant_id       = &amp;#34;&amp;#34; # can be got with $ az account show
+  subscription_id = &amp;#34;&amp;#34; # can be got with $ az account show
 }
 
 data &amp;#34;azurerm_resource_group&amp;#34; &amp;#34;rg&amp;#34; {
@@ -111,12 +111,48 @@ output &amp;#34;kube_config&amp;#34; {
 
   sensitive = true
 }
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;git push&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;create-the-yaml-manifest-to-deploy-nginx&#34;&gt;Create the YAML manifest to deploy Nginx&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
 &lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;créer-la-pipeline&#34;&gt;Créer la pipeline&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;Se rendre dans la séction &amp;ldquo;Pipelines&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;Cliquer sur &amp;ldquo;New pipeline&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;Poursuivre en fonction de la source de notre code (Azure Repos Git dans mon cas)&lt;/li&gt;
-&lt;li&gt;Séléctionner son dépôt&lt;/li&gt;
+&lt;li&gt;Go to the &amp;ldquo;Pipelines&amp;rdquo; section.&lt;/li&gt;
+&lt;li&gt;Click on &amp;ldquo;New pipeline&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;Proceed based on the source of your code (Azure Repos Git in my case).&lt;/li&gt;
+&lt;li&gt;Select your repository.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;trigger:
   branches:
@@ -155,21 +191,21 @@ steps:
   
 - script: kubectl apply -f nginx.yaml
   displayName: &amp;#39;Deploy YAML manifest&amp;#39;
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;fin&#34;&gt;Fin&lt;/h1&gt;
-&lt;p&gt;Connecter vous ensuite à votre cluster, pour connaitre l&amp;rsquo;adresse ip puiblique de votre cluster, éxécutez cette commande :&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;To access your cluster, connect to it and run the following command to obtain the public IP address of your cluster:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;kubecetl get svc&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Au revoir 👋&lt;/p&gt;
+&lt;p&gt;This concludes the tutorial. I hope this has been helpful. Goodbye! 👋&lt;/p&gt;
 </content>
     </item>
     
     <item>
       <title>Hello World</title>
-      <link>https://gitmanamine.github.io/posts/hello-world/</link>
+      <link>https://blog.aminebabouri.online/posts/hello-world/</link>
       <pubDate>Thu, 25 May 2023 05:35:29 +0200</pubDate>
       
-      <guid>https://gitmanamine.github.io/posts/hello-world/</guid>
+      <guid>https://blog.aminebabouri.online/posts/hello-world/</guid>
       <description>Welcome to my blog, this is my first post.</description>
       <content>&lt;hr&gt;
 &lt;p&gt;Welcome to my blog, this is my first post.&lt;/p&gt;

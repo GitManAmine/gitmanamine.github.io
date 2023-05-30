@@ -2,57 +2,57 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Blog - Amine Babouri</title>
-    <link>https://gitmanamine.github.io/tags/</link>
+    <link>https://blog.aminebabouri.online/tags/</link>
     <description>Recent content in Tags on Blog - Amine Babouri</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr</language>
-    <lastBuildDate>Tue, 30 May 2023 22:12:30 +0200</lastBuildDate><atom:link href="https://gitmanamine.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 May 2023 22:12:30 +0200</lastBuildDate><atom:link href="https://blog.aminebabouri.online/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Azure Devops</title>
-      <link>https://gitmanamine.github.io/tags/azure-devops/</link>
+      <link>https://blog.aminebabouri.online/tags/azure-devops/</link>
       <pubDate>Tue, 30 May 2023 22:12:30 +0200</pubDate>
       
-      <guid>https://gitmanamine.github.io/tags/azure-devops/</guid>
+      <guid>https://blog.aminebabouri.online/tags/azure-devops/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
       <title>Kubernetes</title>
-      <link>https://gitmanamine.github.io/tags/kubernetes/</link>
+      <link>https://blog.aminebabouri.online/tags/kubernetes/</link>
       <pubDate>Tue, 30 May 2023 22:12:30 +0200</pubDate>
       
-      <guid>https://gitmanamine.github.io/tags/kubernetes/</guid>
+      <guid>https://blog.aminebabouri.online/tags/kubernetes/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
       <title>fist-post</title>
-      <link>https://gitmanamine.github.io/tags/fist-post/</link>
+      <link>https://blog.aminebabouri.online/tags/fist-post/</link>
       <pubDate>Thu, 25 May 2023 05:35:29 +0200</pubDate>
       
-      <guid>https://gitmanamine.github.io/tags/fist-post/</guid>
+      <guid>https://blog.aminebabouri.online/tags/fist-post/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
       <title>welcome</title>
-      <link>https://gitmanamine.github.io/tags/welcome/</link>
+      <link>https://blog.aminebabouri.online/tags/welcome/</link>
       <pubDate>Thu, 25 May 2023 05:35:29 +0200</pubDate>
       
-      <guid>https://gitmanamine.github.io/tags/welcome/</guid>
+      <guid>https://blog.aminebabouri.online/tags/welcome/</guid>
       <description></description>
       <content></content>
     </item>
     
     <item>
       <title>CI/CD</title>
-      <link>https://gitmanamine.github.io/tags/ci/cd/</link>
+      <link>https://blog.aminebabouri.online/tags/ci/cd/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://gitmanamine.github.io/tags/ci/cd/</guid>
+      <guid>https://blog.aminebabouri.online/tags/ci/cd/</guid>
       <description></description>
       <content></content>
     </item>
