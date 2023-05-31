@@ -6,7 +6,42 @@
     <description>Recent content in Posts-frs on Blog - Amine Babouri</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr</language>
-    <lastBuildDate>Tue, 30 May 2023 22:12:30 +0200</lastBuildDate><atom:link href="https://blog.aminebabouri.online/posts-fr/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 31 May 2023 14:59:09 +0200</lastBuildDate><atom:link href="https://blog.aminebabouri.online/posts-fr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Comment installer Docker sur Ubuntu</title>
+      <link>https://blog.aminebabouri.online/posts-fr/install_docker/</link>
+      <pubDate>Wed, 31 May 2023 14:59:09 +0200</pubDate>
+      
+      <guid>https://blog.aminebabouri.online/posts-fr/install_docker/</guid>
+      <description>Introduction Pour commencer, qu&amp;rsquo;est ce que Docker ?
+Docker est une technologie de conteneurisation qui permet d&amp;rsquo;exécuter des applications isolées dans des conteneurs.
+Les conteneurs empaquettent les applications avec leurs dépendances et leurs bibliothèques, ce qui facilite leur déploiement et leur exécution. Avec Docker, vous pouvez exécuter différentes versions de distributions Linux, d&amp;rsquo;applications et de services tels que des serveurs web, des bases de données et des langages de programmation.</description>
+      <content>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Pour commencer, qu&amp;rsquo;est ce que &lt;code&gt;Docker&lt;/code&gt; ?&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;code&gt;Docker&lt;/code&gt; est une technologie de conteneurisation qui permet d&amp;rsquo;exécuter des applications isolées dans des conteneurs.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Les &lt;code&gt;conteneurs&lt;/code&gt; empaquettent les applications avec leurs dépendances et leurs bibliothèques, ce qui facilite leur déploiement et leur exécution. Avec &lt;code&gt;Docker&lt;/code&gt;, vous pouvez exécuter différentes versions de &lt;code&gt;distributions Linux&lt;/code&gt;, d&amp;rsquo;applications et de services tels que des serveurs web, des bases de données et des langages de programmation.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Il simplifie le déploiement des applications en incluant dans le conteneur tout ce qui est nécessaire à leur fonctionnement. &lt;code&gt;Docker&lt;/code&gt; révolutionne le déploiement et la gestion des &lt;code&gt;applications&lt;/code&gt; en offrant flexibilité, isolation et `utilisation&amp;rsquo; efficace des ressources.&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;mise-à-jour-système&#34;&gt;Mise à jour système&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt update -y &amp;amp;&amp;amp; sudo apt upgrade -y
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;ajoutez-le-dépôt-docker-en-exécutant-la-commande-&#34;&gt;Ajoutez le dépôt Docker en exécutant la commande :&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt install apt-transport-https ca-certificates curl software-properties-common
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;importez-la-clé-gpg-de-docker-avec-la-commande-&#34;&gt;Importez la clé GPG de Docker avec la commande :&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;ajouter-le-dépôt-docker-au-système-&#34;&gt;Ajouter le dépôt Docker au système :&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;echo &amp;#34;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&amp;#34; | sudo tee /etc/apt/sources.list.d/docker.list &amp;gt; /dev/null
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;ajouter-le-dépôt-docker-au-système--1&#34;&gt;Ajouter le dépôt Docker au système :&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt update
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;installez-docker-en-exécutant-la-commande-suivante-&#34;&gt;Installez Docker en exécutant la commande suivante :&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt install docker-ce docker-ce-cli containerd.io
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;check-the-docker-version&#34;&gt;Check the docker version&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;docker --version
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;vérifier-la-version-de-docker&#34;&gt;Vérifier la version de docker&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;docker run hello-world
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Vous pouvez maintenant commencer à utiliser Docker pour exécuter et gérer des applications conteneurisées. Au revoir ! 👋&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>Déployer Nginx sur AKS avec une pipeline</title>
       <link>https://blog.aminebabouri.online/posts-fr/d%C3%A9ployer_nginx_sur_un_aks/</link>
@@ -61,7 +96,7 @@ Schéma de l&amp;rsquo;infrastructure :
 &lt;/ol&gt;
 &lt;hr&gt;
 &lt;h1 id=&#34;créer-un-script-terraform&#34;&gt;Créer un script terraform&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;terraform {
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;terraform {
   required_providers {
     azurerm = {
       source = &amp;#34;hashicorp/azurerm&amp;#34;
@@ -111,11 +146,9 @@ output &amp;#34;kube_config&amp;#34; {
 
   sensitive = true
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
-&lt;p&gt;git push&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&#34;créer-le-manifest-yaml-pour-déployer-nginx&#34;&gt;Créer le manifest YAML pour déployer nginx&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;apiVersion: apps/v1
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;git push
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;créer-le-manifest-yaml-pour-déployer-nginx&#34;&gt;Créer le manifest YAML pour déployer nginx&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deployment
@@ -154,7 +187,7 @@ spec:
 &lt;li&gt;Poursuivre en fonction de la source de notre code (Azure Repos Git dans mon cas)&lt;/li&gt;
 &lt;li&gt;Séléctionner son dépôt&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;trigger:
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;trigger:
   branches:
     include:
       - main
@@ -193,10 +226,8 @@ steps:
   displayName: &amp;#39;Deploy YAML manifest&amp;#39;
 &lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;fin&#34;&gt;Fin&lt;/h1&gt;
 &lt;p&gt;Connecter vous ensuite à votre cluster, pour connaitre l&amp;rsquo;adresse ip puiblique de votre cluster, éxécutez cette commande :&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;kubecetl get svc&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Le tutoriel s&amp;rsquo;achève ici en éspérant vous avoir aidé, salut 👋&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;kubectl get svc
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Le tutoriel s&amp;rsquo;achève ici en éspérant vous avoir aidé, salut 👋&lt;/p&gt;
 </content>
     </item>
     

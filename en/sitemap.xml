@@ -17,6 +17,16 @@
   </url><url>
     <loc>https://blog.aminebabouri.online/tags/docker/</loc>
     <lastmod>2023-05-31T14:59:09+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://blog.aminebabouri.online/fr/tags/docker/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.aminebabouri.online/tags/docker/"
+                />
   </url><url>
     <loc>https://blog.aminebabouri.online/posts/install_docker/</loc>
     <lastmod>2023-05-31T14:59:09+02:00</lastmod>
@@ -39,6 +49,16 @@
   </url><url>
     <loc>https://blog.aminebabouri.online/tags/ubuntu/</loc>
     <lastmod>2023-05-31T14:59:09+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://blog.aminebabouri.online/fr/tags/ubuntu/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.aminebabouri.online/tags/ubuntu/"
+                />
   </url><url>
     <loc>https://blog.aminebabouri.online/tags/azure-devops/</loc>
     <lastmod>2023-05-30T22:12:30+02:00</lastmod>

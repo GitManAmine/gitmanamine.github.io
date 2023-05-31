@@ -26,7 +26,7 @@ It simplifies application deployment by including everything needed to run the a
 &lt;h1 id=&#34;update-system&#34;&gt;Update system&lt;/h1&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt update -y &amp;amp;&amp;amp; sudo apt upgrade -y
 &lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;add-the-docker-repository-by-running-the-command&#34;&gt;Add the Docker repository by running the command:&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt install apt-transport-https ca-certificates curl            software-properties-common
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt install apt-transport-https ca-certificates curl software-properties-common
 &lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;import-the-docker-gpg-key-with-the-command&#34;&gt;Import the Docker GPG key with the command:&lt;/h1&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 &lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;add-the-docker-repository-to-the-system&#34;&gt;Add the Docker repository to the system:&lt;/h1&gt;
