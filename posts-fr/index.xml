@@ -201,14 +201,14 @@ steps:
     </item>
     
     <item>
-      <title>Hello World</title>
+      <title>Bonjour à tous</title>
       <link>https://blog.aminebabouri.online/posts-fr/hello/</link>
       <pubDate>Thu, 25 May 2023 05:35:29 +0200</pubDate>
       
       <guid>https://blog.aminebabouri.online/posts-fr/hello/</guid>
-      <description>Welcome to my blog, this is my first post.</description>
+      <description>Bienvenue sur mon blog, ceci est mon premier post.</description>
       <content>&lt;hr&gt;
-&lt;p&gt;Welcome to my blog, this is my first post.&lt;/p&gt;
+&lt;p&gt;Bienvenue sur mon blog, ceci est mon premier post.&lt;/p&gt;
 </content>
     </item>
     
