@@ -24,21 +24,21 @@ It simplifies application deployment by including everything needed to run the a
 &lt;p&gt;&lt;em&gt;It simplifies application deployment by including everything needed to run the application within the container. &lt;code&gt;Docker&lt;/code&gt; revolutionizes &lt;code&gt;application&lt;/code&gt; deployment and management, offering flexibility, isolation, and efficient resource &lt;code&gt;utilization&lt;/code&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id=&#34;update-system&#34;&gt;Update system&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo apt update -y &amp;amp;&amp;amp; sudo apt upgrade -y
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt update -y &amp;amp;&amp;amp; sudo apt upgrade -y
 &lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;add-the-docker-repository-by-running-the-command&#34;&gt;Add the Docker repository by running the command:&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo apt install apt-transport-https ca-certificates curl software-properties-common
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt install apt-transport-https ca-certificates curl            software-properties-common
 &lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;import-the-docker-gpg-key-with-the-command&#34;&gt;Import the Docker GPG key with the command:&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 &lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;add-the-docker-repository-to-the-system&#34;&gt;Add the Docker repository to the system:&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;echo &amp;#34;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&amp;#34; | sudo tee /etc/apt/sources.list.d/docker.list &amp;gt; /dev/null
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;echo &amp;#34;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&amp;#34; | sudo tee /etc/apt/sources.list.d/docker.list &amp;gt; /dev/null
 &lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;update-the-package-list-again&#34;&gt;Update the package list again:&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo apt update
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt update
 &lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;install-docker-by-running-the-following-command&#34;&gt;Install Docker by running the following command:&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo apt install docker-ce docker-ce-cli containerd.io
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt install docker-ce docker-ce-cli containerd.io
 &lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;check-the-docker-version&#34;&gt;Check the docker version&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker --version
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;docker --version
 &lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;run-this-commmand&#34;&gt;Run this commmand:&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;docker run hello-world
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;docker run hello-world
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Congratulations! You have successfully installed Docker on Ubuntu 22.04.&lt;/p&gt;
 &lt;p&gt;You can now start using Docker to run and manage containerized applications on your system. Goodbye! 👋&lt;/p&gt;
 </content>
@@ -97,7 +97,7 @@ Infrastructure diagram :
 &lt;/ol&gt;
 &lt;hr&gt;
 &lt;h1 id=&#34;create-a-terraform-script&#34;&gt;Create a Terraform script&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;terraform {
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;terraform {
   required_providers {
     azurerm = {
       source = &amp;#34;hashicorp/azurerm&amp;#34;
@@ -147,11 +147,9 @@ output &amp;#34;kube_config&amp;#34; {
 
   sensitive = true
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
-&lt;p&gt;git push&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&#34;create-the-yaml-manifest-to-deploy-nginx&#34;&gt;Create the YAML manifest to deploy Nginx&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;apiVersion: apps/v1
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;git push
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;create-the-yaml-manifest-to-deploy-nginx&#34;&gt;Create the YAML manifest to deploy Nginx&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deployment
@@ -190,7 +188,7 @@ spec:
 &lt;li&gt;Proceed based on the source of your code (Azure Repos Git in my case).&lt;/li&gt;
 &lt;li&gt;Select your repository.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;trigger:
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;trigger:
   branches:
     include:
       - main
@@ -229,10 +227,8 @@ steps:
   displayName: &amp;#39;Deploy YAML manifest&amp;#39;
 &lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
 &lt;p&gt;To access your cluster, connect to it and run the following command to obtain the public IP address of your cluster:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;kubecetl get svc&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;This concludes the tutorial. I hope this has been helpful. Goodbye! 👋&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;kubectl get svc
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This concludes the tutorial. I hope this has been helpful. Goodbye! 👋&lt;/p&gt;
 </content>
     </item>
     

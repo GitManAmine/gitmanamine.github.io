@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   
-    <title>Deploy Nginx on AKS with a Pipeline :: Blog - Amine Babouri</title>
+    <title>Déployer Nginx sur AKS avec une pipeline :: Blog - Amine Babouri</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="In this project, we we&#39;ll see how i deployed Nginx on Azure Kubernetes Service (AKS) using a CI/CD pipeline." />
+<meta name="description" content="Dans ce projet, nous allons voir comment j&#39;ai déployé Nginx sur Azure Kubernetes Service (AKS) en utilisant une pipeline CI/CD." />
 <meta name="keywords" content=", " />
 
   <meta name="robots" content="noodp" />
 
-<link rel="canonical" href="https://blog.aminebabouri.online/posts/deploy_nginx_on_aks/" />
+<link rel="canonical" href="https://blog.aminebabouri.online/fr/posts-fr/d%C3%A9ployer_nginx_sur_un_aks/" />
 
 
 
@@ -40,11 +40,11 @@
 
 
 
-<meta property="og:locale" content="en" />
+<meta property="og:locale" content="fr" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Deploy Nginx on AKS with a Pipeline">
-<meta property="og:description" content="In this project, we we&#39;ll see how i deployed Nginx on Azure Kubernetes Service (AKS) using a CI/CD pipeline." />
-<meta property="og:url" content="https://blog.aminebabouri.online/posts/deploy_nginx_on_aks/" />
+<meta property="og:title" content="Déployer Nginx sur AKS avec une pipeline">
+<meta property="og:description" content="Dans ce projet, nous allons voir comment j&#39;ai déployé Nginx sur Azure Kubernetes Service (AKS) en utilisant une pipeline CI/CD." />
+<meta property="og:url" content="https://blog.aminebabouri.online/fr/posts-fr/d%C3%A9ployer_nginx_sur_un_aks/" />
 <meta property="og:site_name" content="Blog - Amine Babouri" />
 
   
@@ -77,9 +77,9 @@
   <header class="header">
   <div class="header__inner">
     <div class="header__logo">
-      <a href="/">
+      <a href="/posts-fr">
   <div class="logo">
-    amine@blog:~/
+    amine@blog-fr:~/$
   </div>
 </a>
 
@@ -95,7 +95,7 @@
         
       
         
-          <li><a href="/posts">./posts</a></li>
+          <li><a href="/posts-fr">./posts-fr</a></li>
         
       
         
@@ -121,7 +121,7 @@
     
     
       <ul class="menu menu--desktop menu--language-selector">
-  <li class="menu__trigger">English&nbsp;▾</li>
+  <li class="menu__trigger">Français&nbsp;▾</li>
   <li>
     <ul class="menu__dropdown">
       
@@ -145,7 +145,7 @@
         
       
         
-          <li><a href="/posts" >./posts</a></li>
+          <li><a href="/posts-fr" >./posts-fr</a></li>
         
       
         
@@ -165,7 +165,7 @@
     
 <article class="post">
   <h1 class="post-title">
-    <a href="https://blog.aminebabouri.online/posts/deploy_nginx_on_aks/">Deploy Nginx on AKS with a Pipeline</a>
+    <a href="https://blog.aminebabouri.online/fr/posts-fr/d%C3%A9ployer_nginx_sur_un_aks/">Déployer Nginx sur AKS avec une pipeline</a>
   </h1>
   <div class="post-meta">
     
@@ -183,11 +183,11 @@
   
     <span class="post-tags">
       
-      #<a href="https://blog.aminebabouri.online/tags/ci/cd/">CI/CD</a>&nbsp;
+      #<a href="https://blog.aminebabouri.online/fr/tags/ci/cd/">CI/CD</a>&nbsp;
       
-      #<a href="https://blog.aminebabouri.online/tags/azure-devops/">Azure Devops</a>&nbsp;
+      #<a href="https://blog.aminebabouri.online/fr/tags/azure-devops/">Azure Devops</a>&nbsp;
       
-      #<a href="https://blog.aminebabouri.online/tags/kubernetes/">Kubernetes</a>&nbsp;
+      #<a href="https://blog.aminebabouri.online/fr/tags/kubernetes/">Kubernetes</a>&nbsp;
       
     </span>
   
@@ -197,50 +197,51 @@
   
   
   <div class="post-content"><div>
-        <p>In this project, I deployed Nginx on Azure Kubernetes Service (AKS) using a CI/CD pipeline. I automated the deployment using Terraform scripts and used Azure DevOps to create the pipeline.</p>
-<p>Infrastructure diagram :</p>
+        <hr>
+<p>Dans ce projet, j&rsquo;ai déployé Nginx sur Azure Kubernetes Service (AKS) en utilisant une pipeline CI/CD. J&rsquo;ai automatisé le déploiement en utilisant des scripts Terraform et j&rsquo;ai utilisé Azure DevOps pour créer la pipeline.</p>
+<p>Schéma de l&rsquo;infrastructure :</p>
 <p><img src="/images/infra.png" alt="Schéma"></p>
 <h1 id="étapes-">Étapes :<a href="#étapes-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <ul>
-<li>Create a Git repository in Azure</li>
-<li>Create a Terraform script to create the AKS infrastructure</li>
-<li>Create a YAML manifest to deploy Nginx on the cluster</li>
-<li>Create the CI/CD pipeline in Azure DevOps</li>
+<li>Créer un référentiel Git dans Azure</li>
+<li>Créer un script Terraform pour créer l&rsquo;infrastructure AKS</li>
+<li>Créer un manifeste YAML pour déployer Nginx sur le cluster</li>
+<li>Créer la pipeline CI/CD sur Azure Devops</li>
 </ul>
 <hr>
 <h1 id="créer-un-référentiel-git-dans-azure">Créer un référentiel Git dans Azure<a href="#créer-un-référentiel-git-dans-azure" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <ol>
 <li>
-<p>➡️ Sign in to your Azure DevOps account.</p>
+<p>➡️ Connectez-vous à votre compte Azure DevOps</p>
 </li>
 <li>
-<p>➡️ Select the Azure DevOps organization where you want to create the Git repository.</p>
+<p>➡️ Sélectionnez l&rsquo;organisation Azure DevOps dans laquelle vous souhaitez créer le référentiel Git.</p>
 </li>
 <li>
-<p>➡️  Navigate to the project where you want to create the Git repository or create a new project if needed.</p>
+<p>➡️ Accédez au projet dans lequel vous souhaitez créer le référentiel Git, ou créez un nouveau projet si nécessaire.</p>
 </li>
 <li>
-<p>➡️ Click on the &ldquo;Repos&rdquo; tab in the top navigation bar to access the repositories page.</p>
+<p>➡️ Cliquez sur l&rsquo;onglet &ldquo;Repos&rdquo; dans la barre de navigation supérieure pour accéder à la page des référentiels.</p>
 </li>
 <li>
-<p>➡️ Click the &ldquo;New repository&rdquo; button to create a new Git repository.</p>
+<p>➡️ Cliquez sur le bouton &ldquo;New repository&rdquo; (Nouveau référentiel) pour créer un nouveau référentiel Git.</p>
 </li>
 <li>
-<p>➡️ In the opened popup window:</p>
+<p>➡️ Dans la fenêtre contextuelle qui s&rsquo;ouvre :</p>
 <ol>
-<li>Enter a meaningful &ldquo;Repository name&rdquo;.</li>
-<li>Select &ldquo;Git&rdquo; as the &ldquo;Version control&rdquo; system.</li>
+<li>Entrez un &ldquo;Repository name&rdquo; (Nom du référentiel) significatif.</li>
+<li>Sélectionnez &ldquo;Git&rdquo; comme système de &ldquo;Version control&rdquo; (Contrôle de version).</li>
 </ol>
 </li>
 <li>
-<p>➡️ Click the &ldquo;Create&rdquo; button to create the Git repository.</p>
+<p>➡️ Cliquez sur le bouton &ldquo;Create&rdquo; (Créer) pour créer le référentiel Git.</p>
 </li>
 <li>
-<p>➡️ You will be redirected to the newly created repository page.</p>
+<p>➡️ Vous serez redirigé vers la page du référentiel nouvellement créé.</p>
 </li>
 </ol>
 <hr>
-<h1 id="create-a-terraform-script">Create a Terraform script<a href="#create-a-terraform-script" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<h1 id="créer-un-script-terraform">Créer un script terraform<a href="#créer-un-script-terraform" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">terraform {
   required_providers {
     azurerm = {
@@ -252,8 +253,8 @@
 
 provider &#34;azurerm&#34; {
   features {}
-  tenant_id       = &#34;&#34; # can be got with $ az account show
-  subscription_id = &#34;&#34; # can be got with $ az account show
+  tenant_id       = &#34;&#34; # peut être obtenue en faisant un $ az account show
+  subscription_id = &#34;&#34; # peut être obtenue en faisant un $ az account show
 }
 
 data &#34;azurerm_resource_group&#34; &#34;rg&#34; {
@@ -292,7 +293,7 @@ output &#34;kube_config&#34; {
   sensitive = true
 }
 </code></pre><pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">git push
-</code></pre><h1 id="create-the-yaml-manifest-to-deploy-nginx">Create the YAML manifest to deploy Nginx<a href="#create-the-yaml-manifest-to-deploy-nginx" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+</code></pre><h1 id="créer-le-manifest-yaml-pour-déployer-nginx">Créer le manifest YAML pour déployer nginx<a href="#créer-le-manifest-yaml-pour-déployer-nginx" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -327,10 +328,10 @@ spec:
       targetPort: 80
 </code></pre><h1 id="créer-la-pipeline">Créer la pipeline<a href="#créer-la-pipeline" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
 <ul>
-<li>Go to the &ldquo;Pipelines&rdquo; section.</li>
-<li>Click on &ldquo;New pipeline&rdquo;.</li>
-<li>Proceed based on the source of your code (Azure Repos Git in my case).</li>
-<li>Select your repository.</li>
+<li>Se rendre dans la séction &ldquo;Pipelines&rdquo;</li>
+<li>Cliquer sur &ldquo;New pipeline&rdquo;</li>
+<li>Poursuivre en fonction de la source de notre code (Azure Repos Git dans mon cas)</li>
+<li>Séléctionner son dépôt</li>
 </ul>
 <pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">trigger:
   branches:
@@ -369,10 +370,10 @@ steps:
   
 - script: kubectl apply -f nginx.yaml
   displayName: &#39;Deploy YAML manifest&#39;
-</code></pre><h1 id="conclusion">Conclusion<a href="#conclusion" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<p>To access your cluster, connect to it and run the following command to obtain the public IP address of your cluster:</p>
+</code></pre><h1 id="fin">Fin<a href="#fin" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Connecter vous ensuite à votre cluster, pour connaitre l&rsquo;adresse ip puiblique de votre cluster, éxécutez cette commande :</p>
 <pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">kubectl get svc
-</code></pre><p>This concludes the tutorial. I hope this has been helpful. Goodbye! 👋</p>
+</code></pre><p>Le tutoriel s&rsquo;achève ici en éspérant vous avoir aidé, salut 👋</p>
 
       </div></div>
 
@@ -380,22 +381,15 @@ steps:
     
 <div class="pagination">
     <div class="pagination__title">
-        <span class="pagination__title-h">Read other posts</span>
+        <span class="pagination__title-h">Lire les autres articles</span>
         <hr />
     </div>
     <div class="pagination__buttons">
         
-        <span class="button previous">
-            <a href="https://blog.aminebabouri.online/posts/install_docker/">
-                <span class="button__icon">←</span>
-                <span class="button__text">How to install Docker on Ubuntu</span>
-            </a>
-        </span>
-        
         
         <span class="button next">
-            <a href="https://blog.aminebabouri.online/posts/hello-world/">
-                <span class="button__text">Hello World</span>
+            <a href="https://blog.aminebabouri.online/fr/posts-fr/hello/">
+                <span class="button__text">Bonjour à tous</span>
                 <span class="button__icon">→</span>
             </a>
         </span>

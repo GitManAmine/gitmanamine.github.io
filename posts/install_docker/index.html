@@ -202,21 +202,21 @@
 <p><em>It simplifies application deployment by including everything needed to run the application within the container. <code>Docker</code> revolutionizes <code>application</code> deployment and management, offering flexibility, isolation, and efficient resource <code>utilization</code>.</em></p>
 <hr>
 <h1 id="update-system">Update system<a href="#update-system" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<pre tabindex="0"><code>sudo apt update -y &amp;&amp; sudo apt upgrade -y
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">sudo apt update -y &amp;&amp; sudo apt upgrade -y
 </code></pre><h1 id="add-the-docker-repository-by-running-the-command">Add the Docker repository by running the command:<a href="#add-the-docker-repository-by-running-the-command" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<pre tabindex="0"><code>sudo apt install apt-transport-https ca-certificates curl software-properties-common
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">sudo apt install apt-transport-https ca-certificates curl            software-properties-common
 </code></pre><h1 id="import-the-docker-gpg-key-with-the-command">Import the Docker GPG key with the command:<a href="#import-the-docker-gpg-key-with-the-command" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<pre tabindex="0"><code>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 </code></pre><h1 id="add-the-docker-repository-to-the-system">Add the Docker repository to the system:<a href="#add-the-docker-repository-to-the-system" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<pre tabindex="0"><code>echo &#34;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&#34; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">echo &#34;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&#34; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
 </code></pre><h1 id="update-the-package-list-again">Update the package list again:<a href="#update-the-package-list-again" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<pre tabindex="0"><code>sudo apt update
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">sudo apt update
 </code></pre><h1 id="install-docker-by-running-the-following-command">Install Docker by running the following command:<a href="#install-docker-by-running-the-following-command" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<pre tabindex="0"><code>sudo apt install docker-ce docker-ce-cli containerd.io
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">sudo apt install docker-ce docker-ce-cli containerd.io
 </code></pre><h1 id="check-the-docker-version">Check the docker version<a href="#check-the-docker-version" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<pre tabindex="0"><code>docker --version
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">docker --version
 </code></pre><h1 id="run-this-commmand">Run this commmand:<a href="#run-this-commmand" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
-<pre tabindex="0"><code>docker run hello-world
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">docker run hello-world
 </code></pre><p>Congratulations! You have successfully installed Docker on Ubuntu 22.04.</p>
 <p>You can now start using Docker to run and manage containerized applications on your system. Goodbye! 👋</p>
 

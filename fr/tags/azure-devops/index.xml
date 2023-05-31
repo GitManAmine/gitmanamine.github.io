@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts-frs on Blog - Amine Babouri</title>
-    <link>https://blog.aminebabouri.online/fr/posts-fr/</link>
-    <description>Recent content in Posts-frs on Blog - Amine Babouri</description>
+    <title>Azure Devops on Blog - Amine Babouri</title>
+    <link>https://blog.aminebabouri.online/fr/tags/azure-devops/</link>
+    <description>Recent content in Azure Devops on Blog - Amine Babouri</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr</language>
-    <lastBuildDate>Tue, 30 May 2023 22:12:30 +0200</lastBuildDate><atom:link href="https://blog.aminebabouri.online/fr/posts-fr/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 May 2023 22:12:30 +0200</lastBuildDate><atom:link href="https://blog.aminebabouri.online/fr/tags/azure-devops/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Déployer Nginx sur AKS avec une pipeline</title>
       <link>https://blog.aminebabouri.online/fr/posts-fr/d%C3%A9ployer_nginx_sur_un_aks/</link>
@@ -193,18 +193,6 @@ steps:
 &lt;p&gt;Connecter vous ensuite à votre cluster, pour connaitre l&amp;rsquo;adresse ip puiblique de votre cluster, éxécutez cette commande :&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;kubectl get svc
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Le tutoriel s&amp;rsquo;achève ici en éspérant vous avoir aidé, salut 👋&lt;/p&gt;
-</content>
-    </item>
-    
-    <item>
-      <title>Bonjour à tous</title>
-      <link>https://blog.aminebabouri.online/fr/posts-fr/hello/</link>
-      <pubDate>Thu, 25 May 2023 05:35:29 +0200</pubDate>
-      
-      <guid>https://blog.aminebabouri.online/fr/posts-fr/hello/</guid>
-      <description>Bienvenue sur mon blog, ceci est mon premier post.</description>
-      <content>&lt;hr&gt;
-&lt;p&gt;Bienvenue sur mon blog, ceci est mon premier post.&lt;/p&gt;
 </content>
     </item>
     
