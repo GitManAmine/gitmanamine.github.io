@@ -55,7 +55,7 @@ Infrastructure diagram :
 Étapes : Create a Git repository in Azure Create a Terraform script to create the AKS infrastructure Create a YAML manifest to deploy Nginx on the cluster Create the CI/CD pipeline in Azure DevOps Créer un référentiel Git dans Azure ➡️ Sign in to your Azure DevOps account.</description>
       <content>&lt;p&gt;In this project, I deployed Nginx on Azure Kubernetes Service (AKS) using a CI/CD pipeline. I automated the deployment using Terraform scripts and used Azure DevOps to create the pipeline.&lt;/p&gt;
 &lt;p&gt;Infrastructure diagram :&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/infra.png&#34; alt=&#34;Schéma&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/infra.svg&#34; alt=&#34;Schéma&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;étapes-&#34;&gt;Étapes :&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Create a Git repository in Azure&lt;/li&gt;

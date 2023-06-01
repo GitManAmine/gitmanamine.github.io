@@ -18,7 +18,7 @@ Schéma de l&amp;rsquo;infrastructure :
       <content>&lt;hr&gt;
 &lt;p&gt;Dans ce projet, j&amp;rsquo;ai déployé Nginx sur Azure Kubernetes Service (AKS) en utilisant une pipeline CI/CD. J&amp;rsquo;ai automatisé le déploiement en utilisant des scripts Terraform et j&amp;rsquo;ai utilisé Azure DevOps pour créer la pipeline.&lt;/p&gt;
 &lt;p&gt;Schéma de l&amp;rsquo;infrastructure :&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/infra.png&#34; alt=&#34;Schéma&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/infra.svg&#34; alt=&#34;Schéma&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;étapes-&#34;&gt;Étapes :&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Créer un référentiel Git dans Azure&lt;/li&gt;
