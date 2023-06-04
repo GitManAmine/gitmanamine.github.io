@@ -27,6 +27,8 @@ It simplifies application deployment by including everything needed to run the a
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt update -y &amp;amp;&amp;amp; sudo apt upgrade -y
 &lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;add-the-docker-repository-by-running-the-command&#34;&gt;Add the Docker repository by running the command:&lt;/h1&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt install apt-transport-https ca-certificates curl software-properties-common
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;télcharger-le-packet-gnupg&#34;&gt;Télcharger le packet gnupg&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt install gnupg
 &lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;import-the-docker-gpg-key-with-the-command&#34;&gt;Import the Docker GPG key with the command:&lt;/h1&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 &lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;add-the-docker-repository-to-the-system&#34;&gt;Add the Docker repository to the system:&lt;/h1&gt;
@@ -52,11 +54,11 @@ It simplifies application deployment by including everything needed to run the a
       <guid>https://blog.aminebabouri.online/posts/deploy_nginx_on_aks/</guid>
       <description>In this project, I deployed Nginx on Azure Kubernetes Service (AKS) using a CI/CD pipeline. I automated the deployment using Terraform scripts and used Azure DevOps to create the pipeline.
 Infrastructure diagram :
-Étapes : Create a Git repository in Azure Create a Terraform script to create the AKS infrastructure Create a YAML manifest to deploy Nginx on the cluster Create the CI/CD pipeline in Azure DevOps Créer un référentiel Git dans Azure ➡️ Sign in to your Azure DevOps account.</description>
+Steps : Create a Git repository in Azure Create a Terraform script to create the AKS infrastructure Create a YAML manifest to deploy Nginx on the cluster Create the CI/CD pipeline in Azure DevOps Creating a Git repository in Azure ➡️ Sign in to your Azure DevOps account.</description>
       <content>&lt;p&gt;In this project, I deployed Nginx on Azure Kubernetes Service (AKS) using a CI/CD pipeline. I automated the deployment using Terraform scripts and used Azure DevOps to create the pipeline.&lt;/p&gt;
 &lt;p&gt;Infrastructure diagram :&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/infra.svg&#34; alt=&#34;Schéma&#34;&gt;&lt;/p&gt;
-&lt;h1 id=&#34;étapes-&#34;&gt;Étapes :&lt;/h1&gt;
+&lt;h1 id=&#34;steps-&#34;&gt;Steps :&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Create a Git repository in Azure&lt;/li&gt;
 &lt;li&gt;Create a Terraform script to create the AKS infrastructure&lt;/li&gt;
@@ -64,7 +66,7 @@ Infrastructure diagram :
 &lt;li&gt;Create the CI/CD pipeline in Azure DevOps&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;créer-un-référentiel-git-dans-azure&#34;&gt;Créer un référentiel Git dans Azure&lt;/h1&gt;
+&lt;h1 id=&#34;creating-a-git-repository-in-azure&#34;&gt;Creating a Git repository in Azure&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;➡️ Sign in to your Azure DevOps account.&lt;/p&gt;
@@ -181,7 +183,7 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;créer-la-pipeline&#34;&gt;Créer la pipeline&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;create-pipeline&#34;&gt;Create pipeline&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Go to the &amp;ldquo;Pipelines&amp;rdquo; section.&lt;/li&gt;
 &lt;li&gt;Click on &amp;ldquo;New pipeline&amp;rdquo;.&lt;/li&gt;

@@ -26,6 +26,8 @@ Les conteneurs empaquettent les applications avec leurs dépendances et leurs bi
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt update -y &amp;amp;&amp;amp; sudo apt upgrade -y
 &lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;ajoutez-le-dépôt-docker-en-exécutant-la-commande-&#34;&gt;Ajoutez le dépôt Docker en exécutant la commande :&lt;/h1&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt install apt-transport-https ca-certificates curl software-properties-common
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;télcharger-le-packet-gnupg&#34;&gt;Télcharger le packet gnupg&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt install gnupg
 &lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;importez-la-clé-gpg-de-docker-avec-la-commande-&#34;&gt;Importez la clé GPG de Docker avec la commande :&lt;/h1&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 &lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;ajouter-le-dépôt-docker-au-système-&#34;&gt;Ajouter le dépôt Docker au système :&lt;/h1&gt;

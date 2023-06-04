@@ -15,11 +15,11 @@
       <guid>https://blog.aminebabouri.online/posts/deploy_nginx_on_aks/</guid>
       <description>In this project, I deployed Nginx on Azure Kubernetes Service (AKS) using a CI/CD pipeline. I automated the deployment using Terraform scripts and used Azure DevOps to create the pipeline.
 Infrastructure diagram :
-Étapes : Create a Git repository in Azure Create a Terraform script to create the AKS infrastructure Create a YAML manifest to deploy Nginx on the cluster Create the CI/CD pipeline in Azure DevOps Créer un référentiel Git dans Azure ➡️ Sign in to your Azure DevOps account.</description>
+Steps : Create a Git repository in Azure Create a Terraform script to create the AKS infrastructure Create a YAML manifest to deploy Nginx on the cluster Create the CI/CD pipeline in Azure DevOps Creating a Git repository in Azure ➡️ Sign in to your Azure DevOps account.</description>
       <content>&lt;p&gt;In this project, I deployed Nginx on Azure Kubernetes Service (AKS) using a CI/CD pipeline. I automated the deployment using Terraform scripts and used Azure DevOps to create the pipeline.&lt;/p&gt;
 &lt;p&gt;Infrastructure diagram :&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/infra.svg&#34; alt=&#34;Schéma&#34;&gt;&lt;/p&gt;
-&lt;h1 id=&#34;étapes-&#34;&gt;Étapes :&lt;/h1&gt;
+&lt;h1 id=&#34;steps-&#34;&gt;Steps :&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Create a Git repository in Azure&lt;/li&gt;
 &lt;li&gt;Create a Terraform script to create the AKS infrastructure&lt;/li&gt;
@@ -27,7 +27,7 @@ Infrastructure diagram :
 &lt;li&gt;Create the CI/CD pipeline in Azure DevOps&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;créer-un-référentiel-git-dans-azure&#34;&gt;Créer un référentiel Git dans Azure&lt;/h1&gt;
+&lt;h1 id=&#34;creating-a-git-repository-in-azure&#34;&gt;Creating a Git repository in Azure&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;➡️ Sign in to your Azure DevOps account.&lt;/p&gt;
@@ -144,7 +144,7 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;créer-la-pipeline&#34;&gt;Créer la pipeline&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;create-pipeline&#34;&gt;Create pipeline&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Go to the &amp;ldquo;Pipelines&amp;rdquo; section.&lt;/li&gt;
 &lt;li&gt;Click on &amp;ldquo;New pipeline&amp;rdquo;.&lt;/li&gt;
