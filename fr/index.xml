@@ -36,9 +36,9 @@ Les conteneurs empaquettent les applications avec leurs dépendances et leurs bi
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt update
 &lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;installez-docker-en-exécutant-la-commande-suivante-&#34;&gt;Installez Docker en exécutant la commande suivante :&lt;/h1&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt install docker-ce docker-ce-cli containerd.io
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;check-the-docker-version&#34;&gt;Check the docker version&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;docker --version
 &lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;vérifier-la-version-de-docker&#34;&gt;Vérifier la version de docker&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;docker --version
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;test&#34;&gt;Test&lt;/h1&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;docker run hello-world
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Vous pouvez maintenant commencer à utiliser Docker pour exécuter et gérer des applications conteneurisées. Au revoir ! 👋&lt;/p&gt;
 </content>
