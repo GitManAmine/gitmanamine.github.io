@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Comment superviser et monitorer une application ? :: Blog - Amine Babouri</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Introduction Dans ce tuto, nous allons voir comment superviser et monitorer une application avec Prometheus et Grafana. Prérequis : Helm et Kubectl installé sur le poste et un aks à disposition.
+Sommaire : Création du cluster AKS Tout d&amp;rsquo;abord, j&amp;rsquo;ai créé un cluster AKS à l&amp;rsquo;aide de l&amp;rsquo;interface de ligne de commande Azure CLI. J&amp;rsquo;ai spécifié le nombre de nœuds, la taille des nœuds et d&amp;rsquo;autres paramètres pertinents pour répondre à mes besoins." />
+<meta name="keywords" content=", " />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="https://blog.aminebabouri.online/posts/prometheus_and_grafana/" />
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://blog.aminebabouri.online/styles.css">
+
+
+
+
+
+
+
+  <link rel="shortcut icon" href="https://blog.aminebabouri.online/img/theme-colors/green.png">
+  <link rel="apple-touch-icon" href="https://blog.aminebabouri.online/img/theme-colors/green.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Comment superviser et monitorer une application ?">
+<meta property="og:description" content="Introduction Dans ce tuto, nous allons voir comment superviser et monitorer une application avec Prometheus et Grafana. Prérequis : Helm et Kubectl installé sur le poste et un aks à disposition.
+Sommaire : Création du cluster AKS Tout d&amp;rsquo;abord, j&amp;rsquo;ai créé un cluster AKS à l&amp;rsquo;aide de l&amp;rsquo;interface de ligne de commande Azure CLI. J&amp;rsquo;ai spécifié le nombre de nœuds, la taille des nœuds et d&amp;rsquo;autres paramètres pertinents pour répondre à mes besoins." />
+<meta property="og:url" content="https://blog.aminebabouri.online/posts/prometheus_and_grafana/" />
+<meta property="og:site_name" content="Blog - Amine Babouri" />
+
+  
+  
+  <meta property="og:image" content="https://blog.aminebabouri.online/">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="green">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    amine@blog:~/
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/cv">./cv</a></li>
+        
+      
+        
+          <li><a href="/posts">./posts</a></li>
+        
+      
+        
+          <li><a href="/tags">./tags</a></li>
+        
+      
+      
+        <hr />
+        
+          <li>
+            <a href="https://blog.aminebabouri.online/fr/">Français</a>
+          </li>
+        
+          <li>
+            <a href="https://blog.aminebabouri.online/">English</a>
+          </li>
+        
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+      <ul class="menu menu--desktop menu--language-selector">
+  <li class="menu__trigger">English&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        <li><a href="https://blog.aminebabouri.online/fr/">Français</a></li>
+      
+        <li><a href="https://blog.aminebabouri.online/">English</a></li>
+      
+    </ul>
+  </li>
+</ul>
+
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/cv" >./cv</a></li>
+        
+      
+        
+          <li><a href="/posts" >./posts</a></li>
+        
+      
+        
+          <li><a href="/tags" >./tags</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://blog.aminebabouri.online/posts/prometheus_and_grafana/">Comment superviser et monitorer une application ?</a>
+  </h1>
+  <div class="post-meta"><span class="post-author">Amine</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://blog.aminebabouri.online/tags/azure/">Azure</a>&nbsp;
+      
+      #<a href="https://blog.aminebabouri.online/tags/prometheus/">Prometheus</a>&nbsp;
+      
+      #<a href="https://blog.aminebabouri.online/tags/grafana/">Grafana</a>&nbsp;
+      
+      #<a href="https://blog.aminebabouri.online/tags/monitoring/">Monitoring</a>&nbsp;
+      
+      #<a href="https://blog.aminebabouri.online/tags/supervision/">Supervision</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <h1 id="introduction">Introduction<a href="#introduction" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Dans ce tuto, nous allons voir comment superviser et monitorer une application avec Prometheus et Grafana.
+Prérequis : Helm et Kubectl installé sur le poste et un aks à disposition.</p>
+<h1 id="sommaire-">Sommaire :<a href="#sommaire-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<ul>
+<li>Création du cluster AKS
+Tout d&rsquo;abord, j&rsquo;ai créé un cluster AKS à l&rsquo;aide de l&rsquo;interface de ligne de commande Azure CLI. J&rsquo;ai spécifié le nombre de nœuds, la taille des nœuds et d&rsquo;autres paramètres pertinents pour répondre à mes besoins.</li>
+</ul>
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">az aks create -g MyResourceGroup -n nameOfAks
+</code></pre><ul>
+<li>Installation de Prometheus, Grafana et Loki avec Hevlm</li>
+</ul>
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">helm repo add loki https://grafana.github.io/loki/charts
+helm repo add grafana https://grafana.github.io/helm-charts
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm install prometheus prometheus-community/prometheus
+helm install grafana grafana/grafana
+</code></pre><ul>
+<li>Exposition les services kubernetes en type loadbalancer</li>
+</ul>
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">kubeclt edit svc &lt;nom_du_service&gt; -n &lt;nom_du_namespace&gt;
+</code></pre><p>et changer le type ClusterIP en LoadBalancer
+<img src="/static/images/svc.png" alt="screen">
+il faut faire ceci sur les svc suivants : prometheus-server-ext, loki, grafana-ext
+<img src="/static/images/get_svc.png" alt="get_svc"></p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h">Read other posts</span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        <span class="button previous">
+            <a href="https://blog.aminebabouri.online/posts/hello-world/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Hello World</span>
+            </a>
+        </span>
+        
+        
+    </div>
+</div>
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2023 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

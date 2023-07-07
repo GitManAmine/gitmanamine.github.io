@@ -68,11 +68,61 @@
     </item>
     
     <item>
+      <title>Azure</title>
+      <link>https://blog.aminebabouri.online/tags/azure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.aminebabouri.online/tags/azure/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
       <title>CI/CD</title>
       <link>https://blog.aminebabouri.online/tags/ci/cd/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.aminebabouri.online/tags/ci/cd/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Grafana</title>
+      <link>https://blog.aminebabouri.online/tags/grafana/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.aminebabouri.online/tags/grafana/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Monitoring</title>
+      <link>https://blog.aminebabouri.online/tags/monitoring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.aminebabouri.online/tags/monitoring/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Prometheus</title>
+      <link>https://blog.aminebabouri.online/tags/prometheus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.aminebabouri.online/tags/prometheus/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Supervision</title>
+      <link>https://blog.aminebabouri.online/tags/supervision/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.aminebabouri.online/tags/supervision/</guid>
       <description></description>
       <content></content>
     </item>

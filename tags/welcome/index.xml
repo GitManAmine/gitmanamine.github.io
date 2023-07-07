@@ -18,16 +18,5 @@
 </content>
     </item>
     
-    <item>
-      <title>Hello World</title>
-      <link>https://blog.aminebabouri.online/posts/test/</link>
-      <pubDate>Thu, 25 May 2023 05:35:29 +0200</pubDate>
-      
-      <guid>https://blog.aminebabouri.online/posts/test/</guid>
-      <description>AMINITEST</description>
-      <content>&lt;p&gt;AMINITEST&lt;/p&gt;
-</content>
-    </item>
-    
   </channel>
 </rss>
