@@ -33,16 +33,6 @@
   </url><url>
     <loc>https://blog.aminebabouri.online/fr/posts-fr/</loc>
     <lastmod>2023-05-31T14:59:09+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.aminebabouri.online/posts-fr/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://blog.aminebabouri.online/fr/posts-fr/"
-                />
   </url><url>
     <loc>https://blog.aminebabouri.online/fr/tags/</loc>
     <lastmod>2023-05-31T14:59:09+02:00</lastmod>
@@ -128,6 +118,8 @@
                 href="https://blog.aminebabouri.online/fr/tags/welcome/"
                 />
   </url><url>
+    <loc>https://blog.aminebabouri.online/fr/tags/azure/</loc>
+  </url><url>
     <loc>https://blog.aminebabouri.online/fr/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -151,5 +143,17 @@
                 hreflang="fr"
                 href="https://blog.aminebabouri.online/fr/tags/ci/cd/"
                 />
+  </url><url>
+    <loc>https://blog.aminebabouri.online/fr/posts-fr/brief/</loc>
+  </url><url>
+    <loc>https://blog.aminebabouri.online/fr/tags/grafana/</loc>
+  </url><url>
+    <loc>https://blog.aminebabouri.online/fr/tags/loki/</loc>
+  </url><url>
+    <loc>https://blog.aminebabouri.online/fr/tags/monitoring/</loc>
+  </url><url>
+    <loc>https://blog.aminebabouri.online/fr/tags/prometheus/</loc>
+  </url><url>
+    <loc>https://blog.aminebabouri.online/fr/tags/supervision/</loc>
   </url>
 </urlset>

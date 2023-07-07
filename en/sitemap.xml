@@ -153,19 +153,5 @@
                 hreflang="en"
                 href="https://blog.aminebabouri.online/tags/ci/cd/"
                 />
-  </url><url>
-    <loc>https://blog.aminebabouri.online/posts-fr/brief20/</loc>
-  </url><url>
-    <loc>https://blog.aminebabouri.online/posts-fr/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://blog.aminebabouri.online/fr/posts-fr/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.aminebabouri.online/posts-fr/"
-                />
   </url>
 </urlset>
