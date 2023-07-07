@@ -568,18 +568,19 @@ Skills Azure Devops 🔄 Azure ☁️ Bash &amp;gt;_ CI/CD 🚀 Docker 🐳 Kube
       
       <guid>https://blog.aminebabouri.online/posts/prometheus_and_grafana/</guid>
       <description>Introduction Dans ce tuto, nous allons voir comment superviser et monitorer une application avec Prometheus et Grafana. Prérequis : Helm et Kubectl installé sur le poste et un aks à disposition.
-Sommaire : Création du cluster AKS Tout d&amp;rsquo;abord, j&amp;rsquo;ai créé un cluster AKS à l&amp;rsquo;aide de l&amp;rsquo;interface de ligne de commande Azure CLI. J&amp;rsquo;ai spécifié le nombre de nœuds, la taille des nœuds et d&amp;rsquo;autres paramètres pertinents pour répondre à mes besoins.</description>
-      <content>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+Etapes : ➡️ Création du cluster AKS Tout d&amp;rsquo;abord, j&amp;rsquo;ai créé un cluster AKS à l&amp;rsquo;aide de l&amp;rsquo;interface de ligne de commande Azure CLI. J&amp;rsquo;ai spécifié le nombre de nœuds, la taille des nœuds et d&amp;rsquo;autres paramètres pertinents pour répondre à mes besoins.</description>
+      <content>&lt;hr&gt;
+&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
 &lt;p&gt;Dans ce tuto, nous allons voir comment superviser et monitorer une application avec Prometheus et Grafana.
 Prérequis : Helm et Kubectl installé sur le poste et un aks à disposition.&lt;/p&gt;
-&lt;h1 id=&#34;sommaire-&#34;&gt;Sommaire :&lt;/h1&gt;
+&lt;h1 id=&#34;etapes-&#34;&gt;Etapes :&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;Création du cluster AKS
+&lt;li&gt;➡️ Création du cluster AKS
 Tout d&amp;rsquo;abord, j&amp;rsquo;ai créé un cluster AKS à l&amp;rsquo;aide de l&amp;rsquo;interface de ligne de commande Azure CLI. J&amp;rsquo;ai spécifié le nombre de nœuds, la taille des nœuds et d&amp;rsquo;autres paramètres pertinents pour répondre à mes besoins.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;az aks create -g MyResourceGroup -n nameOfAks
 &lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;Installation de Prometheus, Grafana et Loki avec Hevlm&lt;/li&gt;
+&lt;li&gt;➡️ Installation de Prometheus, Grafana et Loki avec Hevlm&lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;helm repo add loki https://grafana.github.io/loki/charts
 helm repo add grafana https://grafana.github.io/helm-charts
@@ -587,13 +588,38 @@ helm repo add prometheus-community https://prometheus-community.github.io/helm-c
 helm install prometheus prometheus-community/prometheus
 helm install grafana grafana/grafana
 &lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;Exposition les services kubernetes en type loadbalancer&lt;/li&gt;
+&lt;li&gt;➡️ Exposition les services kubernetes en type loadbalancer&lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;kubeclt edit svc &amp;lt;nom_du_service&amp;gt; -n &amp;lt;nom_du_namespace&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;et changer le type ClusterIP en LoadBalancer
-&lt;img src=&#34;https://blog.aminebabouri.online/static/images/svc.png&#34; alt=&#34;screen&#34;&gt;
+&lt;img src=&#34;https://blog.aminebabouri.online/images/svc.png&#34; alt=&#34;screen&#34;&gt;
 il faut faire ceci sur les svc suivants : prometheus-server-ext, loki, grafana-ext
-&lt;img src=&#34;https://blog.aminebabouri.online/static/images/get_svc.png&#34; alt=&#34;get_svc&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://blog.aminebabouri.online/images/get_svc.png&#34; alt=&#34;getsvc&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Étape 4: Déployer une application qui génère des pods&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;kubectl create deploy random --dry-run=client --image=chentex/random-logger:latest -o yaml &amp;gt; random.yaml ; kubectl apply -f random.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;➡️ Intégration des données de Prometheus et Loki dans Grafana
+&lt;img src=&#34;https://blog.aminebabouri.online/images/data_prometheus.png&#34; alt=&#34;adddata&#34;&gt;
+&lt;img src=&#34;https://blog.aminebabouri.online/images/add_ip.png&#34; alt=&#34;addip&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Entrer l&amp;rsquo;adreses ip extérieur de prometheus-server-ext
+Faites de même pour Loki&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;➡️ Création de dashboards pour la surveillance
+J&amp;rsquo;ai créé des dashboards personnalisés dans Grafana pour surveiller différentes métriques de mon cluster, telles que l&amp;rsquo;utilisation des ressources, l&amp;rsquo;état des pods, etc. J&amp;rsquo;ai également créé un dashboard spécifique pour afficher les journaux générés par mon application.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/create_dashboard.png&#34; alt=&#34;createdashboard&#34;&gt;
+Vous pouvez le configurer comme vous voulez&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;➡️ Création des alertes dans Grafana
+&lt;img src=&#34;https://blog.aminebabouri.online/images/rule.png&#34; alt=&#34;createrule&#34;&gt;
+&lt;img src=&#34;https://blog.aminebabouri.online/images/rule2.png&#34; alt=&#34;createrule&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Vous pouvez faire des tests de charge pour vérifier que vos alertes fonctionnent bien.&lt;/p&gt;
+&lt;p&gt;Voici le résultat final de mon dashboard grafana :&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/result.png&#34; alt=&#34;createrule&#34;&gt;&lt;/p&gt;
 </content>
     </item>
     
