@@ -14,6 +14,9 @@
       
       <guid>https://blog.aminebabouri.online/fr/posts-fr/hello/</guid>
       <description>Bienvenue sur mon blog, ceci est mon premier post.</description>
+      <content>&lt;hr&gt;
+&lt;p&gt;Bienvenue sur mon blog, ceci est mon premier post.&lt;/p&gt;
+</content>
     </item>
     
   </channel>

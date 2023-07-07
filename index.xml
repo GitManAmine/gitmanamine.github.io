@@ -17,6 +17,33 @@
 Docker is a containerization technology that allows running isolated applications in containers.
 Containers package applications along with their dependencies and libraries, making it easy to deploy and run them. With Docker, you can execute various versions of Linux distributions, applications, and services like web servers, databases, and programming languages.
 It simplifies application deployment by including everything needed to run the application within the container. Docker revolutionizes application deployment and management, offering flexibility, isolation, and efficient resource utilization.</description>
+      <content>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;First, what is &lt;code&gt;Docker&lt;/code&gt; ?&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;code&gt;Docker&lt;/code&gt; is a &lt;code&gt;containerization&lt;/code&gt; technology that allows running isolated applications in containers.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;code&gt;Containers&lt;/code&gt; package applications along with their dependencies and libraries, making it easy to deploy and run them. With Docker, you can execute various versions of &lt;code&gt;Linux distributions&lt;/code&gt;, applications, and services like web servers, databases, and programming languages.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;It simplifies application deployment by including everything needed to run the application within the container. &lt;code&gt;Docker&lt;/code&gt; revolutionizes &lt;code&gt;application&lt;/code&gt; deployment and management, offering flexibility, isolation, and efficient resource &lt;code&gt;utilization&lt;/code&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;update-system&#34;&gt;Update system&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt update -y &amp;amp;&amp;amp; sudo apt upgrade -y
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;add-the-docker-repository-by-running-the-command&#34;&gt;Add the Docker repository by running the command:&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt install apt-transport-https ca-certificates curl software-properties-common
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;download-gnupg-for-import-the-key&#34;&gt;Download gnupg for import the key&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt install gnupg
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;import-the-docker-gpg-key-with-the-command&#34;&gt;Import the Docker GPG key with the command:&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;add-the-docker-repository-to-the-system&#34;&gt;Add the Docker repository to the system:&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;echo &amp;#34;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&amp;#34; | sudo tee /etc/apt/sources.list.d/docker.list &amp;gt; /dev/null
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;update-the-package-list-again&#34;&gt;Update the package list again:&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt update
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;install-docker-by-running-the-following-command&#34;&gt;Install Docker by running the following command:&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt install docker-ce docker-ce-cli containerd.io
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;check-the-docker-version&#34;&gt;Check the docker version&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;docker --version
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;run-this-commmand&#34;&gt;Run this commmand:&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;docker run hello-world
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Congratulations! You have successfully installed Docker on Ubuntu 22.04.&lt;/p&gt;
+&lt;p&gt;You can now start using Docker to run and manage containerized applications on your system. Goodbye! 👋&lt;/p&gt;
+</content>
     </item>
     
     <item>
@@ -28,6 +55,183 @@ It simplifies application deployment by including everything needed to run the a
       <description>In this project, I deployed Nginx on Azure Kubernetes Service (AKS) using a CI/CD pipeline. I automated the deployment using Terraform scripts and used Azure DevOps to create the pipeline.
 Infrastructure diagram :
 Steps : Create a Git repository in Azure Create a Terraform script to create the AKS infrastructure Create a YAML manifest to deploy Nginx on the cluster Create the CI/CD pipeline in Azure DevOps Creating a Git repository in Azure ➡️ Sign in to your Azure DevOps account.</description>
+      <content>&lt;p&gt;In this project, I deployed Nginx on Azure Kubernetes Service (AKS) using a CI/CD pipeline. I automated the deployment using Terraform scripts and used Azure DevOps to create the pipeline.&lt;/p&gt;
+&lt;p&gt;Infrastructure diagram :&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/infra.svg&#34; alt=&#34;Schéma&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;steps-&#34;&gt;Steps :&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Create a Git repository in Azure&lt;/li&gt;
+&lt;li&gt;Create a Terraform script to create the AKS infrastructure&lt;/li&gt;
+&lt;li&gt;Create a YAML manifest to deploy Nginx on the cluster&lt;/li&gt;
+&lt;li&gt;Create the CI/CD pipeline in Azure DevOps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;creating-a-git-repository-in-azure&#34;&gt;Creating a Git repository in Azure&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;➡️ Sign in to your Azure DevOps account.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;➡️ Select the Azure DevOps organization where you want to create the Git repository.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;➡️  Navigate to the project where you want to create the Git repository or create a new project if needed.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;➡️ Click on the &amp;ldquo;Repos&amp;rdquo; tab in the top navigation bar to access the repositories page.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;➡️ Click the &amp;ldquo;New repository&amp;rdquo; button to create a new Git repository.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;➡️ In the opened popup window:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Enter a meaningful &amp;ldquo;Repository name&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;Select &amp;ldquo;Git&amp;rdquo; as the &amp;ldquo;Version control&amp;rdquo; system.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;➡️ Click the &amp;ldquo;Create&amp;rdquo; button to create the Git repository.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;➡️ You will be redirected to the newly created repository page.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;create-a-terraform-script&#34;&gt;Create a Terraform script&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;terraform {
+  required_providers {
+    azurerm = {
+      source = &amp;#34;hashicorp/azurerm&amp;#34;
+      version = &amp;#34;3.57.0&amp;#34;
+    }
+  }
+}
+
+provider &amp;#34;azurerm&amp;#34; {
+  features {}
+  tenant_id       = &amp;#34;&amp;#34; # can be got with $ az account show
+  subscription_id = &amp;#34;&amp;#34; # can be got with $ az account show
+}
+
+data &amp;#34;azurerm_resource_group&amp;#34; &amp;#34;rg&amp;#34; {
+  name = &amp;#34;&amp;#34;
+}
+
+output &amp;#34;id&amp;#34; {
+  value = data.azurerm_resource_group.rg.id
+}
+
+resource &amp;#34;azurerm_kubernetes_cluster&amp;#34; &amp;#34;aks&amp;#34; {
+  name                = &amp;#34;&amp;#34;
+  location            = data.azurerm_resource_group.rg.location
+  resource_group_name = data.azurerm_resource_group.rg.name
+  dns_prefix          = &amp;#34;&amp;#34;
+
+  default_node_pool {
+    name       = &amp;#34;default&amp;#34;
+    node_count = 1
+    vm_size    = &amp;#34;Standard_D2_v2&amp;#34;
+  }
+
+  identity {
+    type = &amp;#34;SystemAssigned&amp;#34;
+  }
+}
+
+output &amp;#34;client_certificate&amp;#34; {
+  value     = azurerm_kubernetes_cluster.aks.kube_config.0.client_certificate
+  sensitive = true
+}
+
+output &amp;#34;kube_config&amp;#34; {
+  value = azurerm_kubernetes_cluster.aks.kube_config_raw
+
+  sensitive = true
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;git push
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;create-the-yaml-manifest-to-deploy-nginx&#34;&gt;Create the YAML manifest to deploy Nginx&lt;/h1&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;create-pipeline&#34;&gt;Create pipeline&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Go to the &amp;ldquo;Pipelines&amp;rdquo; section.&lt;/li&gt;
+&lt;li&gt;Click on &amp;ldquo;New pipeline&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;Proceed based on the source of your code (Azure Repos Git in my case).&lt;/li&gt;
+&lt;li&gt;Select your repository.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: &amp;#39;ubuntu-latest&amp;#39;
+
+steps:
+- checkout: self
+
+- script: az login
+
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: &amp;#39;3.8&amp;#39;
+    addToPath: true
+    
+- task: KubectlInstaller@0
+  displayName: Kubectl installer
+  inputs: 
+    kubectlVersion: latest
+
+- script: |
+    terraform init
+    terraform plan -out=tfplan
+  displayName: &amp;#39;Execute Terraform init and plan&amp;#39;
+
+- script: |
+    terraform apply -auto-approve tfplan
+  displayName: &amp;#39;Execute Terraform apply&amp;#39;
+
+- script: az aks get-credentials --resource-group &amp;lt;insérer nom du groupe de ressource&amp;gt; --name &amp;lt;insérer nom de l&amp;#39;aks&amp;gt;
+  displayName: &amp;#39;Get AKS credentials&amp;#39;
+  
+- script: kubectl apply -f nginx.yaml
+  displayName: &amp;#39;Deploy YAML manifest&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;To access your cluster, connect to it and run the following command to obtain the public IP address of your cluster:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;kubectl get svc
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This concludes the tutorial. I hope this has been helpful. Goodbye! 👋&lt;/p&gt;
+</content>
     </item>
     
     <item>
@@ -39,6 +243,153 @@ Steps : Create a Git repository in Azure Create a Terraform script to create the
       <description>Salut ! Je suis Amine Babouri 👋 Je suis un Administrateur Cloud/Devops, j&amp;rsquo;ai 20 ans et je viens de Lyon. J&amp;rsquo;aime jouer du piano 🎹, la photographie 📸, la randonnée 🥾⛰️, la boxe Anglaise 🥊, l&amp;rsquo;informatique 👨‍💻, et les jeux-vidéos 🎮.
 J&amp;rsquo;ai crée ce blog pour partager des tutoriels informatique notemmment orienté vers le cloud et devops, alors n&amp;rsquo;hésitez pas à aller jeter un oeil sur mes articles !
 Compétences Azure Devops 🔄 Azure ☁️ Bash &amp;gt;_ CI/CD 🚀 Docker 🐳 Kubernetes 🚢 Terraform 🌍 Formation Parcours Diplôme Lieu Date Alternant Cloud DevOps Administrator Simplon 2022 - 2023 BTS Advanced Technician Diploma in Digital Systems and Computer Network Communications Lycée Edouard Branly 2021 - 2022 Lycée Professional Baccalaureate in Digital Systems and Computer Networks Lycée Professionnel Jacques de Flesselles 2018-2021 Certifications Catégorie Nom Date Azure ☁️ AZ - 900 2022 Azure ☁️ AI - 900 2022 Azure ☁️ AZ - 104 2023 Kubernetes ☸️ CKA 2023 Terraform 🌍 Terraform Associate 2023 Expériences Poste Entreprise Date Alternant analyste cloud Visiativ 11/2022 - 11/2023 Technicien support N1 Atos 03/2022 - 05/2022 Stagiaire technicien informatique Lyon Olympique Echecs 02/2021 - 03/2021 Stagiaire technicien informatique Cyber-Phone 01/2021 - 02/2021 Stagiaire technicien informatique Cyber-Phone 11/2020 - 12/2020 Liens Liens Name LinkedIn Email GitHub </description>
+      <content>&lt;h1 id=&#34;salut--je-suis-amine-babouri-&#34;&gt;Salut ! Je suis Amine Babouri 👋&lt;/h1&gt;
+&lt;p&gt;Je suis un Administrateur Cloud/Devops, j&amp;rsquo;ai 20 ans et je viens de Lyon. J&amp;rsquo;aime jouer du piano 🎹, la photographie 📸, la randonnée 🥾⛰️, la boxe Anglaise 🥊, l&amp;rsquo;informatique 👨‍💻, et les jeux-vidéos 🎮.&lt;/p&gt;
+&lt;p&gt;J&amp;rsquo;ai crée ce blog pour partager des tutoriels informatique notemmment orienté vers le cloud et devops, alors n&amp;rsquo;hésitez pas à aller jeter un oeil sur mes articles !&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;compétences&#34;&gt;Compétences&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Azure Devops 🔄&lt;/li&gt;
+&lt;li&gt;Azure ☁️&lt;/li&gt;
+&lt;li&gt;Bash &amp;gt;_&lt;/li&gt;
+&lt;li&gt;CI/CD 🚀&lt;/li&gt;
+&lt;li&gt;Docker  🐳&lt;/li&gt;
+&lt;li&gt;Kubernetes 🚢&lt;/li&gt;
+&lt;li&gt;Terraform 🌍&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;formation&#34;&gt;Formation&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parcours&lt;/th&gt;
+&lt;th&gt;Diplôme&lt;/th&gt;
+&lt;th&gt;Lieu&lt;/th&gt;
+&lt;th&gt;Date&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Alternant&lt;/td&gt;
+&lt;td&gt;Cloud DevOps Administrator&lt;/td&gt;
+&lt;td&gt;Simplon&lt;/td&gt;
+&lt;td&gt;2022 - 2023&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;BTS&lt;/td&gt;
+&lt;td&gt;Advanced Technician Diploma in Digital Systems and Computer Network Communications&lt;/td&gt;
+&lt;td&gt;Lycée Edouard Branly&lt;/td&gt;
+&lt;td&gt;2021 - 2022&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Lycée&lt;/td&gt;
+&lt;td&gt;Professional Baccalaureate in Digital Systems and Computer Networks&lt;/td&gt;
+&lt;td&gt;Lycée Professionnel Jacques de Flesselles&lt;/td&gt;
+&lt;td&gt;2018-2021&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;certifications&#34;&gt;Certifications&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Catégorie&lt;/th&gt;
+&lt;th&gt;Nom&lt;/th&gt;
+&lt;th&gt;Date&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Azure ☁️&lt;/td&gt;
+&lt;td&gt;AZ - 900&lt;/td&gt;
+&lt;td&gt;2022&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Azure ☁️&lt;/td&gt;
+&lt;td&gt;AI - 900&lt;/td&gt;
+&lt;td&gt;2022&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Azure ☁️&lt;/td&gt;
+&lt;td&gt;AZ - 104&lt;/td&gt;
+&lt;td&gt;2023&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Kubernetes ☸️&lt;/td&gt;
+&lt;td&gt;CKA&lt;/td&gt;
+&lt;td&gt;2023&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Terraform 🌍&lt;/td&gt;
+&lt;td&gt;Terraform Associate&lt;/td&gt;
+&lt;td&gt;2023&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;expériences&#34;&gt;Expériences&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Poste&lt;/th&gt;
+&lt;th&gt;Entreprise&lt;/th&gt;
+&lt;th&gt;Date&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Alternant analyste cloud&lt;/td&gt;
+&lt;td&gt;Visiativ&lt;/td&gt;
+&lt;td&gt;11/2022 - 11/2023&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Technicien support N1&lt;/td&gt;
+&lt;td&gt;Atos&lt;/td&gt;
+&lt;td&gt;03/2022 - 05/2022&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Stagiaire technicien informatique&lt;/td&gt;
+&lt;td&gt;Lyon Olympique Echecs&lt;/td&gt;
+&lt;td&gt;02/2021 - 03/2021&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Stagiaire technicien informatique&lt;/td&gt;
+&lt;td&gt;Cyber-Phone&lt;/td&gt;
+&lt;td&gt;01/2021 - 02/2021&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Stagiaire technicien informatique&lt;/td&gt;
+&lt;td&gt;Cyber-Phone&lt;/td&gt;
+&lt;td&gt;11/2020 - 12/2020&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;liens&#34;&gt;Liens&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Liens&lt;/th&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.linkedin.com/in/amine-babouri/&#34;&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/linkedin.png&#34; alt=&#34;LinkedIn&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;LinkedIn&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;mailto:amine.babouri@protonmail.com&#34;&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/email.png&#34; alt=&#34;Email&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Email&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/GitManAmine?tab=repositories&#34;&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/github.png&#34; alt=&#34;GitHub&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;GitHub&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</content>
     </item>
     
     <item>
@@ -50,6 +401,153 @@ Compétences Azure Devops 🔄 Azure ☁️ Bash &amp;gt;_ CI/CD 🚀 Docker �
       <description>Hey There! I’m Amine Babouri 👋 I am a 20 year old Cloud/DevOps from Lyon, France. I enjoy playing the piano 🎹, photography 📸, hiking 🥾⛰️, boxing 🥊, computer science 👨‍💻, and videos games 🎮.
 I&amp;rsquo;m very keen on IT I created this blog to share tutorials and IT technologies in the world of computing, so don&amp;rsquo;t hesitate to check out my articles!
 Skills Azure Devops 🔄 Azure ☁️ Bash &amp;gt;_ CI/CD 🚀 Docker 🐳 Kubernetes 🚢 Terraform 🌍 Education Degree Diploma Institute Date Apprenticeship training Cloud DevOps Administrator Simplon 2022 - 2023 Undergraduate degree Advanced Technician Diploma in Digital Systems and Computer Network Communications Lycée Edouard Branly 2021 - 2022 High School Professional Baccalaureate in Digital Systems and Computer Networks Lycée Professionnel Jacques de Flesselles 2018-2021 Certification Category Name Date Azure ☁️ AZ - 900 2022 Azure ☁️ AI - 900 2022 Azure ☁️ AZ - 104 2023 Kubernetes ☸️ CKA 2023 Terraform 🌍 Terraform Associate 2023 Experience Position Company Date Alternant analyste cloud Visiativ 11/2022 - 11/2023 IT support technician Atos 03/2022 - 05/2022 intern computer technician Lyon Olympique Echecs 02/2021 - 03/2021 intern computer technician Cyber-Phone 01/2021 - 02/2021 intern computer technician Cyber-Phone 11/2020 - 12/2020 Links Liens Name LinkedIn Email GitHub </description>
+      <content>&lt;h1 id=&#34;hey-there-im-amine-babouri-&#34;&gt;Hey There! I’m Amine Babouri 👋&lt;/h1&gt;
+&lt;p&gt;I am a 20 year old Cloud/DevOps from Lyon, France. I enjoy playing the piano 🎹, photography 📸, hiking 🥾⛰️, boxing 🥊, computer science 👨‍💻, and videos games 🎮.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m very keen on IT I created this blog to share tutorials and IT technologies in the world of computing, so don&amp;rsquo;t hesitate to check out my articles!&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;skills&#34;&gt;Skills&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Azure Devops 🔄&lt;/li&gt;
+&lt;li&gt;Azure ☁️&lt;/li&gt;
+&lt;li&gt;Bash &amp;gt;_&lt;/li&gt;
+&lt;li&gt;CI/CD 🚀&lt;/li&gt;
+&lt;li&gt;Docker  🐳&lt;/li&gt;
+&lt;li&gt;Kubernetes 🚢&lt;/li&gt;
+&lt;li&gt;Terraform 🌍&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;education&#34;&gt;Education&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Degree&lt;/th&gt;
+&lt;th&gt;Diploma&lt;/th&gt;
+&lt;th&gt;Institute&lt;/th&gt;
+&lt;th&gt;Date&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Apprenticeship training&lt;/td&gt;
+&lt;td&gt;Cloud DevOps Administrator&lt;/td&gt;
+&lt;td&gt;Simplon&lt;/td&gt;
+&lt;td&gt;2022 - 2023&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Undergraduate degree&lt;/td&gt;
+&lt;td&gt;Advanced Technician Diploma in Digital Systems and Computer Network Communications&lt;/td&gt;
+&lt;td&gt;Lycée Edouard Branly&lt;/td&gt;
+&lt;td&gt;2021 - 2022&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;High School&lt;/td&gt;
+&lt;td&gt;Professional Baccalaureate in Digital Systems and Computer Networks&lt;/td&gt;
+&lt;td&gt;Lycée Professionnel Jacques de Flesselles&lt;/td&gt;
+&lt;td&gt;2018-2021&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;certification&#34;&gt;Certification&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Category&lt;/th&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Date&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Azure ☁️&lt;/td&gt;
+&lt;td&gt;AZ - 900&lt;/td&gt;
+&lt;td&gt;2022&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Azure ☁️&lt;/td&gt;
+&lt;td&gt;AI - 900&lt;/td&gt;
+&lt;td&gt;2022&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Azure ☁️&lt;/td&gt;
+&lt;td&gt;AZ - 104&lt;/td&gt;
+&lt;td&gt;2023&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Kubernetes ☸️&lt;/td&gt;
+&lt;td&gt;CKA&lt;/td&gt;
+&lt;td&gt;2023&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Terraform 🌍&lt;/td&gt;
+&lt;td&gt;Terraform Associate&lt;/td&gt;
+&lt;td&gt;2023&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;experience&#34;&gt;Experience&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Position&lt;/th&gt;
+&lt;th&gt;Company&lt;/th&gt;
+&lt;th&gt;Date&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Alternant analyste cloud&lt;/td&gt;
+&lt;td&gt;Visiativ&lt;/td&gt;
+&lt;td&gt;11/2022 - 11/2023&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;IT support technician&lt;/td&gt;
+&lt;td&gt;Atos&lt;/td&gt;
+&lt;td&gt;03/2022 - 05/2022&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;intern computer technician&lt;/td&gt;
+&lt;td&gt;Lyon Olympique Echecs&lt;/td&gt;
+&lt;td&gt;02/2021 - 03/2021&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;intern computer technician&lt;/td&gt;
+&lt;td&gt;Cyber-Phone&lt;/td&gt;
+&lt;td&gt;01/2021 - 02/2021&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;intern computer technician&lt;/td&gt;
+&lt;td&gt;Cyber-Phone&lt;/td&gt;
+&lt;td&gt;11/2020 - 12/2020&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;links&#34;&gt;Links&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Liens&lt;/th&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.linkedin.com/in/amine-babouri/&#34;&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/linkedin.png&#34; alt=&#34;LinkedIn&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;LinkedIn&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;mailto:amine.babouri@protonmail.com&#34;&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/email.png&#34; alt=&#34;Email&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Email&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/GitManAmine?tab=repositories&#34;&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/github.png&#34; alt=&#34;GitHub&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;GitHub&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</content>
     </item>
     
     <item>
@@ -59,6 +557,19 @@ Skills Azure Devops 🔄 Azure ☁️ Bash &amp;gt;_ CI/CD 🚀 Docker 🐳 Kube
       
       <guid>https://blog.aminebabouri.online/posts/hello-world/</guid>
       <description>Welcome to my blog, this is my first post.</description>
+      <content>&lt;p&gt;Welcome to my blog, this is my first post.&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>https://blog.aminebabouri.online/posts/test/</link>
+      <pubDate>Thu, 25 May 2023 05:35:29 +0200</pubDate>
+      
+      <guid>https://blog.aminebabouri.online/posts/test/</guid>
+      <description>Welsxxsxsxs</description>
+      <content>&lt;p&gt;Welsxxsxsxs&lt;/p&gt;
+</content>
     </item>
     
   </channel>
