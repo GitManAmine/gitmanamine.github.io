@@ -17,33 +17,6 @@
 Docker is a containerization technology that allows running isolated applications in containers.
 Containers package applications along with their dependencies and libraries, making it easy to deploy and run them. With Docker, you can execute various versions of Linux distributions, applications, and services like web servers, databases, and programming languages.
 It simplifies application deployment by including everything needed to run the application within the container. Docker revolutionizes application deployment and management, offering flexibility, isolation, and efficient resource utilization.</description>
-      <content>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
-&lt;p&gt;First, what is &lt;code&gt;Docker&lt;/code&gt; ?&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;&lt;code&gt;Docker&lt;/code&gt; is a &lt;code&gt;containerization&lt;/code&gt; technology that allows running isolated applications in containers.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;&lt;code&gt;Containers&lt;/code&gt; package applications along with their dependencies and libraries, making it easy to deploy and run them. With Docker, you can execute various versions of &lt;code&gt;Linux distributions&lt;/code&gt;, applications, and services like web servers, databases, and programming languages.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;It simplifies application deployment by including everything needed to run the application within the container. &lt;code&gt;Docker&lt;/code&gt; revolutionizes &lt;code&gt;application&lt;/code&gt; deployment and management, offering flexibility, isolation, and efficient resource &lt;code&gt;utilization&lt;/code&gt;.&lt;/em&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1 id=&#34;update-system&#34;&gt;Update system&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt update -y &amp;amp;&amp;amp; sudo apt upgrade -y
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;add-the-docker-repository-by-running-the-command&#34;&gt;Add the Docker repository by running the command:&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt install apt-transport-https ca-certificates curl software-properties-common
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;download-gnupg-for-import-the-key&#34;&gt;Download gnupg for import the key&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt install gnupg
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;import-the-docker-gpg-key-with-the-command&#34;&gt;Import the Docker GPG key with the command:&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;add-the-docker-repository-to-the-system&#34;&gt;Add the Docker repository to the system:&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;echo &amp;#34;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&amp;#34; | sudo tee /etc/apt/sources.list.d/docker.list &amp;gt; /dev/null
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;update-the-package-list-again&#34;&gt;Update the package list again:&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt update
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;install-docker-by-running-the-following-command&#34;&gt;Install Docker by running the following command:&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt install docker-ce docker-ce-cli containerd.io
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;check-the-docker-version&#34;&gt;Check the docker version&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;docker --version
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;run-this-commmand&#34;&gt;Run this commmand:&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;docker run hello-world
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Congratulations! You have successfully installed Docker on Ubuntu 22.04.&lt;/p&gt;
-&lt;p&gt;You can now start using Docker to run and manage containerized applications on your system. Goodbye! 👋&lt;/p&gt;
-</content>
     </item>
     
   </channel>

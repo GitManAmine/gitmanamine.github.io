@@ -5,7 +5,7 @@
     <link>https://blog.aminebabouri.online/fr/posts-fr/</link>
     <description>Recent content in Posts-frs on Blog - Amine Babouri</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>fr</language>
     <lastBuildDate>Wed, 31 May 2023 14:59:09 +0200</lastBuildDate><atom:link href="https://blog.aminebabouri.online/fr/posts-fr/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Comment installer Docker sur Ubuntu</title>
@@ -16,32 +16,6 @@
       <description>Introduction Pour commencer, qu&amp;rsquo;est ce que Docker ?
 Docker est une technologie de conteneurisation qui permet d&amp;rsquo;exécuter des applications isolées dans des conteneurs.
 Les conteneurs empaquettent les applications avec leurs dépendances et leurs bibliothèques, ce qui facilite leur déploiement et leur exécution. Avec Docker, vous pouvez exécuter différentes versions de distributions Linux, d&amp;rsquo;applications et de services tels que des serveurs web, des bases de données et des langages de programmation.</description>
-      <content>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
-&lt;p&gt;Pour commencer, qu&amp;rsquo;est ce que &lt;code&gt;Docker&lt;/code&gt; ?&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;&lt;code&gt;Docker&lt;/code&gt; est une technologie de conteneurisation qui permet d&amp;rsquo;exécuter des applications isolées dans des conteneurs.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Les &lt;code&gt;conteneurs&lt;/code&gt; empaquettent les applications avec leurs dépendances et leurs bibliothèques, ce qui facilite leur déploiement et leur exécution. Avec &lt;code&gt;Docker&lt;/code&gt;, vous pouvez exécuter différentes versions de &lt;code&gt;distributions Linux&lt;/code&gt;, d&amp;rsquo;applications et de services tels que des serveurs web, des bases de données et des langages de programmation.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Il simplifie le déploiement des applications en incluant dans le conteneur tout ce qui est nécessaire à leur fonctionnement. &lt;code&gt;Docker&lt;/code&gt; révolutionne le déploiement et la gestion des &lt;code&gt;applications&lt;/code&gt; en offrant flexibilité, isolation et `utilisation&amp;rsquo; efficace des ressources.&lt;/em&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h1 id=&#34;mise-à-jour-système&#34;&gt;Mise à jour système&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt update -y &amp;amp;&amp;amp; sudo apt upgrade -y
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;ajoutez-le-dépôt-docker-en-exécutant-la-commande-&#34;&gt;Ajoutez le dépôt Docker en exécutant la commande :&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt install apt-transport-https ca-certificates curl software-properties-common
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;télcharger-le-packet-gnupg&#34;&gt;Télcharger le packet gnupg&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt install gnupg
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;importez-la-clé-gpg-de-docker-avec-la-commande-&#34;&gt;Importez la clé GPG de Docker avec la commande :&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;ajouter-le-dépôt-docker-au-système-&#34;&gt;Ajouter le dépôt Docker au système :&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;echo &amp;#34;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&amp;#34; | sudo tee /etc/apt/sources.list.d/docker.list &amp;gt; /dev/null
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;ajouter-le-dépôt-docker-au-système--1&#34;&gt;Ajouter le dépôt Docker au système :&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt update
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;installez-docker-en-exécutant-la-commande-suivante-&#34;&gt;Installez Docker en exécutant la commande suivante :&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sudo apt install docker-ce docker-ce-cli containerd.io
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;vérifier-la-version-de-docker&#34;&gt;Vérifier la version de docker&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;docker --version
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;test&#34;&gt;Test&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;docker run hello-world
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Vous pouvez maintenant commencer à utiliser Docker pour exécuter et gérer des applications conteneurisées. Au revoir ! 👋&lt;/p&gt;
-</content>
     </item>
     
     <item>
@@ -53,184 +27,6 @@ Les conteneurs empaquettent les applications avec leurs dépendances et leurs bi
       <description>Dans ce projet, j&amp;rsquo;ai déployé Nginx sur Azure Kubernetes Service (AKS) en utilisant une pipeline CI/CD. J&amp;rsquo;ai automatisé le déploiement en utilisant des scripts Terraform et j&amp;rsquo;ai utilisé Azure DevOps pour créer la pipeline.
 Schéma de l&amp;rsquo;infrastructure :
 Étapes : Créer un référentiel Git dans Azure Créer un script Terraform pour créer l&amp;rsquo;infrastructure AKS Créer un manifeste YAML pour déployer Nginx sur le cluster Créer la pipeline CI/CD sur Azure Devops Créer un référentiel Git dans Azure ➡️ Connectez-vous à votre compte Azure DevOps</description>
-      <content>&lt;hr&gt;
-&lt;p&gt;Dans ce projet, j&amp;rsquo;ai déployé Nginx sur Azure Kubernetes Service (AKS) en utilisant une pipeline CI/CD. J&amp;rsquo;ai automatisé le déploiement en utilisant des scripts Terraform et j&amp;rsquo;ai utilisé Azure DevOps pour créer la pipeline.&lt;/p&gt;
-&lt;p&gt;Schéma de l&amp;rsquo;infrastructure :&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/infra.svg&#34; alt=&#34;Schéma&#34;&gt;&lt;/p&gt;
-&lt;h1 id=&#34;étapes-&#34;&gt;Étapes :&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;Créer un référentiel Git dans Azure&lt;/li&gt;
-&lt;li&gt;Créer un script Terraform pour créer l&amp;rsquo;infrastructure AKS&lt;/li&gt;
-&lt;li&gt;Créer un manifeste YAML pour déployer Nginx sur le cluster&lt;/li&gt;
-&lt;li&gt;Créer la pipeline CI/CD sur Azure Devops&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h1 id=&#34;créer-un-référentiel-git-dans-azure&#34;&gt;Créer un référentiel Git dans Azure&lt;/h1&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;➡️ Connectez-vous à votre compte Azure DevOps&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;➡️ Sélectionnez l&amp;rsquo;organisation Azure DevOps dans laquelle vous souhaitez créer le référentiel Git.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;➡️ Accédez au projet dans lequel vous souhaitez créer le référentiel Git, ou créez un nouveau projet si nécessaire.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;➡️ Cliquez sur l&amp;rsquo;onglet &amp;ldquo;Repos&amp;rdquo; dans la barre de navigation supérieure pour accéder à la page des référentiels.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;➡️ Cliquez sur le bouton &amp;ldquo;New repository&amp;rdquo; (Nouveau référentiel) pour créer un nouveau référentiel Git.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;➡️ Dans la fenêtre contextuelle qui s&amp;rsquo;ouvre :&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Entrez un &amp;ldquo;Repository name&amp;rdquo; (Nom du référentiel) significatif.&lt;/li&gt;
-&lt;li&gt;Sélectionnez &amp;ldquo;Git&amp;rdquo; comme système de &amp;ldquo;Version control&amp;rdquo; (Contrôle de version).&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;➡️ Cliquez sur le bouton &amp;ldquo;Create&amp;rdquo; (Créer) pour créer le référentiel Git.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;➡️ Vous serez redirigé vers la page du référentiel nouvellement créé.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h1 id=&#34;créer-un-script-terraform&#34;&gt;Créer un script terraform&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;terraform {
-  required_providers {
-    azurerm = {
-      source = &amp;#34;hashicorp/azurerm&amp;#34;
-      version = &amp;#34;3.57.0&amp;#34;
-    }
-  }
-}
-
-provider &amp;#34;azurerm&amp;#34; {
-  features {}
-  tenant_id       = &amp;#34;&amp;#34; # peut être obtenue en faisant un $ az account show
-  subscription_id = &amp;#34;&amp;#34; # peut être obtenue en faisant un $ az account show
-}
-
-data &amp;#34;azurerm_resource_group&amp;#34; &amp;#34;rg&amp;#34; {
-  name = &amp;#34;&amp;#34;
-}
-
-output &amp;#34;id&amp;#34; {
-  value = data.azurerm_resource_group.rg.id
-}
-
-resource &amp;#34;azurerm_kubernetes_cluster&amp;#34; &amp;#34;aks&amp;#34; {
-  name                = &amp;#34;&amp;#34;
-  location            = data.azurerm_resource_group.rg.location
-  resource_group_name = data.azurerm_resource_group.rg.name
-  dns_prefix          = &amp;#34;&amp;#34;
-
-  default_node_pool {
-    name       = &amp;#34;default&amp;#34;
-    node_count = 1
-    vm_size    = &amp;#34;Standard_D2_v2&amp;#34;
-  }
-
-  identity {
-    type = &amp;#34;SystemAssigned&amp;#34;
-  }
-}
-
-output &amp;#34;client_certificate&amp;#34; {
-  value     = azurerm_kubernetes_cluster.aks.kube_config.0.client_certificate
-  sensitive = true
-}
-
-output &amp;#34;kube_config&amp;#34; {
-  value = azurerm_kubernetes_cluster.aks.kube_config_raw
-
-  sensitive = true
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;git push
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;créer-le-manifest-yaml-pour-déployer-nginx&#34;&gt;Créer le manifest YAML pour déployer nginx&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: nginx-deployment
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: nginx
-  template:
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      containers:
-      - name: nginx
-        image: nginx
-        ports:
-        - containerPort: 80
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: nginx-service
-spec:
-  type: LoadBalancer
-  selector:
-    app: nginx
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 80
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;créer-la-pipeline&#34;&gt;Créer la pipeline&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;Se rendre dans la séction &amp;ldquo;Pipelines&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;Cliquer sur &amp;ldquo;New pipeline&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;Poursuivre en fonction de la source de notre code (Azure Repos Git dans mon cas)&lt;/li&gt;
-&lt;li&gt;Séléctionner son dépôt&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;trigger:
-  branches:
-    include:
-      - main
-
-pool:
-  vmImage: &amp;#39;ubuntu-latest&amp;#39;
-
-steps:
-- checkout: self
-
-- script: az login
-
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: &amp;#39;3.8&amp;#39;
-    addToPath: true
-    
-- task: KubectlInstaller@0
-  displayName: Kubectl installer
-  inputs: 
-    kubectlVersion: latest
-
-- script: |
-    terraform init
-    terraform plan -out=tfplan
-  displayName: &amp;#39;Execute Terraform init and plan&amp;#39;
-
-- script: |
-    terraform apply -auto-approve tfplan
-  displayName: &amp;#39;Execute Terraform apply&amp;#39;
-
-- script: az aks get-credentials --resource-group &amp;lt;insérer nom du groupe de ressource&amp;gt; --name &amp;lt;insérer nom de l&amp;#39;aks&amp;gt;
-  displayName: &amp;#39;Get AKS credentials&amp;#39;
-  
-- script: kubectl apply -f nginx.yaml
-  displayName: &amp;#39;Deploy YAML manifest&amp;#39;
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;fin&#34;&gt;Fin&lt;/h1&gt;
-&lt;p&gt;Connecter vous ensuite à votre cluster, pour connaitre l&amp;rsquo;adresse ip puiblique de votre cluster, éxécutez cette commande :&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;kubectl get svc
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Le tutoriel s&amp;rsquo;achève ici en éspérant vous avoir aidé, salut 👋&lt;/p&gt;
-</content>
     </item>
     
     <item>
@@ -240,9 +36,6 @@ steps:
       
       <guid>https://blog.aminebabouri.online/fr/posts-fr/hello/</guid>
       <description>Bienvenue sur mon blog, ceci est mon premier post.</description>
-      <content>&lt;hr&gt;
-&lt;p&gt;Bienvenue sur mon blog, ceci est mon premier post.&lt;/p&gt;
-</content>
     </item>
     
   </channel>
