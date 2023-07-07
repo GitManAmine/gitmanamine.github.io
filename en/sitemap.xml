@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.aminebabouri.online/</loc>
-    <lastmod>2023-05-31T14:59:09+02:00</lastmod>
+    <lastmod>2023-07-06T14:59:09+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
@@ -13,6 +13,40 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://blog.aminebabouri.online/"
+                />
+  </url><url>
+    <loc>https://blog.aminebabouri.online/tags/azure/</loc>
+    <lastmod>2023-07-06T14:59:09+02:00</lastmod>
+  </url><url>
+    <loc>https://blog.aminebabouri.online/posts/prometheus_and_grafana/</loc>
+    <lastmod>2023-07-06T14:59:09+02:00</lastmod>
+  </url><url>
+    <loc>https://blog.aminebabouri.online/tags/grafana/</loc>
+    <lastmod>2023-07-06T14:59:09+02:00</lastmod>
+  </url><url>
+    <loc>https://blog.aminebabouri.online/tags/monitoring/</loc>
+    <lastmod>2023-07-06T14:59:09+02:00</lastmod>
+  </url><url>
+    <loc>https://blog.aminebabouri.online/posts/</loc>
+    <lastmod>2023-07-06T14:59:09+02:00</lastmod>
+  </url><url>
+    <loc>https://blog.aminebabouri.online/tags/prometheus/</loc>
+    <lastmod>2023-07-06T14:59:09+02:00</lastmod>
+  </url><url>
+    <loc>https://blog.aminebabouri.online/tags/supervision/</loc>
+    <lastmod>2023-07-06T14:59:09+02:00</lastmod>
+  </url><url>
+    <loc>https://blog.aminebabouri.online/tags/</loc>
+    <lastmod>2023-07-06T14:59:09+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://blog.aminebabouri.online/fr/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.aminebabouri.online/tags/"
                 />
   </url><url>
     <loc>https://blog.aminebabouri.online/tags/docker/</loc>
@@ -30,22 +64,6 @@
   </url><url>
     <loc>https://blog.aminebabouri.online/posts/install_docker/</loc>
     <lastmod>2023-05-31T14:59:09+02:00</lastmod>
-  </url><url>
-    <loc>https://blog.aminebabouri.online/posts/</loc>
-    <lastmod>2023-05-31T14:59:09+02:00</lastmod>
-  </url><url>
-    <loc>https://blog.aminebabouri.online/tags/</loc>
-    <lastmod>2023-05-31T14:59:09+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://blog.aminebabouri.online/fr/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.aminebabouri.online/tags/"
-                />
   </url><url>
     <loc>https://blog.aminebabouri.online/tags/ubuntu/</loc>
     <lastmod>2023-05-31T14:59:09+02:00</lastmod>
@@ -130,8 +148,6 @@
                 href="https://blog.aminebabouri.online/tags/welcome/"
                 />
   </url><url>
-    <loc>https://blog.aminebabouri.online/tags/azure/</loc>
-  </url><url>
     <loc>https://blog.aminebabouri.online/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -155,15 +171,5 @@
                 hreflang="en"
                 href="https://blog.aminebabouri.online/tags/ci/cd/"
                 />
-  </url><url>
-    <loc>https://blog.aminebabouri.online/posts/prometheus_and_grafana/</loc>
-  </url><url>
-    <loc>https://blog.aminebabouri.online/tags/grafana/</loc>
-  </url><url>
-    <loc>https://blog.aminebabouri.online/tags/monitoring/</loc>
-  </url><url>
-    <loc>https://blog.aminebabouri.online/tags/prometheus/</loc>
-  </url><url>
-    <loc>https://blog.aminebabouri.online/tags/supervision/</loc>
   </url>
 </urlset>

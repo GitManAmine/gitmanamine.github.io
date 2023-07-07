@@ -5,11 +5,12 @@
     <link>https://blog.aminebabouri.online/tags/monitoring/</link>
     <description>Recent content in Monitoring on Blog - Amine Babouri</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://blog.aminebabouri.online/tags/monitoring/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Thu, 06 Jul 2023 14:59:09 +0200</lastBuildDate><atom:link href="https://blog.aminebabouri.online/tags/monitoring/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Comment superviser et monitorer une application ?</title>
       <link>https://blog.aminebabouri.online/posts/prometheus_and_grafana/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 06 Jul 2023 14:59:09 +0200</pubDate>
       
       <guid>https://blog.aminebabouri.online/posts/prometheus_and_grafana/</guid>
       <description>Introduction Dans ce tuto, nous allons voir comment superviser et monitorer une application avec Prometheus et Grafana. Prérequis : Helm et Kubectl installé sur le poste et un aks à disposition.
