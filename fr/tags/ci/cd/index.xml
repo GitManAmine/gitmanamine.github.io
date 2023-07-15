@@ -5,7 +5,7 @@
     <link>https://blog.aminebabouri.online/fr/tags/ci/cd/</link>
     <description>Recent content in CI/CD on Blog - Amine Babouri</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>fr</language><atom:link href="https://blog.aminebabouri.online/fr/tags/ci/cd/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language><atom:link href="https://blog.aminebabouri.online/fr/tags/ci/cd/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Déployer Nginx sur AKS avec une pipeline</title>
       <link>https://blog.aminebabouri.online/fr/posts-fr/d%C3%A9ployer_nginx_sur_un_aks/</link>
