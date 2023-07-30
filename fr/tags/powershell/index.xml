@@ -1,0 +1,932 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Powershell on Blog - Amine Babouri</title>
+    <link>https://blog.aminebabouri.online/fr/tags/powershell/</link>
+    <description>Recent content in Powershell on Blog - Amine Babouri</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 24 Jul 2023 14:59:09 +0200</lastBuildDate><atom:link href="https://blog.aminebabouri.online/fr/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Documentation projet final</title>
+      <link>https://blog.aminebabouri.online/fr/posts-fr/documentation/</link>
+      <pubDate>Mon, 24 Jul 2023 14:59:09 +0200</pubDate>
+      
+      <guid>https://blog.aminebabouri.online/fr/posts-fr/documentation/</guid>
+      <description>Documentation Technique : Déploiement de WordPress sur Azure Kubernetes Service (AKS) avec Terraform, Azure DevOps et supervision avec Grafana 🚀🛠️📊 📖 Sommaire ➡️ Introduction
+Présentation Objectifs Architecture Prérequis ➡️ Déploiement de l&amp;rsquo;Infrastructure avec Terraform
+Création du script terraform Création de la pipeline Azure Devops et configuration du stage Infra ➡️ Déploiement de WordPress - Environnement Dev avec Ingress
+Création du manifest YAML et des scripts pour l&amp;rsquo;ingress Configuration du stage Dev AKS ➡️ Déploiement de WordPress - Environnement Prod</description>
+      <content>&lt;hr&gt;
+&lt;h1 id=&#34;documentation-technique--déploiement-de-wordpress-sur-azure-kubernetes-service-aks-avec-terraform-azure-devops-et-supervision-avec-grafana-&#34;&gt;Documentation Technique : Déploiement de WordPress sur Azure Kubernetes Service (AKS) avec Terraform, Azure DevOps et supervision avec Grafana 🚀🛠️📊&lt;/h1&gt;
+&lt;h2 id=&#34;-sommaire&#34;&gt;📖 Sommaire&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;➡️ &lt;a href=&#34;#introduction&#34;&gt;Introduction&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#11-pr%C3%A9sentation&#34;&gt;Présentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#12-objectifs-&#34;&gt;Objectifs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#13-architecture-&#34;&gt;Architecture&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#14-pr%C3%A9requis&#34;&gt;Prérequis&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;➡️ &lt;a href=&#34;#2-d%C3%A9ploiement-de-linfrastructure-avec-terraform-&#34;&gt;Déploiement de l&amp;rsquo;Infrastructure avec Terraform&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#21-cr%C3%A9ation-du-script-terraform&#34;&gt;Création du script terraform&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#22-cr%C3%A9ation-de-la-pipeline-azure-devops-et-configuration-du-stage-infra&#34;&gt;Création de la pipeline Azure Devops et configuration du stage Infra&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;➡️ &lt;a href=&#34;#3-d%C3%A9ploiement-de-wordpress---environnement-dev-avec-ingress&#34;&gt;Déploiement de WordPress - Environnement Dev avec Ingress&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#31-cr%C3%A9ation-du-manifest-yaml-et-des-scripts-pour-lingress&#34;&gt;Création du manifest YAML et des scripts pour l&amp;rsquo;ingress&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#configuration-du-stage-dev-pour-d%C3%A9ployer-wordpress&#34;&gt;Configuration du stage Dev AKS&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;➡️ &lt;a href=&#34;#4-d%C3%A9ploiement-de-wordpress---environnement-prod&#34;&gt;Déploiement de WordPress - Environnement Prod&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#41-configuration-du-stage-pour-lenvironnement-prod&#34;&gt;Configuration du stage pour l&amp;rsquo;environnement prod&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#42-configuration-du-stage-prod-aks&#34;&gt;Configuration du stage Prod aks&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;➡️ &lt;a href=&#34;#5-installation-de-plugins-sur-wordpress-avec-un-script&#34;&gt;Installation de Plugins sur WordPress avec un script&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#51-script-pluginsps1&#34;&gt;Script plugins&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#52-configuration-du-stage-plugins&#34;&gt;Installation des Plugins pour WordPress&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;➡️ &lt;a href=&#34;#6-surveillance-avec-grafana-et-alerte&#34;&gt;Surveillance avec Grafana et Alerte&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#61-configuration-du-dashboard-grafana&#34;&gt;Configuration du Dashboard Grafana&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#61-configuration-du-dashboard-grafana&#34;&gt;Configuration des Alertes Grafana&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#63-test-de-charge&#34;&gt;Test de charge&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;➡️ Conclusion 🏁&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#71-r%C3%A9sum%C3%A9-du-projet&#34;&gt;Résumé du Projet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#72-points-cl%C3%A9s-du-projet-&#34;&gt;Points clés du projet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#73-conclusion&#34;&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;h4 id=&#34;11-présentation&#34;&gt;1.1 Présentation&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;J&amp;rsquo;ai été chargé de déployer une application WordPress sur Azure Kubernetes Service (AKS) en utilisant Azure DevOps. L&amp;rsquo;objectif est de créer une infrastructure fonctionnelle, sécurisée à faible coût et reproductible tout en automatisant le processus de déploiement, ce qui permettra de faciliter le déploiment, la gestion et les mises à jour ultérieures.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;12-objectifs-&#34;&gt;1.2 Objectifs :&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Création d&amp;rsquo;une infrastructure Azure avec Terraform, comprenant un Virtual Network (VNet) avec deux subnets, un pour l&amp;rsquo;AKS et un pour la base de données, un Azure Database for MySQL flexible server à faible coût pour notre wordpress et un Storage Account.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Automatisation du déploiement de WordPress sur l&amp;rsquo;AKS à l&amp;rsquo;aide d&amp;rsquo;Azure DevOps, en configurant les ressources Kubernetes nécessaires telles que les déploiements, les services, les secrets, etc.
+Mise en place d&amp;rsquo;un Ingress Controller pour permettre l&amp;rsquo;accès externe à WordPress depuis le navigateur.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;13-architecture-&#34;&gt;1.3 Architecture :&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Infra :&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/infraprojet.svg&#34; alt=&#34;schéma de l&amp;amp;rsquo;infra&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Déploiement :&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/archi-devops.svg&#34; alt=&#34;schéma de l&amp;amp;rsquo;infra azure devops&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Wordpress :&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/archi-wordpress.svg&#34; alt=&#34;schéma de l&amp;amp;rsquo;infra de l&amp;amp;rsquo;appli&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;14-prérequis&#34;&gt;1.4 Prérequis&lt;/h4&gt;
+&lt;p&gt;Voici les prérequis et compétences nécessaires pour suivre et comprendre cette documentation :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Connaissances de base en Cloud Computing&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Comprendre les concepts de base du Cloud Computing, y compris les services cloud, les modèles de déploiement (IaaS, PaaS, SaaS) et les avantages du cloud.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Notions fondamentales de Kubernetes :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Avoir une compréhension de base de Kubernetes en tant que système d&amp;rsquo;orchestration de conteneurs. Comprendre les concepts de pods, de déploiements, de services, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Compréhension des conteneurs Docker:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Savoir ce qu&amp;rsquo;est Docker et comment il permet de créer, gérer et exécuter des conteneurs d&amp;rsquo;application de manière portable.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Terraform :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Avoir des connaissances de base sur Terraform, un outil d&amp;rsquo;infrastructure en tant que code (IaC) qui permet de décrire l&amp;rsquo;infrastructure cloud en utilisant une syntaxe déclarative.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Azure DevOps :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Comprendre les principes fondamentaux de Azure DevOps et comment il est utilisé pour automatiser la livraison de logiciels et les pipelines de déploiement.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Git :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Avoir une connaissance de base de Git, un système de contrôle de version, et savoir comment cloner, pousser et extraire des référentiels Git.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Helm :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Comprendre les concepts de base de Helm, un gestionnaire de paquets pour Kubernetes, qui facilite le déploiement et la gestion d&amp;rsquo;applications Kubernetes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Prometheus et Grafana :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Avoir une compréhension de base de Prometheus, un système de surveillance et d&amp;rsquo;alerte open-source, et de Grafana, un outil d&amp;rsquo;analyse et de visualisation des métriques.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scripting et automatisation :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Avoir des compétences de base en scripting, en particulier en PowerShell, car certains scripts sont utilisés pour la gestion de l&amp;rsquo;AKS et des ressources Azure.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Réseaux et sécurité :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Avoir des connaissances de base sur les réseaux et la sécurité cloud, y compris les groupes de sécurité réseau, les pare-feux et les règles de routage.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Gestion des ressources Azure :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Comprendre comment créer et gérer des ressources Azure telles que les comptes de stockage, les comptes Kubernetes (AKS), les comptes de conteneur, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Déploiement d&amp;rsquo;applications Web:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Avoir une connaissance de base des applications Web, des bases de données et des exigences pour déployer des applications Web telles que WordPress.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;2-déploiement-de-linfrastructure-avec-terraform-&#34;&gt;2. Déploiement de l’Infrastructure avec Terraform 🌍&lt;/h1&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;21-création-du-script-terraform&#34;&gt;2.1 Création du script Terraform&lt;/h4&gt;
+&lt;p&gt;Avant de commencer, assurez-vous de posséder un compte Azure. Une fois cela fait, créez un Azure Repos Git où vous pourrez stocker tous vos précieux scripts et autres éléments nécessaires à votre pipeline.&lt;/p&gt;
+&lt;p&gt;Une fois que votre Azure Repos Git est prêt à l&amp;rsquo;emploi, préparez-vous à construire une pipeline efficace. Tout d&amp;rsquo;abord, créez un nouveau fichier que vous appellerez &amp;ldquo;main.tf&amp;rdquo;. C&amp;rsquo;est dans ce fichier que tout se mettra en place.&lt;/p&gt;
+&lt;p&gt;Copiez et collez le script suivant dans votre fichier &amp;ldquo;main.tf&amp;rdquo; :&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;terraform {
+  required_providers {
+    azurerm = {
+      source  = &amp;#34;hashicorp/azurerm&amp;#34;
+      version = &amp;#34;3.57.0&amp;#34;
+    }
+  }
+}
+
+provider &amp;#34;azurerm&amp;#34; {
+  features {}
+  tenant_id       = &amp;#34;&amp;#34; # peut être obtenue en faisant un $ az account show
+  subscription_id = &amp;#34;&amp;#34; # peut être obtenue en faisant un $ az account show
+}
+
+data &amp;#34;azurerm_resource_group&amp;#34; &amp;#34;rg&amp;#34; {
+  name = &amp;#34;PERSO_AMINE&amp;#34;
+}
+
+output &amp;#34;id&amp;#34; {
+  value = data.azurerm_resource_group.rg.id
+}
+
+# Création du réseau virtuel (VNet)
+resource &amp;#34;azurerm_virtual_network&amp;#34; &amp;#34;myVnet&amp;#34; {
+  name                = &amp;#34;Vnet-wp&amp;#34;
+  address_space       = [&amp;#34;10.0.0.0/8&amp;#34;]
+  resource_group_name = &amp;#34;PERSO_AMINE&amp;#34;
+  location            = &amp;#34;westeurope&amp;#34;
+}
+
+# Création du sous-réseau dans le VNet
+resource &amp;#34;azurerm_subnet&amp;#34; &amp;#34;myAKSSubnet&amp;#34; {
+  name                 = &amp;#34;subnetaks&amp;#34;
+  resource_group_name  = &amp;#34;PERSO_AMINE&amp;#34;
+  virtual_network_name = azurerm_virtual_network.myVnet.name
+  address_prefixes     = [&amp;#34;10.240.0.0/16&amp;#34;]
+}
+
+# Création du cluster AKS (Azure Kubernetes Service)
+resource &amp;#34;azurerm_kubernetes_cluster&amp;#34; &amp;#34;aks01&amp;#34; {
+  name                = &amp;#34;aks-01&amp;#34;
+  location            = &amp;#34;westeurope&amp;#34;
+  resource_group_name = &amp;#34;PERSO_AMINE&amp;#34;
+  dns_prefix          = &amp;#34;aks01-dns&amp;#34;
+
+  default_node_pool {
+    name       = &amp;#34;default&amp;#34;
+    node_count = 1
+    vm_size    = &amp;#34;Standard_DS2_v2&amp;#34;
+    vnet_subnet_id        = azurerm_subnet.myAKSSubnet.id
+    
+  }
+
+  identity {
+    type = &amp;#34;SystemAssigned&amp;#34;
+  }
+
+  depends_on = [azurerm_subnet.myAKSSubnet]
+}
+
+
+# Création du sous-réseau pour MySQL
+resource &amp;#34;azurerm_subnet&amp;#34; &amp;#34;mysqlSubnet&amp;#34; {
+  name                 = &amp;#34;subnetmysql&amp;#34;
+  resource_group_name  = &amp;#34;PERSO_AMINE&amp;#34;
+  virtual_network_name = azurerm_virtual_network.myVnet.name
+  address_prefixes     = [&amp;#34;10.255.0.0/24&amp;#34;]
+
+  delegation {
+    name = &amp;#34;flexibleServerDelegation&amp;#34;
+    service_delegation {
+      name    = &amp;#34;Microsoft.DBforMySQL/flexibleServers&amp;#34;
+      actions = [&amp;#34;Microsoft.Network/virtualNetworks/subnets/action&amp;#34;]
+    }
+  }  
+}
+
+# Création du sous-réseau pour le compte de stockage
+resource &amp;#34;azurerm_subnet&amp;#34; &amp;#34;storageSubnet&amp;#34; {
+  name                 = &amp;#34;storage-subnet&amp;#34;
+  resource_group_name  = &amp;#34;PERSO_AMINE&amp;#34;
+  virtual_network_name = azurerm_virtual_network.myVnet.name
+  address_prefixes     = [&amp;#34;10.250.0.0/24&amp;#34;]
+}
+
+# Encodage en base64 des identifiants de la BDD
+locals {
+  admin_username = base64decode(&amp;#34;encoder votre user&amp;#34;)
+  admin_password = base64decode(&amp;#34;encoder votre password&amp;#34;)
+}
+
+# Création du serveur MySQL flexible
+resource &amp;#34;azurerm_mysql_flexible_server&amp;#34; &amp;#34;mysqlServer&amp;#34; {
+  name                = &amp;#34;wordpress-aks01&amp;#34;
+  location            = &amp;#34;westeurope&amp;#34;
+  resource_group_name = &amp;#34;PERSO_AMINE&amp;#34;
+  sku_name            = &amp;#34;B_Standard_B1s&amp;#34;
+  backup_retention_days     = 3       
+  version                      = &amp;#34;8.0.21&amp;#34;
+  delegated_subnet_id          = azurerm_subnet.mysqlSubnet.id
+  administrator_login       =  local.admin_username
+  administrator_password    = local.admin_password
+}
+
+# Création de la database
+resource &amp;#34;azurerm_mysql_flexible_database&amp;#34; &amp;#34;database&amp;#34; {
+  name                = &amp;#34;wordpress-db&amp;#34;
+  resource_group_name = data.azurerm_resource_group.rg.name
+  server_name         = azurerm_mysql_flexible_server.mysqlServer.name
+  charset             = &amp;#34;utf8mb4&amp;#34;
+  collation           = &amp;#34;utf8mb4_unicode_ci&amp;#34;
+}
+
+# Création du compte de stockage 
+resource &amp;#34;azurerm_storage_account&amp;#34; &amp;#34;storage&amp;#34; {
+  name                     = &amp;#34;storagewpamine&amp;#34;
+  resource_group_name      = data.azurerm_resource_group.rg.name
+  location                 = data.azurerm_resource_group.rg.location
+  account_tier             = &amp;#34;Standard&amp;#34;
+  account_replication_type = &amp;#34;GRS&amp;#34;
+}
+
+# Création du compte du conteneur (dans le compte de stockage)
+resource &amp;#34;azurerm_storage_container&amp;#34; &amp;#34;container&amp;#34; {
+  name                  = &amp;#34;containerwp&amp;#34;
+  storage_account_name  = azurerm_storage_account.storage.name
+  container_access_type = &amp;#34;container&amp;#34;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;22-création-de-la-pipeline-azure-devops-et-configuration-du-stage-infra&#34;&gt;2.2 Création de la pipeline Azure Devops et configuration du stage Infra&lt;/h4&gt;
+&lt;p&gt;ne fois que vous avez préparé votre code Terraform, il est temps de créer un pipeline dans Azure DevOps pour automatiser le déploiement de l&amp;rsquo;infrastructure.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Étape 1 : Accédez à Azure DevOps et sélectionnez votre projet.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Étape 2 : Dans votre projet, cliquez sur l&amp;rsquo;onglet &amp;ldquo;Pipelines&amp;rdquo; dans le menu supérieur, puis cliquez sur &amp;ldquo;Create Pipeline&amp;rdquo;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Étape 3 : Choisissez votre référentiel (repository) source contenant vos fichiers Terraform, par exemple, Azure Repos Git ou GitHub, et connectez-le à votre projet.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Voici un exemple pour créer une pipeline ansi que le stage &amp;ldquo;infra&amp;rdquo; avec les tâches Terraform :&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/create_pipeline.png&#34; alt=&#34;Schéma&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/create_pipeline2.png&#34; alt=&#34;Schéma&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Vous allez ensuite ajouter un agent et rechercher &amp;ldquo;Terraform&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/create_pipeline3.png&#34; alt=&#34;Schéma&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Vous allez séléctionner la commande correspodante, dans notre cas ce sera &amp;ldquo;Terraform init&amp;rdquo;. Répétez cette tâche pour &amp;ldquo;Terraform Plan&amp;rdquo; ainsi que &amp;ldquo;Terraform Apply&amp;rdquo;.
+N&amp;quot;oubliez pas de séléctionner votre Azure Repos Git dans &amp;ldquo;Configuration Directory&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/create_tasks.png&#34; alt=&#34;Schéma&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;3-déploiement-de-wordpress---environnement-dev-avec-ingress&#34;&gt;3. Déploiement de WordPress - Environnement Dev avec Ingress&lt;/h1&gt;
+&lt;h4 id=&#34;31-création-du-manifest-yaml-et-des-scripts-pour-lingress&#34;&gt;3.1 Création du manifest YAML et des scripts pour l’ingress&lt;/h4&gt;
+&lt;p&gt;Pour déployer WordPress sur AKS, vous devrez créer un fichier YAML manifeste Kubernetes décrivant l&amp;rsquo;état souhaité de votre déploiement WordPress.&lt;/p&gt;
+&lt;p&gt;De plus, vous aurez besoin de scripts pour gérer le déploiement et la configuration de ressources telles que le contrôleur Ingress et les certificats SSL.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Étape 1 :
+&lt;ul&gt;
+&lt;li&gt;Créer un fichier YAML&lt;/li&gt;
+&lt;li&gt;Créez un nouveau fichier texte à l&amp;rsquo;aide d&amp;rsquo;un éditeur de texte (par exemple, Notepad++ ou Visual Studio Code) et collez le contenu suivant dans le fichier :&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wordpress-dev
+  template:
+    metadata:
+      labels:
+        app: wordpress-dev
+        environment: dev
+    spec:
+      containers:
+      - name: wordpress-dev
+        image: wordpress:latest
+        resources:
+          limits:
+            cpu: &amp;#34;2&amp;#34;
+            memory: &amp;#34;4Gi&amp;#34;
+          requests:
+            cpu: &amp;#34;1&amp;#34;
+            memory: &amp;#34;2048Mi&amp;#34;
+        env:
+        - name: WORDPRESS_DB_HOST
+          value: &amp;#34;&amp;#34;
+        - name: WORDPRESS_DB_USER
+          valueFrom: 
+            secretKeyRef:
+              name: bdd-secret
+              key: user
+        - name: WORDPRESS_DB_PASSWORD
+          valueFrom: 
+            secretKeyRef:
+              name: bdd-secret
+              key: password
+        - name: WORDPRESS_DB_NAME
+          value: &amp;#34;&amp;#34;
+        - name: WORDPRESS_DATABASE_PORT_NUMBER
+          value: &amp;#34;&amp;#34;
+        - name: WORDPRESS_CONFIG_EXTRA
+          value: |
+            define(&amp;#39;DB_SSL&amp;#39;, true);
+            define(&amp;#39;MYSQL_CLIENT_FLAGS&amp;#39;, MYSQLI_CLIENT_SSL);
+        ports:
+        - containerPort: 80
+          name: http
+        - containerPort: 443
+          name: https
+        volumeMounts:
+        - name: wordpress-storage
+          mountPath: /var/www/html/wp-content
+      volumes:
+      - name: wordpress-storage
+        persistentVolumeClaim:
+          claimName: wordpress-pvc
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: wordpress-svc
+spec:
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 80
+  - name: https
+    protocol: TCP
+    port: 443
+    targetPort: 443
+  selector:
+    app: wordpress-dev
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: bdd-secret
+type: Opaque
+data:
+  user: &amp;lt;entrer un user encoder en base64&amp;gt;
+  password: &amp;lt;entrer un password encoder en base64&amp;gt;
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: wordpress-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce²
+  resources:
+    requests:
+      storage: 5Gi
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Dans ce fichier YAML, vous pouvez personnaliser les paramètres de votre déploiement WordPress, tels que le nombre de répliques, les limites de ressources et les informations d&amp;rsquo;identification de la base de données.&lt;/p&gt;
+&lt;p&gt;ssurez-vous de remplacer &amp;lt;BASE64_ENCODED_DB_USER&amp;gt; et &amp;lt;BASE64_ENCODED_DB_PASSWORD&amp;gt; par votre utilisateur et votre mot de passe de base de données encodés en Base64.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Étape 2 : Enregistrez le fichier YAML&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Enregistrez le fichier en lui donnant un nom significatif tel que &amp;ldquo;wordpress-deployment.yaml&amp;rdquo;. Assurez-vous qu&amp;rsquo;il se trouve dans votre Azure Repos Git.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Étape 3 : Ajoutez un nouveau stage pour le déploiement avec les tasks suivantes :&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/create_tasks_kube.png&#34; alt=&#34;Schéma&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Pour déployer un contrôleur Ingress et gérer les certificats SSL, vous pouvez créer des scripts PowerShell qui interagiront avec votre cluster Kubernetes à l&amp;rsquo;aide de l&amp;rsquo;outil de ligne de commande kubectl. Voici des exemples de scripts PowerShell :&lt;/p&gt;
+&lt;p&gt;Vous allez créer un script appelé &amp;ldquo;helm-repo&amp;rdquo;, c&amp;rsquo;est un script powershell qui va déployer le générateur de certificat, l&amp;rsquo;ingress et pleins d&amp;rsquo;autres choses utiles.
+Vous allez y coller ceci :&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;# Connexion au cluster
+az account set --subscription &amp;#34;insérer la subscription de son abonnement azure&amp;#34;
+az aks get-credentials --resource-group &amp;#34;insérer le nom de votre groupe de ressource&amp;#34; --name &amp;#34;insérer le nom de votre cluster&amp;#34;
+
+# Ajout du repo pour l&amp;#39;ingress
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm repo add jetstack https://charts.jetstack.io
+helm repo update
+
+# Ajout des repo suivants : grafana, promtheus, loki
+
+helm repo add grafana https://grafana.github.io/helm-charts
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+
+# Deploiement de l&amp;#39;ingress, du générateur de certificat, de loki, de grafana et prometheus
+helm install quickstart ingress-nginx/ingress-nginx 
+helm install my-cert-manager jetstack/cert-manager --create-namespace --version v1.12.0 --set installCRDs=true
+helm install loki grafana/loki-stack --create-namespace --set grafana.enabled=true
+helm install prometheus prometheus-community/prometheus
+
+
+# Paramètre obligatoire pour résoudre le problème du cluster lié à l&amp;#39;ingress
+helm upgrade --set controller.service.externalTrafficPolicy=Local quickstart ingress-nginx/ingress-nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Le script powershell &amp;ldquo;ingress.ps1&amp;rdquo; :&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;# Connexion au cluster
+az account set --subscription &amp;#34;insérer la subscription de son abonnement azure&amp;#34;
+az aks get-credentials --resource-group &amp;#34;insérer le nom de votre groupe de ressource&amp;#34; --name &amp;#34;insérer le nom de votre cluster&amp;#34;
+
+# Commande qui stock dans une variable l&amp;#39;adresse ip de l&amp;#39;ingress
+$service = kubectl get service quickstart-ingress-nginx-controller -o json | ConvertFrom-Json
+$externalIP = $service.status.loadBalancer.ingress[0].ip
+Write-Output $externalIP
+
+$yaml = @&amp;#34;
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kuard
+  annotations:
+    #cert-manager.io/issuer: &amp;#34;letsencrypt-staging&amp;#34;
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - $externalIP.sslip.io
+    secretName: quickstart-example-tls
+  rules:
+  - host: $externalIP.sslip.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: wordpress-svc
+            port:
+              number: 80
+&amp;#34;@
+
+# Enregistrement du contenu YAML dans un fichier temporaire
+$yamlFilePath = &amp;#34;$env:TEMP\kuard-ingress.yaml&amp;#34;
+$yaml | Set-Content -Path $yamlFilePath -Encoding UTF8
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Le manifest issuer-stagging.yaml est émetteur définit comment cert-manager demandera des certificats  :&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: letsencrypt-staging
+spec:
+  acme:
+    # The ACME server URL
+    server: https://acme-staging-v02.api.letsencrypt.org/directory
+    # Email address used for ACME registration
+    email: fd@gmail.com
+    # Name of a secret used to store the ACME account private key
+    privateKeySecretRef:
+      name: letsencrypt-staging
+    # Enable the HTTP-01 challenge provider
+    solvers:
+      - http01:
+          ingress:
+            ingressClassName: nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Remarque : Ces scripts supposent que vous avez déjà configuré votre cluster AKS et que vous disposez des autorisations nécessaires pour interagir avec lui à l&amp;rsquo;aide de kubectl.&lt;/p&gt;
+&lt;p&gt;L&amp;rsquo;émetteur de production, issuer-production.yaml :&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: letsencrypt-prod
+spec:
+  acme:
+    # The ACME server URL
+    server: https://acme-v02.api.letsencrypt.org/directory
+    # Email address used for ACME registration
+    email: fd@gmail.com
+    # Name of a secret used to store the ACME account private key
+    privateKeySecretRef:
+      name: letsencrypt-prod
+    # Enable the HTTP-01 challenge provider
+    solvers:
+      - http01:
+          ingress:
+            ingressClassName: nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Puis pour finir le script powershell de l&amp;rsquo;ingress final :&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;# Connexion au cluster
+az account set --subscription &amp;#34;insérer la subscription de son abonnement azure&amp;#34;
+az aks get-credentials --resource-group &amp;#34;insérer le nom de votre groupe de ressource&amp;#34; --name &amp;#34;insérer le nom de votre cluster&amp;#34;
+
+$service = kubectl get service quickstart-ingress-nginx-controller -o json | ConvertFrom-Json
+$externalIP = $service.status.loadBalancer.ingress[0].ip
+Write-Output $externalIP
+
+$yaml = @&amp;#34;
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kuard
+  annotations:
+    cert-manager.io/issuer: &amp;#34;letsencrypt-staging&amp;#34;
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - $externalIP.sslip.io
+    secretName: quickstart-example-tls
+  rules:
+  - host: $externalIP.sslip.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: wordpress-svc
+            port:
+              number: 80
+&amp;#34;@
+
+# Enregistrement du contenu YAML dans un fichier temporaire
+$yamlFilePath = &amp;#34;$env:TEMP\kuard-ingress.yaml&amp;#34;
+$yaml | Set-Content -Path $yamlFilePath -Encoding UTF8
+
+$service = kubectl get service quickstart-ingress-nginx-controller -o json | ConvertFrom-Json
+$externalIP = $service.status.loadBalancer.ingress[0].ip
+Write-Output $externalIP
+
+$yamltest = @&amp;#34;
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: test
+  annotations:
+    cert-manager.io/issuer: &amp;#34;letsencrypt-prod&amp;#34;
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - $externalIP.sslip.io
+    secretName: quickstart-example-tls
+  rules:
+  - host: $externalIP.sslip.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: wordpress-svc
+            port:
+              number: 80
+&amp;#34;@
+
+# Enregistrement du contenu YAML dans un fichier temporaire
+$yamltestFilePath = &amp;#34;$env:TEMP\test-ingress.yaml&amp;#34;
+$yamltest | Set-Content -Path $yamltestFilePath -Encoding UTF8
+
+# Création de l&amp;#39;Ingress avec le fichier YAML
+kubectl apply -f $yamltestFilePath
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;configuration-du-stage-dev-pour-déployer-wordpress&#34;&gt;Configuration du stage Dev pour déployer wordpress&lt;/h4&gt;
+&lt;p&gt;Maintenant que vous avez préparé le fichier et les scripts YAML nécessaires, il est temps de configurer l&amp;rsquo;étape de développement de votre pipeline de déploiement AKS dans Azure DevOps&lt;/p&gt;
+&lt;p&gt;Ajoutez un nouveau stage puis cliquez dessus et ajouter des tasks&lt;/p&gt;
+&lt;p&gt;Install Kubectl :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/create_stage_dev.png&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Déploie le manifest YAML wordpress-dev.yaml&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/create_stage_dev2.png&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Exécute le script helm-repo.ps1&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/create_stage_dev3.png&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Exécute le script ingress.ps1&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/create_stage_dev4.png&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Déploie le manifest issuer-staging.yaml&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/create_stage_dev5.png&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Déploie le manifest issuer-prod.yaml&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/create_stage_dev6.png&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Exécute le script ingress-edited.ps1&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/create_stage_dev7.png&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;4-déploiement-de-wordpress---environnement-prod&#34;&gt;4. Déploiement de WordPress - Environnement Prod&lt;/h1&gt;
+&lt;h4 id=&#34;41-configuration-du-stage-pour-lenvironnement-prod&#34;&gt;4.1 Configuration du stage pour l’environnement prod&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Étape 1 :
+&lt;ul&gt;
+&lt;li&gt;Créer un fichier YAML&lt;/li&gt;
+&lt;li&gt;Créez un nouveau fichier texte à l&amp;rsquo;aide d&amp;rsquo;un éditeur de texte (par exemple, Notepad++ ou Visual Studio Code) nommez le &amp;ldquo;wordpress-dev.yaml&amp;rdquo; et collez le contenu suivant dans le fichier :&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress-prod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wordpress-prod
+  template:
+    metadata:
+      labels:
+        app: wordpress-prod
+        environment: prod        
+    spec:
+      containers:
+      - name: wordpress-prod
+        image: wordpress:latest
+        resources:
+          limits:
+            cpu: &amp;#34;2&amp;#34;
+            memory: &amp;#34;4Gi&amp;#34;
+          requests:
+            cpu: &amp;#34;1&amp;#34;
+            memory: &amp;#34;1024&amp;#34;
+        env:
+        - name: WORDPRESS_DB_HOST
+          value: wordpress-aks01.mysql.database.azure.com
+        - name: WORDPRESS_DB_USER
+          valueFrom: 
+            secretKeyRef:
+              name: bdd-secret
+              key: user
+        - name: WORDPRESS_DB_PASSWORD
+          valueFrom: 
+            secretKeyRef:
+              name: bdd-secret
+              key: password
+        - name: WORDPRESS_DB_NAME
+          value: wordpress-db
+        - name: WORDPRESS_DATABASE_PORT_NUMBER
+          value: &amp;#34;3306&amp;#34;
+        - name: WORDPRESS_CONFIG_EXTRA
+          value: |
+            define(&amp;#39;DB_SSL&amp;#39;, true);
+            define(&amp;#39;MYSQL_CLIENT_FLAGS&amp;#39;, MYSQLI_CLIENT_SSL);
+        ports:
+        - containerPort: 80
+          name: http
+        - containerPort: 443
+          name: https
+        volumeMounts:
+        - name: wordpress-storage
+          mountPath: /var/www/html/wp-content
+      volumes:
+      - name: wordpress-storage
+        persistentVolumeClaim:
+          claimName: wordpress-pvc
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: wordpress-svc
+spec:
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 80
+  - name: https
+    protocol: TCP
+    port: 443
+    targetPort: 443
+  selector:
+    app: wordpress-prod
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: bdd-secret
+type: Opaque
+data:
+  user: YW1pbmU=
+  password: SG9tZWxhbmRlcjM3JSo=
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: wordpress-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: wordpress-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: wordpress-prod
+  minReplicas: 1
+  maxReplicas: 2
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 80
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 90
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;42-configuration-du-stage-prod-aks&#34;&gt;4.2 Configuration du stage Prod AKS&lt;/h4&gt;
+&lt;p&gt;Ajoutez un nouveau stage puis cliquez dessus et ajouter des tasks&lt;/p&gt;
+&lt;p&gt;Install kubectl&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/create_stage_prod.png&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Supprime le deploiement wordpress-dev&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/create_stage_prod2.png&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Déploie le manifest wordpress-prod&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/create_stage_prod3.png&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;5-installation-de-plugins-sur-wordpress-avec-un-script&#34;&gt;5. Installation de Plugins sur WordPress avec un script&lt;/h1&gt;
+&lt;h4 id=&#34;51-script-pluginsps1&#34;&gt;5.1 Script plugins.ps1&lt;/h4&gt;
+&lt;p&gt;Voici le script :&lt;/p&gt;
+&lt;p&gt;Avant de procéder à l&amp;rsquo;installation des plugins WordPress, nous avons besoin d&amp;rsquo;un script PowerShell pour automatiser le processus d&amp;rsquo;installation.&lt;/p&gt;
+&lt;p&gt;Créez un nouveau script PowerShell nommé plugins.ps1 et ajoutez le contenu suivant :&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;# Connexion au cluster 
+az account set --subscription &amp;#34;insérer la subscription de son abonnement azure&amp;#34;
+az aks get-credentials --resource-group &amp;#34;insérer le nom de votre groupe de ressource&amp;#34;
+
+# Commandes pour stocker dans des variables les choses suivantes : nom du conteneur de mon storage account, clé du compte storage
+$key_storage = az storage account keys list --account-name storagewpamine --resource-group PERSO_AMINE --query &amp;#34;[0].value&amp;#34; --output tsv
+Write-Host $key_storage
+
+# Commandes qui stock dans des variables les choses suivantes : nom du pod, et l&amp;#39;adresse de l&amp;#39;ingress 
+$podName = kubectl get po -o custom-columns=&amp;#34;:metadata.name&amp;#34; --no-headers | Select-Object -Index 12
+$result = kubectl get ingress -o json | ConvertFrom-Json
+$address = $result.items[0].status.loadBalancer.ingress[0].ip
+
+# Commandes qui install le thèmes et les plugins nécessaire à mon site wordpress 
+$commands = @(
+    &amp;#34;curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar&amp;#34;,
+    &amp;#34;chmod +x wp-cli.phar&amp;#34;,
+    &amp;#34;mv wp-cli.phar /usr/local/bin/wp&amp;#34;,
+    &amp;#34;cd ..&amp;#34;,
+    &amp;#34;chmod 777 -R html/&amp;#34;,
+    &amp;#34;cd html&amp;#34;,
+    &amp;#34;wp core install --url=&amp;#39;https://$($address).sslip.io/&amp;#39; --title=&amp;#39;&amp;lt;insérer le nom de votre site&amp;#39; --admin_user=&amp;#39;&amp;lt;insérer le nom d&amp;#39;utilisateur de votre bdd&amp;gt;&amp;#39; --admin_password=&amp;#39;&amp;lt;insérer le mot de passe de votre bdd&amp;gt;&amp;#39; --admin_email=&amp;#39;&amp;lt;insérer l&amp;#39;adresse mail que vous souhaitez pour wordpress&amp;#39; --allow-root&amp;#34;,
+    &amp;#34;wp theme install zakra --activate --allow-root&amp;#34;,
+    &amp;#34;wp plugin install windows-azure-storage --activate --allow-root&amp;#34;,
+    &amp;#34;wp option update azure_storage_account_name &amp;#39;storagewpamine&amp;#39; --allow-root&amp;#34;,
+    &amp;#34;wp option update azure_storage_account_primary_access_key &amp;#39;$key_storage&amp;#39; --allow-root&amp;#34;,
+    &amp;#34;wp option update default_azure_storage_account_container_name &amp;#39;containerwp&amp;#39; --allow-root&amp;#34;,
+    &amp;#34;wp option update azure_storage_use_for_default_upload &amp;#39;true&amp;#39; --allow-root&amp;#34;,
+    &amp;#34;wp plugin install elementor --activate --allow-root&amp;#34;,
+    &amp;#34;wp plugin install themegrill-demo-importer --activate --allow-root&amp;#34;,
+    &amp;#34;wp plugin install wp-booking-system --activate --allow-root&amp;#34;,
+    &amp;#34;wp plugin install wp-fastest-cache --activate --allow-root&amp;#34;
+)
+
+$commandsScript = $commands -join &amp;#34;; &amp;#34;
+
+kubectl exec -it $podName -- bash -c $commandsScript
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;52-configuration-du-stage-plugins&#34;&gt;5.2 Configuration du stage plugins&lt;/h4&gt;
+&lt;p&gt;Maintenant que nous avons le script PowerShell pour installer les plugins WordPress, configurons une nouvelle étape dans le pipeline Azure DevOps pour cette tâche&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/create_stage_plugins.png&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;6-surveillance-avec-grafana-et-alerte&#34;&gt;6. Surveillance avec Grafana et Alerte&lt;/h1&gt;
+&lt;h4 id=&#34;61-configuration-du-dashboard-grafana&#34;&gt;6.1 Configuration du Dashboard Grafana&lt;/h4&gt;
+&lt;p&gt;Pour accéder à Grafana nous avons deux solution, soit faire un port-forward soit mettre le pod grafana en type LoadBalancer.
+Nous allons voir la première solution mais si la deuxième vous intéresse vous pouvez vous rendre sur un autre de mes tutoriels, cliquez sur ce &lt;a href=&#34;https://blog.aminebabouri.online/posts/prometheus_and_grafana/&#34;&gt;lien&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Bien, nous allons faire un port-forward (redirection de port) afin d&amp;rsquo;accéder à Grafana sans l&amp;rsquo;exposer au réseau extérieur. (vous devez être connecté à votre aks)&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;kubectl port-forward svc/loki-grafana 75:80
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Puis taper sur votre navigateur : localhost:75&lt;/p&gt;
+&lt;p&gt;Vous allez arriver sur la page de conenxion de Grafana, le nom d&amp;rsquo;utilisateur par défaut de Grafana est admin, en revenche pour connaitre votre mot de passe vous devez taper cette commande car il sera encodé en base64 :&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;kubectl get secrets loki-grafana -o yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Vous verrez alors le champ &amp;ldquo;admin-password: XXXXXXXXXXXXXXXXXXXXXXXX&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Copier le password, rendez vous sur un terminal bash puis exécuter cette commande :&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;echo -n &amp;#34;XXXXXXXXXXXXXXXXXXXXXXXX&amp;#34; | base64 --decode
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Vous serez alors connecté à votre Grafana.&lt;/p&gt;
+&lt;p&gt;Suivez ceci pour ajouter prometheus en datas source à Grafana :&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/data_prometheus.png&#34; alt=&#34;adddata&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/add_ip.png&#34; alt=&#34;addip&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Ensuite créer un Dashboard puis configurez vous comme vous le voulez&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/result.png&#34; alt=&#34;create_dashboard&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;62-configuration-des-alertes-grafana&#34;&gt;6.2 Configuration des Alertes Grafana&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/rule.png&#34; alt=&#34;createrule&#34;&gt;
+&lt;img src=&#34;https://blog.aminebabouri.online/images/rule2.png&#34; alt=&#34;createrule&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;63-test-de-charge&#34;&gt;6.3 Test de charge&lt;/h4&gt;
+&lt;p&gt;Pour tester notre site nous allons faire un test de charge, cela permettra de savoir si il faut allouer plus de ressources à notre AKS/Pod, mais cela nous permettra également de voir si nos alertes fonctionnent bien.&lt;/p&gt;
+&lt;p&gt;Nous allons alors utiliser une commande linux :&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;ab -n 1000 -c 1000 -t 300 &amp;lt;lien de votre site web&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Cette commande simule 500 utilisateurs simultanés pendant 5 minutes.&lt;/p&gt;
+&lt;p&gt;Voyons voir si nos alertes fonctionnent :&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/rules_grafana.png&#34; alt=&#34;resultat&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/rules_grafana2.png&#34; alt=&#34;resultat_alert&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;71-résumé-du-projet&#34;&gt;7.1 Résumé du projet&lt;/h4&gt;
+&lt;p&gt;Le projet vise à déployer avec succès une instance de l&amp;rsquo;application WordPress sur le service Azure Kubernetes (AKS) en utilisant divers outils tels que Terraform, Azure DevOps, Grafana et Prometheus. L&amp;rsquo;utilisation d&amp;rsquo;Azure Kubernetes Service permet de bénéficier d&amp;rsquo;une orchestration évolutive de conteneurs, tandis que Terraform facilite la gestion de l&amp;rsquo;infrastructure en tant que code. L&amp;rsquo;intégration d&amp;rsquo;Azure DevOps assure une livraison continue et efficace, tandis que Grafana et Prometheus fournissent des métriques et des alertes pour surveiller les performances du cluster.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;72-points-clés-du-projet-&#34;&gt;7.2 Points clés du projet :&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Infrastructure en tant que Code (IaC) avec Terraform : Le projet met l&amp;rsquo;accent sur la gestion de l&amp;rsquo;infrastructure de manière déclarative grâce à Terraform. Les fichiers de configuration Terraform sont utilisés pour créer et configurer les ressources Azure nécessaires, telles que les comptes de stockage, le cluster AKS, etc.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Déploiement d&amp;rsquo;une application Web sur AKS : L&amp;rsquo;objectif principal du projet est de déployer l&amp;rsquo;application Web WordPress sur le cluster AKS nouvellement créé. Cela implique de créer des images de conteneurs Docker, de configurer des déploiements Kubernetes, des services et des secrets pour héberger l&amp;rsquo;application.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Intégration et Livraison Continue (CI/CD) : Azure DevOps est utilisé pour créer des pipelines d&amp;rsquo;intégration et de livraison continue. Cela permet d&amp;rsquo;automatiser le processus de déploiement, de tester et de mettre à jour l&amp;rsquo;application de manière cohérente et reproductible.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Surveillance avec Prometheus et Grafana : Le projet inclut la mise en place de Prometheus pour la collecte de métriques et de Grafana pour la visualisation de ces métriques. Cela permet aux opérateurs de surveiller les performances du cluster AKS et de détecter rapidement les problèmes potentiels.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scalabilité et Haute Disponibilité : Grâce à l&amp;rsquo;utilisation d&amp;rsquo;Azure Kubernetes Service, le cluster peut être facilement mis à l&amp;rsquo;échelle pour répondre aux besoins croissants de l&amp;rsquo;application. De plus, la réplication et la distribution des charges garantissent une haute disponibilité de l&amp;rsquo;application.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;73-conclusion&#34;&gt;7.3 Conclusion&lt;/h4&gt;
+&lt;p&gt;Le déploiement de WordPress sur Azure Kubernetes Service avec Terraform, Azure DevOps, Grafana et Prometheus offre une approche robuste et évolutive pour héberger des applications Web modernes. L&amp;rsquo;automatisation fournie par Azure DevOps facilite grandement la gestion du cycle de vie de l&amp;rsquo;application, tandis que la surveillance avec Prometheus et Grafana garantit des performances optimales.&lt;/p&gt;
+&lt;p&gt;Le projet démontre l&amp;rsquo;importance de l&amp;rsquo;infrastructure en tant que code, où les ressources cloud sont gérées de manière reproductible, traçable et sans intervention manuelle. De plus, l&amp;rsquo;utilisation de Kubernetes permet de simplifier le déploiement et la gestion des conteneurs, offrant ainsi une flexibilité accrue pour les équipes de développement et d&amp;rsquo;exploitation.&lt;/p&gt;
+&lt;p&gt;En conclusion, ce projet constitue une base solide pour déployer d&amp;rsquo;autres applications sur Azure Kubernetes Service et offre des perspectives d&amp;rsquo;amélioration continue en explorant davantage les fonctionnalités avancées d&amp;rsquo;Azure et des outils de surveillance et de gestion connexes.&lt;/p&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>

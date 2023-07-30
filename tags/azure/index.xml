@@ -53,15 +53,15 @@ il faut faire ceci sur les svc suivants : prometheus-server-ext, loki, grafana-e
 &lt;p&gt;Entrer l&amp;rsquo;adreses ip extérieur de prometheus-server-ext
 Faites de même pour Loki&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;➡️ Création de dashboards pour la surveillance
-J&amp;rsquo;ai créé des dashboards personnalisés dans Grafana pour surveiller différentes métriques de mon cluster, telles que l&amp;rsquo;utilisation des ressources, l&amp;rsquo;état des pods, etc. J&amp;rsquo;ai également créé un dashboard spécifique pour afficher les journaux générés par mon application.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.aminebabouri.online/images/create_dashboard.png&#34; alt=&#34;createdashboard&#34;&gt;
-Vous pouvez le configurer comme vous voulez&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;➡️ Création des alertes dans Grafana
+&lt;li&gt;
+&lt;p&gt;➡️ Création de dashboards pour la surveillance
+J&amp;rsquo;ai créé des dashboards personnalisés dans Grafana pour surveiller différentes métriques de mon cluster, telles que l&amp;rsquo;utilisation des ressources, l&amp;rsquo;état des pods, etc. J&amp;rsquo;ai également créé un dashboard spécifique pour afficher les journaux générés par mon application.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;➡️ Création des alertes dans Grafana
 &lt;img src=&#34;https://blog.aminebabouri.online/images/rule.png&#34; alt=&#34;createrule&#34;&gt;
-&lt;img src=&#34;https://blog.aminebabouri.online/images/rule2.png&#34; alt=&#34;createrule&#34;&gt;&lt;/li&gt;
+&lt;img src=&#34;https://blog.aminebabouri.online/images/rule2.png&#34; alt=&#34;createrule&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Vous pouvez faire des tests de charge pour vérifier que vos alertes fonctionnent bien.&lt;/p&gt;
 &lt;p&gt;Voici le résultat final de mon dashboard grafana :&lt;/p&gt;

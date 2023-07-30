@@ -17,24 +17,74 @@
   </url><url>
     <loc>https://blog.aminebabouri.online/tags/azure/</loc>
     <lastmod>2023-07-06T14:59:09+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://blog.aminebabouri.online/fr/tags/azure/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.aminebabouri.online/tags/azure/"
+                />
   </url><url>
     <loc>https://blog.aminebabouri.online/posts/prometheus_and_grafana/</loc>
     <lastmod>2023-07-06T14:59:09+02:00</lastmod>
   </url><url>
     <loc>https://blog.aminebabouri.online/tags/grafana/</loc>
     <lastmod>2023-07-06T14:59:09+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://blog.aminebabouri.online/fr/tags/grafana/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.aminebabouri.online/tags/grafana/"
+                />
   </url><url>
     <loc>https://blog.aminebabouri.online/tags/monitoring/</loc>
     <lastmod>2023-07-06T14:59:09+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://blog.aminebabouri.online/fr/tags/monitoring/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.aminebabouri.online/tags/monitoring/"
+                />
   </url><url>
     <loc>https://blog.aminebabouri.online/posts/</loc>
     <lastmod>2023-07-06T14:59:09+02:00</lastmod>
   </url><url>
     <loc>https://blog.aminebabouri.online/tags/prometheus/</loc>
     <lastmod>2023-07-06T14:59:09+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://blog.aminebabouri.online/fr/tags/prometheus/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.aminebabouri.online/tags/prometheus/"
+                />
   </url><url>
     <loc>https://blog.aminebabouri.online/tags/supervision/</loc>
     <lastmod>2023-07-06T14:59:09+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://blog.aminebabouri.online/fr/tags/supervision/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.aminebabouri.online/tags/supervision/"
+                />
   </url><url>
     <loc>https://blog.aminebabouri.online/tags/</loc>
     <lastmod>2023-07-06T14:59:09+02:00</lastmod>
@@ -119,17 +169,17 @@
     <loc>https://blog.aminebabouri.online/cv/</loc>
     <lastmod>2023-05-25T05:35:29+02:00</lastmod>
   </url><url>
-    <loc>https://blog.aminebabouri.online/tags/fist-post/</loc>
+    <loc>https://blog.aminebabouri.online/tags/first-post/</loc>
     <lastmod>2023-05-25T05:35:29+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://blog.aminebabouri.online/fr/tags/fist-post/"
+                href="https://blog.aminebabouri.online/fr/tags/first-post/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.aminebabouri.online/tags/fist-post/"
+                href="https://blog.aminebabouri.online/tags/first-post/"
                 />
   </url><url>
     <loc>https://blog.aminebabouri.online/posts/hello-world/</loc>

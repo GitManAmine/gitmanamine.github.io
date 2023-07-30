@@ -6,7 +6,117 @@
     <description>Recent content in Tags on Blog - Amine Babouri</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 31 May 2023 14:59:09 +0200</lastBuildDate><atom:link href="https://blog.aminebabouri.online/fr/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 Jul 2023 14:59:09 +0200</lastBuildDate><atom:link href="https://blog.aminebabouri.online/fr/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure</title>
+      <link>https://blog.aminebabouri.online/fr/tags/azure/</link>
+      <pubDate>Mon, 24 Jul 2023 14:59:09 +0200</pubDate>
+      
+      <guid>https://blog.aminebabouri.online/fr/tags/azure/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Azure Devops</title>
+      <link>https://blog.aminebabouri.online/fr/tags/azure-devops/</link>
+      <pubDate>Mon, 24 Jul 2023 14:59:09 +0200</pubDate>
+      
+      <guid>https://blog.aminebabouri.online/fr/tags/azure-devops/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Devops</title>
+      <link>https://blog.aminebabouri.online/fr/tags/devops/</link>
+      <pubDate>Mon, 24 Jul 2023 14:59:09 +0200</pubDate>
+      
+      <guid>https://blog.aminebabouri.online/fr/tags/devops/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Grafana</title>
+      <link>https://blog.aminebabouri.online/fr/tags/grafana/</link>
+      <pubDate>Mon, 24 Jul 2023 14:59:09 +0200</pubDate>
+      
+      <guid>https://blog.aminebabouri.online/fr/tags/grafana/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>https://blog.aminebabouri.online/fr/tags/kubernetes/</link>
+      <pubDate>Mon, 24 Jul 2023 14:59:09 +0200</pubDate>
+      
+      <guid>https://blog.aminebabouri.online/fr/tags/kubernetes/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Monitoring</title>
+      <link>https://blog.aminebabouri.online/fr/tags/monitoring/</link>
+      <pubDate>Mon, 24 Jul 2023 14:59:09 +0200</pubDate>
+      
+      <guid>https://blog.aminebabouri.online/fr/tags/monitoring/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Powershell</title>
+      <link>https://blog.aminebabouri.online/fr/tags/powershell/</link>
+      <pubDate>Mon, 24 Jul 2023 14:59:09 +0200</pubDate>
+      
+      <guid>https://blog.aminebabouri.online/fr/tags/powershell/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Prometheus</title>
+      <link>https://blog.aminebabouri.online/fr/tags/prometheus/</link>
+      <pubDate>Mon, 24 Jul 2023 14:59:09 +0200</pubDate>
+      
+      <guid>https://blog.aminebabouri.online/fr/tags/prometheus/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Supervision</title>
+      <link>https://blog.aminebabouri.online/fr/tags/supervision/</link>
+      <pubDate>Mon, 24 Jul 2023 14:59:09 +0200</pubDate>
+      
+      <guid>https://blog.aminebabouri.online/fr/tags/supervision/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Terraform</title>
+      <link>https://blog.aminebabouri.online/fr/tags/terraform/</link>
+      <pubDate>Mon, 24 Jul 2023 14:59:09 +0200</pubDate>
+      
+      <guid>https://blog.aminebabouri.online/fr/tags/terraform/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Wordpress</title>
+      <link>https://blog.aminebabouri.online/fr/tags/wordpress/</link>
+      <pubDate>Mon, 24 Jul 2023 14:59:09 +0200</pubDate>
+      
+      <guid>https://blog.aminebabouri.online/fr/tags/wordpress/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
     <item>
       <title>Docker</title>
       <link>https://blog.aminebabouri.online/fr/tags/docker/</link>
@@ -28,31 +138,11 @@
     </item>
     
     <item>
-      <title>Azure Devops</title>
-      <link>https://blog.aminebabouri.online/fr/tags/azure-devops/</link>
-      <pubDate>Tue, 30 May 2023 22:12:30 +0200</pubDate>
-      
-      <guid>https://blog.aminebabouri.online/fr/tags/azure-devops/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>Kubernetes</title>
-      <link>https://blog.aminebabouri.online/fr/tags/kubernetes/</link>
-      <pubDate>Tue, 30 May 2023 22:12:30 +0200</pubDate>
-      
-      <guid>https://blog.aminebabouri.online/fr/tags/kubernetes/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>fist-post</title>
-      <link>https://blog.aminebabouri.online/fr/tags/fist-post/</link>
+      <title>first-post</title>
+      <link>https://blog.aminebabouri.online/fr/tags/first-post/</link>
       <pubDate>Thu, 25 May 2023 05:35:29 +0200</pubDate>
       
-      <guid>https://blog.aminebabouri.online/fr/tags/fist-post/</guid>
+      <guid>https://blog.aminebabouri.online/fr/tags/first-post/</guid>
       <description></description>
       <content></content>
     </item>

@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.aminebabouri.online/fr/</loc>
-    <lastmod>2023-05-31T14:59:09+02:00</lastmod>
+    <lastmod>2023-07-24T14:59:09+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -14,6 +14,128 @@
                 hreflang="fr"
                 href="https://blog.aminebabouri.online/fr/"
                 />
+  </url><url>
+    <loc>https://blog.aminebabouri.online/fr/tags/azure/</loc>
+    <lastmod>2023-07-24T14:59:09+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.aminebabouri.online/tags/azure/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://blog.aminebabouri.online/fr/tags/azure/"
+                />
+  </url><url>
+    <loc>https://blog.aminebabouri.online/fr/tags/azure-devops/</loc>
+    <lastmod>2023-07-24T14:59:09+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.aminebabouri.online/tags/azure-devops/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://blog.aminebabouri.online/fr/tags/azure-devops/"
+                />
+  </url><url>
+    <loc>https://blog.aminebabouri.online/fr/tags/devops/</loc>
+    <lastmod>2023-07-24T14:59:09+02:00</lastmod>
+  </url><url>
+    <loc>https://blog.aminebabouri.online/fr/posts-fr/documentation/</loc>
+    <lastmod>2023-07-24T14:59:09+02:00</lastmod>
+  </url><url>
+    <loc>https://blog.aminebabouri.online/fr/tags/grafana/</loc>
+    <lastmod>2023-07-24T14:59:09+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.aminebabouri.online/tags/grafana/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://blog.aminebabouri.online/fr/tags/grafana/"
+                />
+  </url><url>
+    <loc>https://blog.aminebabouri.online/fr/tags/kubernetes/</loc>
+    <lastmod>2023-07-24T14:59:09+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.aminebabouri.online/tags/kubernetes/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://blog.aminebabouri.online/fr/tags/kubernetes/"
+                />
+  </url><url>
+    <loc>https://blog.aminebabouri.online/fr/tags/monitoring/</loc>
+    <lastmod>2023-07-24T14:59:09+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.aminebabouri.online/tags/monitoring/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://blog.aminebabouri.online/fr/tags/monitoring/"
+                />
+  </url><url>
+    <loc>https://blog.aminebabouri.online/fr/posts-fr/</loc>
+    <lastmod>2023-07-24T14:59:09+02:00</lastmod>
+  </url><url>
+    <loc>https://blog.aminebabouri.online/fr/tags/powershell/</loc>
+    <lastmod>2023-07-24T14:59:09+02:00</lastmod>
+  </url><url>
+    <loc>https://blog.aminebabouri.online/fr/tags/prometheus/</loc>
+    <lastmod>2023-07-24T14:59:09+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.aminebabouri.online/tags/prometheus/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://blog.aminebabouri.online/fr/tags/prometheus/"
+                />
+  </url><url>
+    <loc>https://blog.aminebabouri.online/fr/tags/supervision/</loc>
+    <lastmod>2023-07-24T14:59:09+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.aminebabouri.online/tags/supervision/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://blog.aminebabouri.online/fr/tags/supervision/"
+                />
+  </url><url>
+    <loc>https://blog.aminebabouri.online/fr/tags/</loc>
+    <lastmod>2023-07-24T14:59:09+02:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.aminebabouri.online/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="https://blog.aminebabouri.online/fr/tags/"
+                />
+  </url><url>
+    <loc>https://blog.aminebabouri.online/fr/tags/terraform/</loc>
+    <lastmod>2023-07-24T14:59:09+02:00</lastmod>
+  </url><url>
+    <loc>https://blog.aminebabouri.online/fr/tags/wordpress/</loc>
+    <lastmod>2023-07-24T14:59:09+02:00</lastmod>
   </url><url>
     <loc>https://blog.aminebabouri.online/fr/posts-fr/install_docker/</loc>
     <lastmod>2023-05-31T14:59:09+02:00</lastmod>
@@ -31,22 +153,6 @@
                 href="https://blog.aminebabouri.online/fr/tags/docker/"
                 />
   </url><url>
-    <loc>https://blog.aminebabouri.online/fr/posts-fr/</loc>
-    <lastmod>2023-05-31T14:59:09+02:00</lastmod>
-  </url><url>
-    <loc>https://blog.aminebabouri.online/fr/tags/</loc>
-    <lastmod>2023-05-31T14:59:09+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.aminebabouri.online/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://blog.aminebabouri.online/fr/tags/"
-                />
-  </url><url>
     <loc>https://blog.aminebabouri.online/fr/tags/ubuntu/</loc>
     <lastmod>2023-05-31T14:59:09+02:00</lastmod>
     <xhtml:link
@@ -60,49 +166,23 @@
                 href="https://blog.aminebabouri.online/fr/tags/ubuntu/"
                 />
   </url><url>
-    <loc>https://blog.aminebabouri.online/fr/tags/azure-devops/</loc>
-    <lastmod>2023-05-30T22:12:30+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.aminebabouri.online/tags/azure-devops/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://blog.aminebabouri.online/fr/tags/azure-devops/"
-                />
-  </url><url>
     <loc>https://blog.aminebabouri.online/fr/posts-fr/d%C3%A9ployer_nginx_sur_un_aks/</loc>
     <lastmod>2023-05-30T22:12:30+02:00</lastmod>
-  </url><url>
-    <loc>https://blog.aminebabouri.online/fr/tags/kubernetes/</loc>
-    <lastmod>2023-05-30T22:12:30+02:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.aminebabouri.online/tags/kubernetes/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="https://blog.aminebabouri.online/fr/tags/kubernetes/"
-                />
   </url><url>
     <loc>https://blog.aminebabouri.online/fr/posts-fr/hello/</loc>
     <lastmod>2023-05-25T05:35:29+02:00</lastmod>
   </url><url>
-    <loc>https://blog.aminebabouri.online/fr/tags/fist-post/</loc>
+    <loc>https://blog.aminebabouri.online/fr/tags/first-post/</loc>
     <lastmod>2023-05-25T05:35:29+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://blog.aminebabouri.online/tags/fist-post/"
+                href="https://blog.aminebabouri.online/tags/first-post/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://blog.aminebabouri.online/fr/tags/fist-post/"
+                href="https://blog.aminebabouri.online/fr/tags/first-post/"
                 />
   </url><url>
     <loc>https://blog.aminebabouri.online/fr/tags/welcome/</loc>
